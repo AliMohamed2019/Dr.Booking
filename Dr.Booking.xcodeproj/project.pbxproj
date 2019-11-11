@@ -3,27 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3B119CDC23782DC700FC4FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */; };
 		3B119CDE23782DC700FC4FC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */; };
-		3B119CE023782DC700FC4FC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDF23782DC700FC4FC2 /* ViewController.swift */; };
+		3B119CE023782DC700FC4FC2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDF23782DC700FC4FC2 /* LogInViewController.swift */; };
 		3B119CE323782DC700FC4FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B119CE123782DC700FC4FC2 /* Main.storyboard */; };
 		3B119CE523782DC800FC4FC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B119CE423782DC800FC4FC2 /* Assets.xcassets */; };
 		3B119CE823782DC800FC4FC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B119CE623782DC800FC4FC2 /* LaunchScreen.storyboard */; };
+		7D9E1F34C178B97034237E04 /* Pods_Dr_Booking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E65729F7C7618EC01EBDF39 /* Pods_Dr_Booking.framework */; };
+		813FFBE12379A019004897AE /* RegesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FFBE02379A019004897AE /* RegesterVC.swift */; };
+		813FFBE62379A141004897AE /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FFBE52379A141004897AE /* ProductVC.swift */; };
+		81970DEE23795AA5001CD992 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81970DED23795AA5001CD992 /* ProfileVC.swift */; };
+		81F2A7FE2378488C003DFCD1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2A7FA2378488C003DFCD1 /* Alert.swift */; };
+		81F2A7FF2378488C003DFCD1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2A7FB2378488C003DFCD1 /* CardView.swift */; };
+		81F2A8002378488C003DFCD1 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2A7FC2378488C003DFCD1 /* DesignableUITextField.swift */; };
+		81F2A803237853EA003DFCD1 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2A802237853EA003DFCD1 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3B119CD823782DC700FC4FC2 /* Dr.Booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dr.Booking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3B119CDF23782DC700FC4FC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B119CDF23782DC700FC4FC2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3B119CE223782DC700FC4FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B119CE423782DC800FC4FC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B119CE723782DC800FC4FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B119CE923782DC800FC4FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E65729F7C7618EC01EBDF39 /* Pods_Dr_Booking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dr_Booking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E33EA26FA4806F422DB503 /* Pods-Dr.Booking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr.Booking.debug.xcconfig"; path = "Target Support Files/Pods-Dr.Booking/Pods-Dr.Booking.debug.xcconfig"; sourceTree = "<group>"; };
+		813FFBE02379A019004897AE /* RegesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegesterVC.swift; sourceTree = "<group>"; };
+		813FFBE52379A141004897AE /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
+		81970DED23795AA5001CD992 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		81F2A7FA2378488C003DFCD1 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		81F2A7FB2378488C003DFCD1 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		81F2A7FC2378488C003DFCD1 /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
+		81F2A802237853EA003DFCD1 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		EF43448627F8F638A85D27E8 /* Pods-Dr.Booking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr.Booking.release.xcconfig"; path = "Target Support Files/Pods-Dr.Booking/Pods-Dr.Booking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9E1F34C178B97034237E04 /* Pods_Dr_Booking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +61,8 @@
 			children = (
 				3B119CDA23782DC700FC4FC2 /* Dr.Booking */,
 				3B119CD923782DC700FC4FC2 /* Products */,
+				EC32AE7F6828AAC5D8A47A22 /* Pods */,
+				49FEF2450917DC8BB83473DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +77,103 @@
 		3B119CDA23782DC700FC4FC2 /* Dr.Booking */ = {
 			isa = PBXGroup;
 			children = (
+				81F2A7F92378488C003DFCD1 /* Utitlites */,
 				3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */,
 				3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */,
-				3B119CDF23782DC700FC4FC2 /* ViewController.swift */,
+				813FFBDA23799F6E004897AE /* Senarios */,
 				3B119CE123782DC700FC4FC2 /* Main.storyboard */,
+				81F2A802237853EA003DFCD1 /* TabBar.swift */,
 				3B119CE423782DC800FC4FC2 /* Assets.xcassets */,
 				3B119CE623782DC800FC4FC2 /* LaunchScreen.storyboard */,
 				3B119CE923782DC800FC4FC2 /* Info.plist */,
 			);
 			path = Dr.Booking;
+			sourceTree = "<group>";
+		};
+		49FEF2450917DC8BB83473DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E65729F7C7618EC01EBDF39 /* Pods_Dr_Booking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		813FFBDA23799F6E004897AE /* Senarios */ = {
+			isa = PBXGroup;
+			children = (
+				813FFBDF23799FC2004897AE /* Products */,
+				813FFBDE23799FB6004897AE /* Regester */,
+				813FFBDB23799F7E004897AE /* Log in */,
+				81970DED23795AA5001CD992 /* ProfileVC.swift */,
+			);
+			path = Senarios;
+			sourceTree = "<group>";
+		};
+		813FFBDB23799F7E004897AE /* Log in */ = {
+			isa = PBXGroup;
+			children = (
+				813FFBDD23799F9C004897AE /* Controller */,
+			);
+			path = "Log in";
+			sourceTree = "<group>";
+		};
+		813FFBDD23799F9C004897AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B119CDF23782DC700FC4FC2 /* LogInViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		813FFBDE23799FB6004897AE /* Regester */ = {
+			isa = PBXGroup;
+			children = (
+				813FFBE32379A026004897AE /* Controller */,
+			);
+			path = Regester;
+			sourceTree = "<group>";
+		};
+		813FFBDF23799FC2004897AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				813FFBE42379A126004897AE /* Contoller */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		813FFBE32379A026004897AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				813FFBE02379A019004897AE /* RegesterVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		813FFBE42379A126004897AE /* Contoller */ = {
+			isa = PBXGroup;
+			children = (
+				813FFBE52379A141004897AE /* ProductVC.swift */,
+			);
+			path = Contoller;
+			sourceTree = "<group>";
+		};
+		81F2A7F92378488C003DFCD1 /* Utitlites */ = {
+			isa = PBXGroup;
+			children = (
+				81F2A7FA2378488C003DFCD1 /* Alert.swift */,
+				81F2A7FB2378488C003DFCD1 /* CardView.swift */,
+				81F2A7FC2378488C003DFCD1 /* DesignableUITextField.swift */,
+			);
+			path = Utitlites;
+			sourceTree = "<group>";
+		};
+		EC32AE7F6828AAC5D8A47A22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63E33EA26FA4806F422DB503 /* Pods-Dr.Booking.debug.xcconfig */,
+				EF43448627F8F638A85D27E8 /* Pods-Dr.Booking.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +183,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B119CEC23782DC800FC4FC2 /* Build configuration list for PBXNativeTarget "Dr.Booking" */;
 			buildPhases = (
+				92ED93779A2DCC795933EED7 /* [CP] Check Pods Manifest.lock */,
 				3B119CD423782DC700FC4FC2 /* Sources */,
 				3B119CD523782DC700FC4FC2 /* Frameworks */,
 				3B119CD623782DC700FC4FC2 /* Resources */,
+				09AA5266DD636EBA6ECF938D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +244,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09AA5266DD636EBA6ECF938D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dr.Booking/Pods-Dr.Booking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dr.Booking/Pods-Dr.Booking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dr.Booking/Pods-Dr.Booking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92ED93779A2DCC795933EED7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dr.Booking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B119CD423782DC700FC4FC2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B119CE023782DC700FC4FC2 /* ViewController.swift in Sources */,
+				3B119CE023782DC700FC4FC2 /* LogInViewController.swift in Sources */,
 				3B119CDC23782DC700FC4FC2 /* AppDelegate.swift in Sources */,
+				813FFBE12379A019004897AE /* RegesterVC.swift in Sources */,
+				81F2A7FE2378488C003DFCD1 /* Alert.swift in Sources */,
+				81F2A8002378488C003DFCD1 /* DesignableUITextField.swift in Sources */,
+				81970DEE23795AA5001CD992 /* ProfileVC.swift in Sources */,
 				3B119CDE23782DC700FC4FC2 /* SceneDelegate.swift in Sources */,
+				81F2A7FF2378488C003DFCD1 /* CardView.swift in Sources */,
+				813FFBE62379A141004897AE /* ProductVC.swift in Sources */,
+				81F2A803237853EA003DFCD1 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +442,7 @@
 		};
 		3B119CED23782DC800FC4FC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63E33EA26FA4806F422DB503 /* Pods-Dr.Booking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +460,7 @@
 		};
 		3B119CEE23782DC800FC4FC2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF43448627F8F638A85D27E8 /* Pods-Dr.Booking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
