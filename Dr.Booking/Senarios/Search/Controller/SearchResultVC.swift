@@ -1,19 +1,19 @@
 //
-//  TabBar.swift
+//  SearchResultVC.swift
 //  Dr.Booking
 //
-//  Created by Ali Mohamed on 11/10/19.
+//  Created by Ali Mohamed on 11/12/19.
 //  Copyright © 2019 BeSolutions.Dr.BookingOriginal. All rights reserved.
 //
 
 import UIKit
 
-class TabBar: UITabBarController {
+class SearchResultVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.selectedIndex = 2
+        // Do any additional setup after loading the view.
     }
     
 
