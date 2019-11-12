@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1729" y="-629"/>
+            <point key="canvasLocation" x="-1730" y="-796"/>
         </scene>
         <!--ProductVC-->
         <scene sceneID="BMX-hU-hKV">
@@ -675,7 +675,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mST-dY-6Cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-810.14492753623199" y="1534.8214285714284"/>
+            <point key="canvasLocation" x="-510" y="1437"/>
         </scene>
         <!--Change PasswordVC-->
         <scene sceneID="R2N-3J-MVT">
@@ -778,7 +778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSm-iq-HE0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13" y="1535"/>
+            <point key="canvasLocation" x="-510" y="2192"/>
         </scene>
         <!--Product DetailsVC-->
         <scene sceneID="CdO-Co-UoP">
@@ -1319,9 +1319,6 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="d6v-J3-Ial" firstAttribute="height" secondItem="5J7-ED-bHD" secondAttribute="height" multiplier="1.06855" id="caf-mW-Mn6"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1452,11 +1449,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="o6P-hO-6PV" secondAttribute="bottom" id="Ge3-ac-Wf9"/>
+                                    <constraint firstItem="aDL-n9-LTW" firstAttribute="top" secondItem="LSY-Tl-wB4" secondAttribute="bottom" constant="15" id="H7T-gB-vRH"/>
                                     <constraint firstAttribute="trailing" secondItem="o6P-hO-6PV" secondAttribute="trailing" id="IaU-vD-v7T"/>
                                     <constraint firstAttribute="trailing" secondItem="aDL-n9-LTW" secondAttribute="trailing" constant="8" id="Rou-ar-kbn"/>
                                     <constraint firstAttribute="trailing" secondItem="LSY-Tl-wB4" secondAttribute="trailing" id="WEs-QZ-9Gf"/>
                                     <constraint firstItem="LSY-Tl-wB4" firstAttribute="leading" secondItem="4OP-P3-CCj" secondAttribute="leading" id="Xbb-97-EGY"/>
-                                    <constraint firstItem="aDL-n9-LTW" firstAttribute="top" secondItem="LSY-Tl-wB4" secondAttribute="bottom" constant="15" id="bKk-vY-rFF"/>
                                     <constraint firstItem="aDL-n9-LTW" firstAttribute="leading" secondItem="4OP-P3-CCj" secondAttribute="leading" constant="8" id="dEy-RV-XeP"/>
                                     <constraint firstItem="w9U-IR-FUf" firstAttribute="leading" secondItem="4OP-P3-CCj" secondAttribute="leading" id="eGW-xG-3vm"/>
                                     <constraint firstItem="w9U-IR-FUf" firstAttribute="top" secondItem="4OP-P3-CCj" secondAttribute="top" id="gfn-Rl-ycY"/>
@@ -1504,7 +1501,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSj-Fx-RgD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2323" y="100"/>
+            <point key="canvasLocation" x="-2323" y="-66"/>
         </scene>
         <!--Forgot PasswordVC-->
         <scene sceneID="faM-Ln-jMc">
@@ -1571,7 +1568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cb9-gs-bMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1194" y="86"/>
+            <point key="canvasLocation" x="-1194" y="-80"/>
         </scene>
         <!--RegesterVC-->
         <scene sceneID="aKt-qS-PYQ">
@@ -1720,7 +1717,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tX-Bw-ddD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-949.27536231884062" y="-629.46428571428567"/>
+            <point key="canvasLocation" x="-949" y="-796"/>
         </scene>
         <!--بحث-->
         <scene sceneID="tCc-Uw-qcF">
