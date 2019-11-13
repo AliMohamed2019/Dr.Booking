@@ -68,7 +68,6 @@
                                 </state>
                                 <connections>
                                     <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MuO-iQ-1T3"/>
-                                    <segue destination="h7b-dH-rG2" kind="show" id="A6A-16-wL8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bse-DI-M1t">
@@ -136,6 +135,7 @@
                         <outlet property="email" destination="cAl-hH-VpF" id="4BX-Ad-rau"/>
                         <outlet property="logInBtn" destination="1y5-6j-Ojc" id="P4j-u1-HXu"/>
                         <outlet property="password" destination="ygD-04-mvR" id="Dwr-JY-YCY"/>
+                        <segue destination="h7b-dH-rG2" kind="show" identifier="GoToTapBar" id="1bT-WS-4Rq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -234,7 +234,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gbL-Tq-aRI"/>
                     <connections>
-                        <segue destination="xZv-r0-tDc" kind="show" id="lAX-Pr-IXo"/>
+                        <segue destination="xZv-r0-tDc" kind="show" identifier="GoToProductDetails" id="lAX-Pr-IXo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NmR-MD-cko" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -302,7 +302,6 @@
                                         </state>
                                         <connections>
                                             <action selector="skipButtonPressed:" destination="SGq-bj-wFg" eventType="touchUpInside" id="jbB-1S-0gS"/>
-                                            <segue destination="j6o-a0-UxD" kind="show" id="8W3-MX-F1n"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -335,6 +334,9 @@
                         <viewLayoutGuide key="safeArea" id="VgV-Tp-OmS"/>
                     </view>
                     <navigationItem key="navigationItem" id="L1P-U8-zjQ"/>
+                    <connections>
+                        <segue destination="j6o-a0-UxD" kind="show" identifier="GoToSearch" id="6Op-XP-S0O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0L-jc-Lqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -528,6 +530,7 @@
                         <outlet property="phone" destination="vZa-QF-YbH" id="ENh-Id-k0G"/>
                         <outlet property="profileImage" destination="CbH-Fu-Qn8" id="2P8-aM-w73"/>
                         <outlet property="signOutBtn" destination="D4u-af-ih8" id="uBy-Qc-zlX"/>
+                        <segue destination="2na-Om-r9D" kind="show" identifier="GoToProfileDetails" id="mPW-w7-3zz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcb-Kf-IVn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -539,11 +542,11 @@
             <objects>
                 <viewController id="2na-Om-r9D" customClass="EditProfileVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="IAy-A8-stb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eTT-1x-sVt">
-                                <rect key="frame" x="30" y="368.5" width="354" height="159"/>
+                                <rect key="frame" x="30" y="341.5" width="354" height="159"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8Z-tq-Evk" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
@@ -596,14 +599,14 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mahmoud" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-pk-XZK">
-                                <rect key="frame" x="152" y="218.5" width="110" height="110"/>
+                                <rect key="frame" x="152" y="191.5" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="NEM-gc-LNQ"/>
                                     <constraint firstAttribute="height" constant="110" id="Z29-Kd-qq5"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RL9-LA-ecy">
-                                <rect key="frame" x="30" y="545.5" width="354" height="50"/>
+                                <rect key="frame" x="30" y="518.5" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.2404647171" green="0.3184609115" blue="0.69135731460000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4MV-ee-PCb"/>
@@ -617,10 +620,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RaV-JP-UoB">
-                                <rect key="frame" x="0.0" y="595.5" width="414" height="300.5"/>
+                                <rect key="frame" x="0.0" y="568.5" width="414" height="273.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yld-7R-tFM">
-                                        <rect key="frame" x="151.5" y="133.5" width="111" height="34"/>
+                                        <rect key="frame" x="151.5" y="120" width="111" height="34"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="تغيير كلمة السر ؟">
@@ -635,7 +638,7 @@
                                         </state>
                                         <connections>
                                             <action selector="changePassword:" destination="2na-Om-r9D" eventType="touchUpInside" id="Xzi-1h-eio"/>
-                                            <segue destination="tQF-Zw-qb0" kind="show" id="erU-Dv-CEK"/>
+                                            <segue destination="tQF-Zw-qb0" kind="show" identifier="GoToChangePassword" id="erU-Dv-CEK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -646,7 +649,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKp-93-1OB">
-                                <rect key="frame" x="132" y="203.5" width="150" height="125"/>
+                                <rect key="frame" x="132" y="176.5" width="150" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="42s-yj-ctG"/>
                                     <constraint firstAttribute="width" constant="150" id="ze2-as-Bfm"/>
@@ -676,6 +679,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dNS-Kg-fcE"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kc8-jX-PiK"/>
                     <connections>
                         <outlet property="email" destination="QWs-du-juv" id="M8A-Pe-2RK"/>
                         <outlet property="name" destination="z8Z-tq-Evk" id="wRu-ie-nVj"/>
@@ -685,7 +689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mST-dY-6Cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1397" y="2221"/>
+            <point key="canvasLocation" x="-1397" y="2245"/>
         </scene>
         <!--Change PasswordVC-->
         <scene sceneID="R2N-3J-MVT">
@@ -791,7 +795,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSm-iq-HE0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1397" y="2892"/>
+            <point key="canvasLocation" x="-1397" y="2942"/>
         </scene>
         <!--Product DetailsVC-->
         <scene sceneID="CdO-Co-UoP">
@@ -1169,24 +1173,27 @@
                         <viewLayoutGuide key="safeArea" id="x6L-2m-y8e"/>
                     </view>
                     <navigationItem key="navigationItem" id="g5Z-Ze-jlK"/>
+                    <connections>
+                        <segue destination="cW4-2L-9ZH" kind="show" identifier="GoToSearchDetails" id="EO3-pg-ZLj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJp-ZL-gnp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2323" y="2221"/>
+            <point key="canvasLocation" x="-2326" y="2317"/>
         </scene>
         <!--Doctor DetailsVC-->
         <scene sceneID="Q3t-PC-Cpp">
             <objects>
                 <viewController id="cW4-2L-9ZH" customClass="DoctorDetailsVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Wp-ay-pq0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUH-zw-SJk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="956"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="890"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sd2-z3-fF2">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="956"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="890"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZl-Rl-Ym9" customClass="CardView" customModule="Dr_Booking" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="47" width="398" height="299.5"/>
@@ -1229,7 +1236,7 @@
                                                         <state key="normal" backgroundImage="star"/>
                                                         <connections>
                                                             <action selector="rateButtonPressed:" destination="cW4-2L-9ZH" eventType="touchUpInside" id="MAx-tp-s3A"/>
-                                                            <segue destination="eMb-Le-4OP" kind="show" id="hTd-y1-B2A"/>
+                                                            <segue destination="eMb-Le-4OP" kind="show" identifier="GoToRate" id="hTd-y1-B2A"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CC8-Qy-1Ig">
@@ -1366,6 +1373,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m01-G7-CwJ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8rB-Uj-og4"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="doctorDescreption" destination="CC8-Qy-1Ig" id="AE5-jp-qxo"/>
@@ -1379,7 +1387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9j-ox-tk9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2322" y="2892"/>
+            <point key="canvasLocation" x="-2326" y="3078"/>
         </scene>
         <!--Rate-->
         <scene sceneID="nHt-0k-861">
@@ -1494,7 +1502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEc-xU-chO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2325" y="3663"/>
+            <point key="canvasLocation" x="-2323" y="3822"/>
         </scene>
         <!--Tab Bar-->
         <scene sceneID="Exh-yx-uSW">
