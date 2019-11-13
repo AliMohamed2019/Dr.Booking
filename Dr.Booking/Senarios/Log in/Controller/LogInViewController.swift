@@ -28,5 +28,27 @@ class LogInViewController: UIViewController {
     @IBAction func regesterButtonPressed(_ sender: UIButton) {
     }
     
+    
+    
+    
+    func login(){
+        if let mail = email.text , let pass = password.text {
+        APIClient.login(mail: mail, password: pass) { (Result) in
+            switch Result {
+            case .success(let response):
+                DispatchQueue.main.async {
+                    print("aaaaaaaa")
+                    print(response)
+               }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    print("bbbbbbbbb")
+                    print(error.localizedDescription)
+                }
+            }
+            }
+        }
+            
+    }
 }
 
