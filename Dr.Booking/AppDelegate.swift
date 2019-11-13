@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print(Realm.Configuration.defaultConfiguration.fileURL)
+        
+        let doctor = Doctor()
+        doctor.Name = "Ali"
+        doctor.Fees = 200
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(doctor)
+            }
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        
         return true
     }
 

@@ -8,11 +8,12 @@ target 'Dr.Booking' do
   # Pods for Dr.Booking
     pod 'Alamofire', '~> 5.0.0-beta.5'
     pod 'IQKeyboardManagerSwift', '6.0.4'
-    pod 'SDWebImage', '~> 5.0'
+    pod 'SDWebImage'
     pod 'Firebase/Core'
     pod 'Firebase/Storage'
     pod 'BEMCheckBox'
     pod 'NVActivityIndicatorView'
     pod 'SwiftyJSON'
     pod 'Cosmos'
+    pod 'RealmSwift'
 end
