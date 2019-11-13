@@ -21,7 +21,7 @@ enum APIRouter: URLRequestConvertible {
     case viewProduct(product_id : Int)
     case buyProduct(user_id : Int, product_id : Int)
     case getUserProducts(user_id : Int)
-    case editProfile(user_id : Int , user_name : String , user_mail : String ,user_phone : String)
+    case editProfile(user_id : String , user_name : String , user_mail : String ,user_phone : String)
     case Search(search_words : String ,order_by : String ,user_id : Int)
     case viewDoctor(user_id : Int, doctor_id : Int )
     case make_reservation(user_id : Int, doctor_id : Int , docotor_reservation_date_id : Int)
@@ -29,7 +29,7 @@ enum APIRouter: URLRequestConvertible {
     case getAllDoctors(user_id : Int)
     case viewProfile(user_id : Int)
     case forget_pass(user_email : String)
-    case update_password(user_id : Int,Current_Password : String ,New_Password : String ,ReType_New_Password : String )
+    case update_password(user_id : String,Current_Password : String ,New_Password : String ,ReType_New_Password : String )
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
@@ -114,7 +114,7 @@ enum APIRouter: URLRequestConvertible {
        case .viewProfile(let user_id):
            return "/\(K.ProductionServer.userType)/view/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)\(user_id)"
         case .forget_pass(let user_email):
-            return "/\(K.ProductionServer.userType)/forget_pass/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)\(user_email)"
+            return "/\(K.ProductionServer.userType)/forget_pass/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(user_email)"
         case .update_password(let user_id, let Current_Password, let New_Password, let     ReType_New_Password):
            return "/\(K.ProductionServer.userType)/update_password/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(user_id)/\(Current_Password)/\(New_Password)/\(ReType_New_Password)"
         

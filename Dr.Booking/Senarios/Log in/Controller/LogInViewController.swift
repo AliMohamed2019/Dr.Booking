@@ -32,8 +32,6 @@ class LogInViewController: UIViewController {
     }
     
     
-    
-    
     func getLogin(){
         if let mail = email.text , let pass = password.text {
         APIClient.login(mail: mail, password: pass) { (Result) in
@@ -43,7 +41,8 @@ class LogInViewController: UIViewController {
                     print("aaaaaaaa")
                     print(response)
                     self.login = response
-                    
+                    self.setData()
+                    self.performSegue(withIdentifier: "GoToTapBar", sender: self)
                }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -58,8 +57,6 @@ class LogInViewController: UIViewController {
                             self.failure = response
                             Alert.show("Error", massege: self.failure!.message, context: self)
                             
-                            
-                            
                        }
                     case .failure(let error):
                         DispatchQueue.main.async {
@@ -72,5 +69,21 @@ class LogInViewController: UIViewController {
         }
             
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+             if segue.identifier == "GoToTapBar" {
+                 let vc = segue.destination as! TabBar
+                 vc.modalPresentationStyle = .fullScreen
+                 
+             }
+    }
+    
+    func setData() {
+           UserDefault.setId((self.login?.userData.id)!)
+           UserDefault.setName((self.login?.userData.name)!)
+           UserDefault.setEmail((self.login?.userData.mail)!)
+           UserDefault.setPhone((self.login?.userData.phone)!)
+       }
+    
 }
 
