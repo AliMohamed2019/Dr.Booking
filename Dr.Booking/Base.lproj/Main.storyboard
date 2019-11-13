@@ -20,6 +20,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الالكتروني " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAl-hH-VpF" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="36"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="0Ce-gl-Z4c"/>
                                         </constraints>
@@ -37,6 +38,7 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة السر " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ygD-04-mvR" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="48" width="354" height="36"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -269,9 +271,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spT-gU-bdC">
                                 <rect key="frame" x="0.0" y="431.5" width="414" height="410.5"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2mw-EE-LNo">
+                                    <searchBar contentMode="redraw" placeholder="ما هي اعراض مرضك ؟" translatesAutoresizingMaskIntoConstraints="NO" id="2mw-EE-LNo">
                                         <rect key="frame" x="20" y="40" width="374" height="56"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
                                     </searchBar>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يتم الفصل بين الاعراض ب , مثال(بوتكس,جراحة عيون,شفط دهون)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryb-kQ-9Lq">
                                         <rect key="frame" x="20" y="106" width="374" height="36"/>
@@ -280,7 +287,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EaZ-vS-VZQ">
-                                        <rect key="frame" x="183.5" y="188.5" width="47" height="34"/>
+                                        <rect key="frame" x="183.5" y="162" width="47" height="34"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="تخطي؟">
@@ -301,8 +308,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="EaZ-vS-VZQ" firstAttribute="top" secondItem="ryb-kQ-9Lq" secondAttribute="bottom" constant="20" id="AlA-d9-doe"/>
                                     <constraint firstAttribute="trailing" secondItem="ryb-kQ-9Lq" secondAttribute="trailing" constant="20" id="Ix1-Pd-HQj"/>
-                                    <constraint firstItem="EaZ-vS-VZQ" firstAttribute="centerY" secondItem="spT-gU-bdC" secondAttribute="centerY" id="fbZ-rN-X2D"/>
                                     <constraint firstItem="ryb-kQ-9Lq" firstAttribute="leading" secondItem="spT-gU-bdC" secondAttribute="leading" constant="20" id="o3h-aG-7Uw"/>
                                     <constraint firstAttribute="trailing" secondItem="2mw-EE-LNo" secondAttribute="trailing" constant="20" id="ptD-hQ-iwr"/>
                                     <constraint firstItem="ryb-kQ-9Lq" firstAttribute="top" secondItem="2mw-EE-LNo" secondAttribute="bottom" constant="10" id="vzz-nZ-4HQ"/>
@@ -540,6 +547,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8Z-tq-Evk" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="ZXK-tn-WcR"/>
                                         </constraints>
@@ -557,6 +565,7 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رقم الهاتف" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-65-i2F" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="57" width="354" height="45"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -571,6 +580,7 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الالكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWs-du-juv" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="114" width="354" height="45"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -690,6 +700,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة السر الحالية" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IX2-o9-qaV" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="3l1-DX-POz"/>
                                         </constraints>
@@ -707,6 +718,7 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة السر الجديدة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nOV-DC-tzo" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="57" width="354" height="45"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -721,6 +733,7 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تاكيد كلمة السر" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vxl-6j-yeF" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="114" width="354" height="45"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -1175,7 +1188,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sd2-z3-fF2">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="956"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZl-Rl-Ym9" customClass="CardView" customModule="Dr_Booking" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZl-Rl-Ym9" customClass="CardView" customModule="Dr_Booking" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="47" width="398" height="299.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V32-6O-k7u">
@@ -1225,7 +1238,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DlA-FD-w3J" customClass="CosmosView" customModule="Cosmos">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DlA-FD-w3J" customClass="CosmosView" customModule="Cosmos">
                                                         <rect key="frame" x="134" y="257" width="130" height="22"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1271,7 +1284,7 @@
                                                     <constraint firstAttribute="width" constant="90" id="i9W-ZL-YQI"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Qcu-nY-nhE">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Qcu-nY-nhE">
                                                 <rect key="frame" x="30" y="386.5" width="354" height="132.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d6v-J3-Ial">
@@ -1395,7 +1408,7 @@
                                             <constraint firstAttribute="height" constant="1" id="kyU-2g-a3I"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDL-n9-LTW" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDL-n9-LTW" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="8" y="56" width="240" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -1483,15 +1496,16 @@
             </objects>
             <point key="canvasLocation" x="-2325" y="3663"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar-->
         <scene sceneID="Exh-yx-uSW">
             <objects>
-                <tabBarController id="h7b-dH-rG2" sceneMemberID="viewController">
+                <tabBarController id="h7b-dH-rG2" customClass="TabBar" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Wot-oo-yqc"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P52-H2-Y9q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="FDm-2V-H7Q" kind="relationship" relationship="viewControllers" id="dct-9g-Xvz"/>
@@ -1513,6 +1527,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الالكترونى" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxU-Kx-X8Q" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                 <rect key="frame" x="30" y="403" width="354" height="36"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="fQI-cy-iev"/>
                                 </constraints>
@@ -1583,6 +1598,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R4E-FE-jVf" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="36"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="BJW-60-AbU"/>
                                         </constraints>
@@ -1600,6 +1616,7 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة السر" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fX-f7-6xZ" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="48" width="354" height="36"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -1614,6 +1631,7 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الهاتف" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OA7-6r-vB3" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="96" width="354" height="36"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -1628,6 +1646,7 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الالكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIn-Un-fkz" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="144" width="354" height="36"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -1723,7 +1742,7 @@
         <scene sceneID="tCc-Uw-qcF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ivh-eK-NsU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="بحث" id="Rnz-ah-eqE">
+                    <tabBarItem key="tabBarItem" title="بحث" image="magnifyingglass" catalog="system" id="Rnz-ah-eqE">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1745,7 +1764,7 @@
         <scene sceneID="qMI-9I-lXe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FDm-2V-H7Q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="المنتجات" id="1HJ-VK-pLC"/>
+                    <tabBarItem key="tabBarItem" title="المنتجات" image="barcode.viewfinder" catalog="system" id="1HJ-VK-pLC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="frN-4D-sbz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -1765,7 +1784,7 @@
         <scene sceneID="s63-UE-pji">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8pS-Nv-F7Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="الصفحة الشخصية" id="WGe-Sn-2po"/>
+                    <tabBarItem key="tabBarItem" title="الصفحة الشخصية" image="person" catalog="system" id="WGe-Sn-2po"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5fQ-h0-pkR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -1880,6 +1899,7 @@
     </scenes>
     <resources>
         <image name="appbackground" width="360" height="150"/>
+        <image name="barcode.viewfinder" catalog="system" width="64" height="56"/>
         <image name="booking" width="231.5" height="49.5"/>
         <image name="doctor" width="64" height="64"/>
         <image name="doctor2" width="64" height="64"/>
@@ -1890,10 +1910,13 @@
         <image name="location" width="32" height="32"/>
         <image name="location2" width="64" height="64"/>
         <image name="lock.fill" catalog="system" width="64" height="64"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="mahmoud" width="37" height="48"/>
+        <image name="person" catalog="system" width="64" height="58"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="phone.fill" catalog="system" width="64" height="56"/>
         <image name="star" width="64" height="64"/>
         <image name="user" width="24" height="24"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
