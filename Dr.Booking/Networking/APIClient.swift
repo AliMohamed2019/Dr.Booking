@@ -50,22 +50,22 @@ class APIClient {
            performRequest(route: APIRouter.register(user_name: user_name, mail: mail, phone: phone, pass: pass), completion: completion)
        }
     
-    static func addFavoriteDoctor (user_id : Int,  doctor_id : Int , completion : @escaping(Result<FavoriteDoctor,AFError>)->Void) {
+    static func addFavoriteDoctor (user_id : String,  doctor_id : String , completion : @escaping(Result<FavoriteDoctor,AFError>)->Void) {
         performRequest(route: APIRouter.addFavoriteDoctor(user_id: user_id, doctor_id: doctor_id), completion: completion)
     }
-    static func deleteFavoriteDoctor (user_id : Int,  doctor_id : Int , completion : @escaping(Result<FavoriteDoctor,AFError>)->Void) {
+    static func deleteFavoriteDoctor (user_id : String,  doctor_id : String , completion : @escaping(Result<FavoriteDoctor,AFError>)->Void) {
            performRequest(route: APIRouter.deleteFavoriteDoctor(user_id: user_id, doctor_id: doctor_id), completion: completion)
 
        }
     
     
-    static func getFavoriteDoctors(user_id : Int  , completion:@escaping
+    static func getFavoriteDoctors(user_id : String  , completion:@escaping
            (Result<AllFavoriteDoctor,AFError>)->Void){
            performRequest(route: APIRouter.getFavoriteDoctors(user_id: user_id), completion: completion)
 
        }
     
-    static func getFavoriteDoctorsfailure(user_id : Int  , completion:@escaping
+    static func getFavoriteDoctorsfailure(user_id : String  , completion:@escaping
         (Result<Failure,AFError>)->Void){
         performRequest(route: APIRouter.getFavoriteDoctors(user_id: user_id), completion: completion)
 
@@ -83,18 +83,30 @@ class APIClient {
            performRequest(route: APIRouter.viewProduct(product_id: product_id), completion: completion)
     }
     
-    static func buyProduct(user_id: Int, product_id: Int, completion:@escaping
+    static func buyProduct(user_id: String, product_id: String, completion:@escaping
            (Result<Failure,AFError>)->Void){
            performRequest(route: APIRouter.buyProduct(user_id: user_id, product_id: product_id), completion: completion)
     }
     
-    static func getUserFavouritProducts(user_id: Int, completion:@escaping
+    static func getUserFavouritProducts(user_id: String, completion:@escaping
            (Result<Failure,AFError>)->Void){
            performRequest(route: APIRouter.getUserProducts(user_id: user_id), completion: completion)
     }
     
     
-    
+
+    static func forgetPass(user_email : String , completion:@escaping(Result<ForgetPass,AFError>)->Void){
+            performRequest(route: APIRouter.forget_pass(user_email: user_email), completion: completion)
+            }
+        
+        static func updatePassword(user_id : String , Current_Password  : String, New_Password  : String, ReType_New_Password: String ,  completion:@escaping(Result<UpdatePassword,AFError>)->Void){
+            performRequest(route: APIRouter.update_password(user_id: user_id, Current_Password: Current_Password, New_Password: New_Password, ReType_New_Password: ReType_New_Password), completion: completion)
+        }
+        
+        
+        static func editProfile(user_id : String , user_name  : String, user_mail  : String, user_phone: String ,  completion:@escaping(Result<EditProfile,AFError>)->Void){
+            performRequest(route: APIRouter.editProfile(user_id: user_id, user_name: user_name, user_mail: user_mail, user_phone: user_phone), completion: completion)
+        }
 }
 
 

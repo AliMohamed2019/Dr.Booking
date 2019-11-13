@@ -25,36 +25,36 @@ class ProductDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        getDetails(with : productID)
+        getDetails(with : productID)
     }
     
-//    func getDetails(with ID : String){
-//        APIClient.getProductDetails(product_id: ID) { (Result) in
-//            switch Result {
-//            case .success(let Response):
-//                DispatchQueue.main.async {
-//                    self.productData = Response.product
-//                    self.updateView()
-//
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//
-//    }
-//
-//    func updateView(){
-//        if let details = productData {
-//            productName.text = details.name
-//            productPrice.text = details.price
-//            productImage.sd_setImage(with: URL(string: details.image), placeholderImage: UIImage(named: ""))
-//            descreptionTitle.text = "ما هو \(details.name)"
-//            benefitsTitle.text = "فوائد \(details.name)"
-//            descreption.text = details.productDescription
-//            benefits.text = details.benefits
-//        }
-//    }
+    func getDetails(with ID : String){
+        APIClient.getProductDetails(product_id: ID) { (Result) in
+            switch Result {
+            case .success(let Response):
+                DispatchQueue.main.async {
+                    self.productData = Response.product
+                    self.updateView()
+
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
+    }
+
+    func updateView(){
+        if let details = productData {
+            productName.text = details.name
+            productPrice.text = details.price
+            productImage.sd_setImage(with: URL(string: details.image), placeholderImage: UIImage(named: ""))
+            descreptionTitle.text = "ما هو \(details.name)"
+            benefitsTitle.text = "فوائد \(details.name)"
+            descreption.text = details.productDescription
+            benefits.text = details.benefits
+        }
+    }
     
     @IBAction func buyProduct(_ sender: UIButton) {
 
