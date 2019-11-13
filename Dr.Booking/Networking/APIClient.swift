@@ -71,6 +71,30 @@ class APIClient {
 
     }
     
+    static func getAllProduct(completion:@escaping
+        (Result<Products,AFError>)->Void){
+        performRequest(route: APIRouter.getAllProducts, completion: completion)
+        
+
+    }
+    
+    static func getProductDetails(product_id: String, completion:@escaping
+           (Result<ProductDetails,AFError>)->Void){
+           performRequest(route: APIRouter.viewProduct(product_id: product_id), completion: completion)
+    }
+    
+    static func buyProduct(user_id: Int, product_id: Int, completion:@escaping
+           (Result<Failure,AFError>)->Void){
+           performRequest(route: APIRouter.buyProduct(user_id: user_id, product_id: product_id), completion: completion)
+    }
+    
+    static func getUserFavouritProducts(user_id: Int, completion:@escaping
+           (Result<Failure,AFError>)->Void){
+           performRequest(route: APIRouter.getUserProducts(user_id: user_id), completion: completion)
+    }
+    
+    
+    
 }
 
 
