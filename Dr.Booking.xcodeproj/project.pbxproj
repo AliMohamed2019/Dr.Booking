@@ -18,7 +18,6 @@
 		3B24D157237BFAAA008D3605 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D154237BFAAA008D3605 /* Constants.swift */; };
 		3B24D15A237BFC0F008D3605 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D159237BFC0F008D3605 /* Login.swift */; };
 		3B24D15E237BFC53008D3605 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D15C237BFC52008D3605 /* Register.swift */; };
-		3B24D15F237BFC53008D3605 /* RegisterFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D15D237BFC53008D3605 /* RegisterFailure.swift */; };
 		3B24D163237BFCEE008D3605 /* FavoriteDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */; };
 		3B24D164237BFCEE008D3605 /* AllFavoriteDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D162237BFCED008D3605 /* AllFavoriteDoctor.swift */; };
 		3B24D168237C0119008D3605 /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D167237C0119008D3605 /* Failure.swift */; };
@@ -57,7 +56,6 @@
 		3B24D154237BFAAA008D3605 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3B24D159237BFC0F008D3605 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		3B24D15C237BFC52008D3605 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
-		3B24D15D237BFC53008D3605 /* RegisterFailure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFailure.swift; sourceTree = "<group>"; };
 		3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteDoctor.swift; sourceTree = "<group>"; };
 		3B24D162237BFCED008D3605 /* AllFavoriteDoctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllFavoriteDoctor.swift; sourceTree = "<group>"; };
 		3B24D167237C0119008D3605 /* Failure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				3B24D15C237BFC52008D3605 /* Register.swift */,
-				3B24D15D237BFC53008D3605 /* RegisterFailure.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -464,7 +461,6 @@
 				813FFBE62379A141004897AE /* ProductVC.swift in Sources */,
 				3B24D164237BFCEE008D3605 /* AllFavoriteDoctor.swift in Sources */,
 				81DEBC60237AABB20096CF47 /* EditProfileVC.swift in Sources */,
-				3B24D15F237BFC53008D3605 /* RegisterFailure.swift in Sources */,
 				3B24D15A237BFC0F008D3605 /* Login.swift in Sources */,
 				3B24D156237BFAAA008D3605 /* APIRouter.swift in Sources */,
 				81F2A803237853EA003DFCD1 /* TabBar.swift in Sources */,

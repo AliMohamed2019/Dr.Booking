@@ -9,6 +9,8 @@
 import UIKit
 
 class LogInViewController: UIViewController {
+    var login:Login?
+    var failure:Failure?
 
     @IBOutlet weak var email: DesignableUITextField!
     @IBOutlet weak var password: DesignableUITextField!
@@ -20,6 +22,7 @@ class LogInViewController: UIViewController {
         
     }
     @IBAction func logInPressed(_ sender: UIButton) {
+        getLogin()
     }
     
     @IBAction func forgotPassword(_ sender: UIButton) {
@@ -31,7 +34,7 @@ class LogInViewController: UIViewController {
     
     
     
-    func login(){
+    func getLogin(){
         if let mail = email.text , let pass = password.text {
         APIClient.login(mail: mail, password: pass) { (Result) in
             switch Result {
@@ -39,11 +42,30 @@ class LogInViewController: UIViewController {
                 DispatchQueue.main.async {
                     print("aaaaaaaa")
                     print(response)
+                    self.login = response
+                    
                }
             case .failure(let error):
                 DispatchQueue.main.async {
                     print("bbbbbbbbb")
                     print(error.localizedDescription)
+                    APIClient.loginfailure(mail: mail, password: pass) { (Result) in
+                    switch Result {
+                    case .success(let response):
+                        DispatchQueue.main.async {
+                            print("aaaaaaaa")
+                            print(response)
+                            self.failure = response
+                            Alert.show("Error", massege: self.failure!.message, context: self)
+                            
+                            
+                            
+                       }
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            print("bbbbbbbbb")
+                            print(error.localizedDescription)
+                        }}}
                 }
             }
             }

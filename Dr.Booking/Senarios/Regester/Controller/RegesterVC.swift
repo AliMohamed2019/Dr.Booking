@@ -9,6 +9,9 @@
 import UIKit
 
 class RegesterVC: UIViewController {
+    
+    var register:Register?
+    var failure:Failure?
 
     @IBOutlet weak var name: DesignableUITextField!
     @IBOutlet weak var passwrod: DesignableUITextField!
@@ -24,7 +27,7 @@ class RegesterVC: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        register()
+        getregister()
     }
     
     @IBAction func logInButtonPressed(_ sender: UIButton) {
@@ -32,7 +35,7 @@ class RegesterVC: UIViewController {
     }
     
     
-    func register(){
+    func getregister(){
         if let name = name.text , let mail = email.text , let phone = phone.text , let pass = passwrod.text{
         APIClient.register(user_name: name , mail: mail, phone: phone, pass: pass){(Result) in
             switch Result {
@@ -40,6 +43,8 @@ class RegesterVC: UIViewController {
                 DispatchQueue.main.async {
                     print("aaaaaaaa")
                     print(response)
+                    self.register = response
+                    Alert.show("Error", massege: self.register!.message, context: self)
                }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -51,6 +56,8 @@ class RegesterVC: UIViewController {
                         DispatchQueue.main.async {
                             print("aaaaaaaa")
                             print(response)
+                            self.failure = response
+                            Alert.show("Error", massege: self.failure!.message, context: self)
                        }
                     case .failure(let error):
                         DispatchQueue.main.async {

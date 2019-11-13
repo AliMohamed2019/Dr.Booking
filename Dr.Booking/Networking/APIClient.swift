@@ -36,6 +36,12 @@ class APIClient {
     
     }
     
+    static func loginfailure(mail : String , password : String , completion:@escaping
+           (Result<Failure,AFError>)->Void){
+           performRequest(route: APIRouter.login(mail: mail, password: password), completion: completion)
+       
+       }
+    
     static func register (user_name : String , mail : String , phone : String , pass : String , completion : @escaping(Result<Register,AFError>)->Void){
         performRequest(route: APIRouter.register(user_name: user_name, mail: mail, phone: phone, pass: pass), completion: completion)
     }
