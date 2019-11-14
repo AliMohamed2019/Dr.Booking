@@ -564,11 +564,13 @@
                         <outlet property="profileImage" destination="CbH-Fu-Qn8" id="2P8-aM-w73"/>
                         <outlet property="signOutBtn" destination="D4u-af-ih8" id="uBy-Qc-zlX"/>
                         <segue destination="2na-Om-r9D" kind="show" identifier="GoToProfileDetails" id="mPW-w7-3zz"/>
+                        <segue destination="U8s-i3-iNo" kind="show" identifier="GoToFavoriteDetails " id="IO5-26-y2S"/>
+                        <segue destination="Dhr-2l-v14" kind="show" identifier="GoToProductDetails" id="c1L-ui-DWE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcb-Kf-IVn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1397" y="1566"/>
+            <point key="canvasLocation" x="-893" y="1566"/>
         </scene>
         <!--تعديل-->
         <scene sceneID="85C-cp-leI">
@@ -722,7 +724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mST-dY-6Cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1397" y="2245"/>
+            <point key="canvasLocation" x="-1594" y="2317"/>
         </scene>
         <!--تغيير كلمة السر-->
         <scene sceneID="R2N-3J-MVT">
@@ -828,7 +830,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSm-iq-HE0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1397" y="2942"/>
+            <point key="canvasLocation" x="-1594" y="3112"/>
         </scene>
         <!--Product DetailsVC-->
         <scene sceneID="CdO-Co-UoP">
@@ -1215,7 +1217,7 @@
         <!--Doctor DetailsVC-->
         <scene sceneID="Q3t-PC-Cpp">
             <objects>
-                <viewController id="cW4-2L-9ZH" customClass="DoctorDetailsVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoctorDetails" id="cW4-2L-9ZH" customClass="DoctorDetailsVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Wp-ay-pq0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1267,7 +1269,6 @@
                                                         <state key="normal" backgroundImage="star"/>
                                                         <connections>
                                                             <action selector="rateButtonPressed:" destination="cW4-2L-9ZH" eventType="touchUpInside" id="MAx-tp-s3A"/>
-                                                            <segue destination="eMb-Le-4OP" kind="show" identifier="GoToRate" id="hTd-y1-B2A"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CC8-Qy-1Ig">
@@ -1423,13 +1424,13 @@
         <!--Rate-->
         <scene sceneID="nHt-0k-861">
             <objects>
-                <viewController id="eMb-Le-4OP" customClass="Rate" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Rate" id="eMb-Le-4OP" customClass="Rate" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LHh-JB-NDv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4OP-P3-CCj">
-                                <rect key="frame" x="79" y="321" width="256" height="200"/>
+                                <rect key="frame" x="79" y="348" width="256" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تقييم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9U-IR-FUf">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="40"/>
@@ -1535,19 +1536,19 @@
             </objects>
             <point key="canvasLocation" x="-2323" y="3822"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite Details View Controller-->
         <scene sceneID="QPQ-Zg-ibL">
             <objects>
-                <viewController id="U8s-i3-iNo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteDetailsViewController" id="U8s-i3-iNo" customClass="FavoriteDetailsViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePf-hF-O9l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="efA-hR-EBm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="efA-hR-EBm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="280" id="tuD-e6-iX5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="280" id="tuD-e6-iX5" customClass="FavoriteDetailsTableViewCell" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tuD-e6-iX5" id="hAD-sz-abh">
@@ -1603,6 +1604,9 @@
                                                         <constraint firstAttribute="width" constant="35" id="zdf-Le-tdD"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="heart"/>
+                                                    <connections>
+                                                        <action selector="addToFavoriets:" destination="tuD-e6-iX5" eventType="touchUpInside" id="Low-6Y-n90"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbq-fW-WaL">
                                                     <rect key="frame" x="7" y="166" width="81" height="32"/>
@@ -1618,6 +1622,9 @@
                                                             </fragment>
                                                         </attributedString>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="viewOnMap:" destination="tuD-e6-iX5" eventType="touchUpInside" id="10Z-db-yle"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vob-Zv-jdu">
                                                     <rect key="frame" x="143.5" y="229" width="127" height="40"/>
@@ -1629,6 +1636,9 @@
                                                     <state key="normal" title="الصفحة الشخصية">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="showDoctorDetails:" destination="tuD-e6-iX5" eventType="touchUpInside" id="afe-fJ-pLf"/>
+                                                    </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-0P-j94">
                                                     <rect key="frame" x="184" y="99" width="209.5" height="95"/>
@@ -1692,8 +1702,22 @@
                                                 <constraint firstItem="wAi-aK-fhp" firstAttribute="leading" secondItem="2ZO-5Q-Gwc" secondAttribute="trailing" constant="8" id="wKL-dX-5jo"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="DoctorDetailsBtn" destination="Vob-Zv-jdu" id="DrN-ta-WYl"/>
+                                            <outlet property="DoctorTitle" destination="PLq-mD-sLV" id="7sw-dz-c4w"/>
+                                            <outlet property="doctorAddress" destination="Oqo-GX-2Nk" id="JHN-3K-QRi"/>
+                                            <outlet property="doctorFees" destination="rQZ-ab-6fN" id="8Ya-dR-Zy2"/>
+                                            <outlet property="doctorImage" destination="wAi-aK-fhp" id="VM1-3Q-0go"/>
+                                            <outlet property="doctorName" destination="Mzq-hJ-zbj" id="ofj-6u-3KZ"/>
+                                            <outlet property="likeBtn" destination="BLO-zD-uXY" id="FVw-Md-up1"/>
+                                            <outlet property="rateOfDoctor" destination="XL3-BH-uPY" id="PLE-F0-3gd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="U8s-i3-iNo" id="PFk-Mr-WgB"/>
+                                    <outlet property="delegate" destination="U8s-i3-iNo" id="nIC-hd-qVR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1705,10 +1729,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HsM-QC-ZVR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="EyI-ff-29J"/>
+                    <connections>
+                        <outlet property="doctorFavoriteTableView" destination="efA-hR-EBm" id="xpK-4w-EGG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2R-ZR-D43" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1397" y="4259"/>
+            <point key="canvasLocation" x="-775" y="2317"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uzm-x1-CD4">
@@ -1857,25 +1885,26 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EvR-Mk-NAb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="XWP-mY-VZB"/>
                     <size key="freeformSize" width="414" height="1200"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjL-B8-qeZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1397" y="5006"/>
+            <point key="canvasLocation" x="1155" y="2624"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Details View Controller-->
         <scene sceneID="HG4-bB-B7B">
             <objects>
-                <viewController id="Dhr-2l-v14" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailsViewController" id="Dhr-2l-v14" customClass="ProductDetailsViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ytS-zu-2jp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sj0-84-UWP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="140" id="q7U-H6-hrB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="140" id="q7U-H6-hrB" customClass="ProductDetailsTableViewCell" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q7U-H6-hrB" id="cki-sL-Ofp">
@@ -1929,8 +1958,17 @@
                                                 <constraint firstItem="LID-ar-yCz" firstAttribute="top" secondItem="cki-sL-Ofp" secondAttribute="top" constant="8" id="my6-Ws-0aY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productImage" destination="SUx-sW-sZa" id="atB-vc-CZm"/>
+                                            <outlet property="productName" destination="GIf-cg-RZL" id="tMw-p4-yKR"/>
+                                            <outlet property="productPrice" destination="A8q-GS-jkG" id="K8a-2S-fEX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dhr-2l-v14" id="Qr3-6q-ZYU"/>
+                                    <outlet property="delegate" destination="Dhr-2l-v14" id="3Gr-BP-rba"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1942,10 +1980,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Uw-mL-4i8"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AKW-uS-kUf"/>
+                    <connections>
+                        <outlet property="orderTableView" destination="Sj0-84-UWP" id="GIQ-ga-UNJ"/>
+                        <segue destination="xZv-r0-tDc" kind="show" id="JhW-jy-Ctz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXc-1s-YdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1397" y="3609"/>
+            <point key="canvasLocation" x="86" y="2363"/>
         </scene>
         <!--Tab Bar-->
         <scene sceneID="Exh-yx-uSW">
@@ -2281,5 +2324,8 @@
         <image name="star" width="64" height="64"/>
         <image name="user" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JhW-jy-Ctz"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

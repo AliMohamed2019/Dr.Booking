@@ -12,13 +12,14 @@ class ProfileVC: UIViewController {
     
     let photsArray = ["product","profile","callender","house"]
     let namesArray = ["منتجاتي","تعديل البيانات","حجوزاتي","مفضلتي"]
+    let viewControllerArray = ["GoToProductDetails","GoToProfileDetails" , "" , "GoToFavoriteDetails "]
+    let nameViewControllerArray = ["ProductVC" , "EditProfileVC" , "" , "SearchResultVC"]
     
 
     @IBOutlet weak var profileImage: UIImageView!{
         didSet{
             Rounded.roundedImage(imageView: self.profileImage)
-            self.profileImage.layer.borderWidth = 4
-            self.profileImage.layer.borderColor = #colorLiteral(red: 0.5132408738, green: 0.8211410642, blue: 0.2199990749, alpha: 1)
+            
         }
     }
     
@@ -41,7 +42,8 @@ class ProfileVC: UIViewController {
     func getData() {
         name.text = UserDefault.getName()
         phone.text = UserDefault.getPhone()
-        profileImage.sd_setImage(with: URL(string: UserDefault.getPhoto() ?? ""), placeholderImage: UIImage(named: "user"))
+    /*    profileImage.sd_setImage(with: URL(string: UserDefault.getPhoto() ?? ""), placeholderImage: UIImage(named: "user"))
+    */
          
         TableView.reloadData()
         
@@ -62,8 +64,9 @@ extension ProfileVC: UITableViewDelegate , UITableViewDataSource {
                
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         
-       
+        performSegue(withIdentifier: viewControllerArray[indexPath.row], sender: self)
+        
+        
     }
     
     

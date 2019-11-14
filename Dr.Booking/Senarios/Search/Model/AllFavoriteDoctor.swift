@@ -16,8 +16,8 @@ struct Doctor: Codable {
     let favorite: Int
     let id, name, address: String
     let image: String
-    let price, jobTitle, doctorDescription, longitude: String
-    let latitude: String
+    let price, jobTitle, doctorDescription, longitude: String?
+    let latitude: String?
     let rating: Int
 
     enum CodingKeys: String, CodingKey {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B046B97237D67250032C7D1 /* FavoriteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B96237D67250032C7D1 /* FavoriteDetailsViewController.swift */; };
+		3B046B99237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B98237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift */; };
+		3B046B9B237D6BDF0032C7D1 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */; };
+		3B046B9D237D6C170032C7D1 /* ProductDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B9C237D6C170032C7D1 /* ProductDetailsTableViewCell.swift */; };
 		3B119CDC23782DC700FC4FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */; };
 		3B119CDE23782DC700FC4FC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */; };
 		3B119CE023782DC700FC4FC2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDF23782DC700FC4FC2 /* LogInViewController.swift */; };
@@ -49,6 +53,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B046B96237D67250032C7D1 /* FavoriteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsViewController.swift; sourceTree = "<group>"; };
+		3B046B98237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		3B046B9C237D6C170032C7D1 /* ProductDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		3B119CD823782DC700FC4FC2 /* Dr.Booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dr.Booking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +276,8 @@
 				81970DED23795AA5001CD992 /* ProfileVC.swift */,
 				81DEBC5F237AABB20096CF47 /* EditProfileVC.swift */,
 				81DEBC77237AEF8D0096CF47 /* ChangePasswordVC.swift */,
+				3B046B96237D67250032C7D1 /* FavoriteDetailsViewController.swift */,
+				3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -286,6 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				81DEBC5D237AAB1E0096CF47 /* ProfileTableViewCell.swift */,
+				3B046B98237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift */,
+				3B046B9C237D6C170032C7D1 /* ProductDetailsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -475,6 +487,7 @@
 				3B24D171237C49A1008D3605 /* EditProfile.swift in Sources */,
 				3B119CE023782DC700FC4FC2 /* LogInViewController.swift in Sources */,
 				3B119CDC23782DC700FC4FC2 /* AppDelegate.swift in Sources */,
+				3B046B9B237D6BDF0032C7D1 /* ProductDetailsViewController.swift in Sources */,
 				81DEBC76237AEBCF0096CF47 /* Rate.swift in Sources */,
 				3B24D15E237BFC53008D3605 /* Register.swift in Sources */,
 				81DEBC67237ABC0A0096CF47 /* ProductDetailsVC.swift in Sources */,
@@ -488,8 +501,10 @@
 				81F2A7FE2378488C003DFCD1 /* Alert.swift in Sources */,
 				81F2A8002378488C003DFCD1 /* DesignableUITextField.swift in Sources */,
 				81DEBC70237AC5D50096CF47 /* SearchResultTableViewCell.swift in Sources */,
+				3B046B99237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift in Sources */,
 				3B24D16F237C37DF008D3605 /* UserDefault.swift in Sources */,
 				81970DEE23795AA5001CD992 /* ProfileVC.swift in Sources */,
+				3B046B9D237D6C170032C7D1 /* ProductDetailsTableViewCell.swift in Sources */,
 				81DEBC6B237AC4D80096CF47 /* SearchVC.swift in Sources */,
 				3B119CDE23782DC700FC4FC2 /* SceneDelegate.swift in Sources */,
 				81DEBC78237AEF8D0096CF47 /* ChangePasswordVC.swift in Sources */,
@@ -501,6 +516,7 @@
 				3B24D164237BFCEE008D3605 /* AllFavoriteDoctor.swift in Sources */,
 				81DEBC60237AABB20096CF47 /* EditProfileVC.swift in Sources */,
 				3B24D15A237BFC0F008D3605 /* Login.swift in Sources */,
+				3B046B97237D67250032C7D1 /* FavoriteDetailsViewController.swift in Sources */,
 				3B24D156237BFAAA008D3605 /* APIRouter.swift in Sources */,
 				81F678AA237C2A93004CB1AB /* Products.swift in Sources */,
 				81F2A803237853EA003DFCD1 /* TabBar.swift in Sources */,

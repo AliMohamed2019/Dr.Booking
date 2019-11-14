@@ -60,7 +60,7 @@ class ProductDetailsVC: UIViewController, NVActivityIndicatorViewable{
     
     @IBAction func buyProduct(_ sender: UIButton) {
 
-        APIClient.buyProduct(user_id:"77" , product_id:"10" ) { (Result) in
+        APIClient.buyProduct(user_id: UserDefault.getId() , product_id: productID ) { (Result) in
             switch Result {
             case .success(let response):
                 DispatchQueue.main.async {
