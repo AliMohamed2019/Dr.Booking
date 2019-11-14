@@ -16,7 +16,7 @@ enum APIRouter: URLRequestConvertible {
     case addFavoriteDoctor(user_id : String,doctor_id : String )
     case deleteFavoriteDoctor(user_id : String, doctor_id : String )
     case getFavoriteDoctors(user_id : String)
-    case addRate(user_id : String, doctor_id : String , rate : Int)
+    case addRate(user_id : String, doctor_id : String , rate : Double)
     case getAllProducts
     case viewProduct(product_id : String)
     case buyProduct(user_id : String, product_id : String)
@@ -110,7 +110,7 @@ enum APIRouter: URLRequestConvertible {
         case .view_reservations(let user_id):
             return "/\(K.ProductionServer.userType)/view_reservations/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)\(user_id)"
         case .getAllDoctors(let user_id):
-            return "/\(K.ProductionServer.DoctorType)/getAll/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)\(user_id)"
+            return "/\(K.ProductionServer.DoctorType)/getAll/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(user_id)"
        case .viewProfile(let user_id):
            return "/\(K.ProductionServer.userType)/view/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)\(user_id)"
         case .forget_pass(let user_email):

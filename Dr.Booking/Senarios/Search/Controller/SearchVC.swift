@@ -26,16 +26,18 @@ class SearchVC: UIViewController , UITextFieldDelegate{
      
     
     @IBAction func skipButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "GoToSearch", sender: self)
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-      
-    }
     func textFieldDidEndEditing(_ textField: UITextField) {
-          if searchTv.text != nil {
-                  searchBtn.backgroundColor = #colorLiteral(red: 0.5216588974, green: 0.8082630634, blue: 0.2478611171, alpha: 1)
-              } else {
-                  searchBtn.backgroundColor = .lightGray
-              }
+        searchBtn.backgroundColor = .blue
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToSearch" {
+            let vc = segue.destination as! SearchResultVC
+            vc.modalPresentationStyle = .fullScreen
+            vc.searchDoctors(SortBy: "all", keyWord: searchTv.text ?? "", userId: "75")
+        }
     }
 }

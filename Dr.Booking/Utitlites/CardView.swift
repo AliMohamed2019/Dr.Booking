@@ -52,6 +52,8 @@ class ProfileImageView: UIImageView {
         imageView.layer.cornerRadius = imageView.frame.width / 2
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.borderWidth = 4
+        imageView.layer.borderColor = #colorLiteral(red: 0.5132408738, green: 0.8211410642, blue: 0.2199990749, alpha: 1)
     }
     
     static func roundedButton1(button: UIButton) {

@@ -23,6 +23,7 @@ class Rate: UIViewController {
     }
     @IBOutlet weak var rateStars: CosmosView!
     
+    var doctorID = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +32,17 @@ class Rate: UIViewController {
     
 
     @IBAction func rateButtonPressed(_ sender: UIButton) {
+        
+        APIClient.rateDoctor(user_id: "77", doctor_id: doctorID, rate: rateStars.rating) { (Result) in
+            switch Result {
+            case .success(let response):
+                print(response)
+                self.dismiss(animated: true, completion: nil)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
     }
     
 }

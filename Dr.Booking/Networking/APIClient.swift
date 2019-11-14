@@ -107,6 +107,18 @@ class APIClient {
         static func editProfile(user_id : String , user_name  : String, user_mail  : String, user_phone: String ,  completion:@escaping(Result<EditProfile,AFError>)->Void){
             performRequest(route: APIRouter.editProfile(user_id: user_id, user_name: user_name, user_mail: user_mail, user_phone: user_phone), completion: completion)
         }
+    
+    static func getDoctors(user_id : String ,completion:@escaping(Result<Doctors,AFError>)->Void){
+        performRequest(route: APIRouter.getAllDoctors(user_id: user_id) , completion: completion)
+    }
+    
+    static func getSearchedDoctors(search_words: String, order_by: String,user_id : String ,completion:@escaping(Result<EditProfile,AFError>)->Void){
+        performRequest(route: APIRouter.Search(search_words: search_words, order_by: order_by, user_id: user_id) , completion: completion)
+    }
+    
+    static func rateDoctor( user_id : String ,doctor_id : String , rate: Double ,completion:@escaping(Result<Failure,AFError>)->Void){
+        performRequest(route: APIRouter.addRate(user_id: user_id, doctor_id: doctor_id, rate: rate  ) , completion: completion)
+    }
 }
 
 
