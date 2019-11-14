@@ -9,6 +9,10 @@
 import UIKit
 
 class ProfileVC: UIViewController {
+    
+    let photsArray = ["product","profile","callender","house"]
+    let namesArray = ["منتجاتي","تعديل البيانات","حجوزاتي","مفضلتي"]
+    
 
     @IBOutlet weak var profileImage: UIImageView!{
         didSet{
@@ -25,20 +29,41 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getData()
+       
     }
     
     @IBAction func signOutPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func getData() {
+        name.text = UserDefault.getName()
+        phone.text = UserDefault.getPhone()
+        profileImage.sd_setImage(with: URL(string: UserDefault.getPhoto() ?? ""), placeholderImage: UIImage(named: "user"))
+         
+        TableView.reloadData()
+        
     }
     
 }
 extension ProfileVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        return photsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProfileTableViewCell
+        cell.iconImage.image = UIImage(named: photsArray[indexPath.row])
+        cell.title.text = namesArray[indexPath.row]
+       return cell
+               
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         
+       
     }
     
     

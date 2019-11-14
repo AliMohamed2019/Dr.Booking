@@ -80,6 +80,8 @@ extension EditProfileVC: UIImagePickerControllerDelegate , UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let imageData = info[.originalImage] as! UIImage
         profileImage.image = imageData
+        UserDefault.setPhoto(info[.originalImage] as! String)
+       
         
     }
 }

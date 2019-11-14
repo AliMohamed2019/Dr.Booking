@@ -42,6 +42,7 @@ class LogInViewController: UIViewController {
                     print(response)
                     self.login = response
                     self.setData()
+                    self.clearText()
                     self.performSegue(withIdentifier: "GoToTapBar", sender: self)
                }
             case .failure(let error):
@@ -83,7 +84,12 @@ class LogInViewController: UIViewController {
            UserDefault.setName((self.login?.userData.name)!)
            UserDefault.setEmail((self.login?.userData.mail)!)
            UserDefault.setPhone((self.login?.userData.phone)!)
+          
        }
+    func clearText()  {
+        email.text = ""
+        password.text = ""
+    }
     
 }
 

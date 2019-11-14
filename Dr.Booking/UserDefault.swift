@@ -13,6 +13,7 @@ struct UserDefault {
     static let name = "name"
     static let email = "email"
     static let phone = "phone"
+    static let photo = "photo"
     
     
     
@@ -42,5 +43,11 @@ struct UserDefault {
     }
     static func getPhone () ->String{
         return UserDefaults.standard.string(forKey: self.phone) ??  ""
+    }
+    static func setPhoto ( _ photo : String){
+        UserDefaults.standard.set(photo, forKey: self.photo)
+    }
+    static func getPhoto () ->String{
+        return UserDefaults.standard.string(forKey: self.photo) ??  ""
     }
 }
