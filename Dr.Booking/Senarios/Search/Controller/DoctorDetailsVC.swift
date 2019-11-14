@@ -17,13 +17,16 @@ class DoctorDetailsVC: UIViewController {
     @IBOutlet weak var doctorRate: CosmosView!
     @IBOutlet weak var doctorLocation: UILabel!
     @IBOutlet weak var doctorFees: UILabel!
+    @IBOutlet weak var doctorJobTitle: UILabel!
     
     var doctor: SearchDoctor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
         
     }
+    
     func updateView(){
         navigationItem.title = doctor?.name
         Rounded.roundedImage(imageView: doctorImage)
@@ -33,8 +36,8 @@ class DoctorDetailsVC: UIViewController {
         doctorDescreption.text = doctor?.doctorDescription
         doctorRate.rating = doctor?.rating ?? 0.0
         doctorFees.text = doctor?.price
-            
-        
+        doctorLocation.text = doctor?.address
+        doctorJobTitle.text = doctor?.jobTitle
     }
 
     @IBAction func likeButtonPressed(_ sender: UIButton) {

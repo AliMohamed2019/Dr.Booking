@@ -99,23 +99,25 @@ class APIClient {
             performRequest(route: APIRouter.forget_pass(user_email: user_email), completion: completion)
             }
         
-        static func updatePassword(user_id : String , Current_Password  : String, New_Password  : String, ReType_New_Password: String ,  completion:@escaping(Result<UpdatePassword,AFError>)->Void){
-            performRequest(route: APIRouter.update_password(user_id: user_id, Current_Password: Current_Password, New_Password: New_Password, ReType_New_Password: ReType_New_Password), completion: completion)
-        }
-        
-        
-        static func editProfile(user_id : String , user_name  : String, user_mail  : String, user_phone: String ,  completion:@escaping(Result<EditProfile,AFError>)->Void){
-            performRequest(route: APIRouter.editProfile(user_id: user_id, user_name: user_name, user_mail: user_mail, user_phone: user_phone), completion: completion)
-        }
+    static func updatePassword(user_id : String , Current_Password  : String, New_Password  : String, ReType_New_Password: String ,  completion:@escaping(Result<UpdatePassword,AFError>)->Void){
+        performRequest(route: APIRouter.update_password(user_id: user_id, Current_Password: Current_Password, New_Password: New_Password, ReType_New_Password: ReType_New_Password), completion: completion)
+    }
+    
+    
+    static func editProfile(user_id : String , user_name  : String, user_mail  : String, user_phone: String ,  completion:@escaping(Result<EditProfile,AFError>)->Void){
+        performRequest(route: APIRouter.editProfile(user_id: user_id, user_name: user_name, user_mail: user_mail, user_phone: user_phone), completion: completion)
+    }
     
     static func getDoctors(user_id : String ,completion:@escaping(Result<Doctors,AFError>)->Void){
         performRequest(route: APIRouter.getAllDoctors(user_id: user_id) , completion: completion)
     }
     
-    static func getSearchedDoctors(search_words: String, order_by: String,user_id : String ,completion:@escaping(Result<EditProfile,AFError>)->Void){
+    static func getSearchedDoctors(search_words: String, order_by: String,user_id : String ,completion:@escaping(Result<Doctors,AFError>)->Void){
         performRequest(route: APIRouter.Search(search_words: search_words, order_by: order_by, user_id: user_id) , completion: completion)
     }
-    
+    static func getSearchedDoctorsFailure(search_words: String, order_by: String,user_id : String ,completion:@escaping(Result<Failure,AFError>)->Void){
+        performRequest(route: APIRouter.Search(search_words: search_words, order_by: order_by, user_id: user_id) , completion: completion)
+    }
     static func rateDoctor( user_id : String ,doctor_id : String , rate: Double ,completion:@escaping(Result<Failure,AFError>)->Void){
         performRequest(route: APIRouter.addRate(user_id: user_id, doctor_id: doctor_id, rate: rate  ) , completion: completion)
     }
@@ -123,9 +125,9 @@ class APIClient {
            performRequest(route: APIRouter.getUserProducts(user_id: user_id), completion: completion)
        }
        
-       static func getUserProductsfailure (user_id : String , completion:@escaping(Result<Failure,AFError>)->Void){
-              performRequest(route: APIRouter.getUserProducts(user_id: user_id), completion: completion)
-          }
+   static func getUserProductsfailure (user_id : String , completion:@escaping(Result<Failure,AFError>)->Void){
+          performRequest(route: APIRouter.getUserProducts(user_id: user_id), completion: completion)
+      }
 }
 
 
