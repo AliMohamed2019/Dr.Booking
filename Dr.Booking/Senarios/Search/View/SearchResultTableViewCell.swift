@@ -7,16 +7,21 @@
 //
 
 import UIKit
-
+import Cosmos
 class SearchResultTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var doctorImage: UIImageView!
+    @IBOutlet weak var doctorImage: UIImageView!{
+        didSet{
+            Rounded.roundedImage(imageView: self.doctorImage)
+        }
+    }
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var DoctorTitle: UILabel!
     @IBOutlet weak var doctorFees: UILabel!
     @IBOutlet weak var doctorAddress: UILabel!
     @IBOutlet weak var DoctorDetailsBtn: UIButton!
     @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var rateView: CosmosView!
     
     
     override func awakeFromNib() {
