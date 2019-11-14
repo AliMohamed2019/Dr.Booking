@@ -20,7 +20,11 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var doctorFees: UILabel!
     @IBOutlet weak var doctorAddress: UILabel!
     @IBOutlet weak var DoctorDetailsBtn: UIButton!
-    @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var likeBtn: UIButton!{
+        didSet{
+            likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
+        }
+    }
     @IBOutlet weak var rateView: CosmosView!
     
     
@@ -35,10 +39,17 @@ class SearchResultTableViewCell: UITableViewCell {
 
     }
     @IBAction func addToFavoriets(_ sender: UIButton) {
+        if likeBtn.currentBackgroundImage == UIImage(named: "heart") {
+            likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
+        }else {
+          likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
+        }
     }
     @IBAction func viewOnMap(_ sender: UIButton) {
+        
     }
     @IBAction func showDoctorDetails(_ sender: UIButton) {
+        
     }
     
 }

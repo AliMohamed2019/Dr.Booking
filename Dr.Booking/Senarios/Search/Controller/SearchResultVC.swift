@@ -16,8 +16,6 @@ class SearchResultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
     }
     
     func searchDoctors(SortBy:String , keyWord: String , userId: String){
@@ -31,10 +29,32 @@ class SearchResultVC: UIViewController {
                 case .failure(let error):
                     print("error")
                     print(error.localizedDescription)
-                    
                 }
             }
         } else {
+            APIClient.getSearchedDoctors(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
+                switch Result {
+                case .success(let response):
+                    print("===============================")
+                    print(response)
+                case.failure(let error):
+                    print("===============================")
+                    print(error.localizedDescription)
+                    APIClient.getSearchedDoctorsFailure(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
+                        switch Result {
+                            case .success(let response):
+                                print("===============================")
+                                print(response)
+                                self.TableView.reloadData()
+                                Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "No Doctors Available")
+                            case.failure(let error):
+                                print("===============================")
+                                print(error.localizedDescription)
+                        }
+                    }
+            }
+            
+            }
             
         }
     }
@@ -55,7 +75,7 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
             cell.doctorName.text = doctor.name
             cell.doctorFees.text = doctor.price
             cell.DoctorTitle.text = doctor.jobTitle
-//            cell.doctorAddress.text = doctor.address
+            cell.doctorAddress.text = doctor.address
             cell.rateView.rating = doctor.rating
             cell.doctorImage.sd_setImage(with: URL(string: doctor.image), placeholderImage: UIImage(named: "user"))
         }

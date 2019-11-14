@@ -15,10 +15,10 @@ struct Doctors: Codable {
 struct SearchDoctor: Codable {
     let favorite: Int
     let id, name: String
-    let address: Address
+    let address: String
     let image: String
-    let price, jobTitle, doctorDescription, longitude: String
-    let latitude: String
+    let price, jobTitle, doctorDescription, longitude: String?
+    let latitude: String?
     let rating: Double
 
     enum CodingKeys: String, CodingKey {
@@ -29,7 +29,4 @@ struct SearchDoctor: Codable {
     }
 }
 
-enum Address: String, Codable {
-    case طريقالملكعبدالعزيزالرياضالسعودية = "طريق الملك عبد العزيز-الرياض-السعودية"
-}
 
