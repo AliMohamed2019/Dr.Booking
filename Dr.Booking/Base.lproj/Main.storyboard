@@ -1021,11 +1021,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B2F-mj-A3V">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B2F-mj-A3V">
                                 <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="280" id="dfC-EN-gKQ" customClass="SearchResultTableViewCell" customModule="Dr_Booking" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" rowHeight="280" id="dfC-EN-gKQ" customClass="SearchResultTableViewCell" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dfC-EN-gKQ" id="gLI-aM-KE1">
@@ -1187,6 +1188,7 @@
                                             <outlet property="doctorImage" destination="wAi-1c-M5r" id="9u9-Vo-MHQ"/>
                                             <outlet property="doctorName" destination="ycO-1O-Pzb" id="Az5-WM-r0d"/>
                                             <outlet property="likeBtn" destination="cIk-Ew-8gf" id="Xib-Mz-JaM"/>
+                                            <outlet property="rateView" destination="XPT-ka-AH0" id="IMc-Nl-reS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1207,6 +1209,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="جميع الاطباء" id="g5Z-Ze-jlK"/>
                     <connections>
+                        <outlet property="TableView" destination="B2F-mj-A3V" id="aob-gh-Izs"/>
                         <segue destination="cW4-2L-9ZH" kind="show" identifier="GoToSearchDetails" id="EO3-pg-ZLj"/>
                     </connections>
                 </viewController>
@@ -1536,7 +1539,7 @@
             </objects>
             <point key="canvasLocation" x="-2323" y="3822"/>
         </scene>
-        <!--Favorite Details View Controller-->
+        <!--مفضلتي-->
         <scene sceneID="QPQ-Zg-ibL">
             <objects>
                 <viewController storyboardIdentifier="FavoriteDetailsViewController" id="U8s-i3-iNo" customClass="FavoriteDetailsViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
@@ -1547,6 +1550,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="efA-hR-EBm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="280" id="tuD-e6-iX5" customClass="FavoriteDetailsTableViewCell" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="280"/>
@@ -1729,7 +1733,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HsM-QC-ZVR"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EyI-ff-29J"/>
+                    <navigationItem key="navigationItem" title="مفضلتي" id="EyI-ff-29J"/>
                     <connections>
                         <outlet property="doctorFavoriteTableView" destination="efA-hR-EBm" id="xpK-4w-EGG"/>
                     </connections>
@@ -1892,7 +1896,7 @@
             </objects>
             <point key="canvasLocation" x="1155" y="2624"/>
         </scene>
-        <!--Product Details View Controller-->
+        <!--منتجاتي-->
         <scene sceneID="HG4-bB-B7B">
             <objects>
                 <viewController storyboardIdentifier="ProductDetailsViewController" id="Dhr-2l-v14" customClass="ProductDetailsViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
@@ -1980,7 +1984,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Uw-mL-4i8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AKW-uS-kUf"/>
+                    <navigationItem key="navigationItem" title="منتجاتي" id="AKW-uS-kUf"/>
                     <connections>
                         <outlet property="orderTableView" destination="Sj0-84-UWP" id="GIQ-ga-UNJ"/>
                         <segue destination="xZv-r0-tDc" kind="show" id="JhW-jy-Ctz"/>

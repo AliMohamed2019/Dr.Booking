@@ -119,6 +119,13 @@ class APIClient {
     static func rateDoctor( user_id : String ,doctor_id : String , rate: Double ,completion:@escaping(Result<Failure,AFError>)->Void){
         performRequest(route: APIRouter.addRate(user_id: user_id, doctor_id: doctor_id, rate: rate  ) , completion: completion)
     }
+    static func getUserProducts (user_id : String , completion:@escaping(Result<Products,AFError>)->Void){
+           performRequest(route: APIRouter.getUserProducts(user_id: user_id), completion: completion)
+       }
+       
+       static func getUserProductsfailure (user_id : String , completion:@escaping(Result<Failure,AFError>)->Void){
+              performRequest(route: APIRouter.getUserProducts(user_id: user_id), completion: completion)
+          }
 }
 
 
