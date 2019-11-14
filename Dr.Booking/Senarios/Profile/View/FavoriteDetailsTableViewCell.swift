@@ -54,7 +54,7 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
         
         deleteFavoriteDoctor()
         check = 1
-        print(<#T##items: Any...##Any#>)
+       
       }
       @IBAction func viewOnMap(_ sender: UIButton) {
       }

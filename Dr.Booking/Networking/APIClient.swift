@@ -60,7 +60,7 @@ class APIClient {
     
     
     static func getFavoriteDoctors(user_id : String  , completion:@escaping
-           (Result<AllFavoriteDoctor,AFError>)->Void){
+           (Result<Doctors,AFError>)->Void){
            performRequest(route: APIRouter.getFavoriteDoctors(user_id: user_id), completion: completion)
 
        }
