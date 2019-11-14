@@ -55,7 +55,7 @@ class ProfileImageView: UIImageView {
     }
     
     static func roundedButton1(button: UIButton) {
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 8
         button.layer.shadowRadius = 3
 
         button.layer.shadowColor = UIColor.black.cgColor

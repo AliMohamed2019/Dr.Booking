@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class ProductDetailsVC: UIViewController {
+import NVActivityIndicatorView
+class ProductDetailsVC: UIViewController, NVActivityIndicatorViewable{
 
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productPrice: UILabel!
@@ -25,6 +25,7 @@ class ProductDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startAnimating()
         getDetails(with : productID)
     }
     
@@ -35,10 +36,11 @@ class ProductDetailsVC: UIViewController {
                 DispatchQueue.main.async {
                     self.productData = Response.product
                     self.updateView()
-
+                    self.stopAnimating()
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+                self.stopAnimating()
             }
         }
 
@@ -58,14 +60,16 @@ class ProductDetailsVC: UIViewController {
     
     @IBAction func buyProduct(_ sender: UIButton) {
 
-//        APIClient.buyProduct(user_id: 0, product_id: 0) { (Result) in
-//            switch Result {
-//            case .success(let response):
-//                print(response)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
+        APIClient.buyProduct(user_id:"77" , product_id:"10" ) { (Result) in
+            switch Result {
+            case .success(let response):
+                DispatchQueue.main.async {
+                    Alert.show("تم الشراء", massege: "تم شراء المنتج بنجاح", context: self)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
 }
