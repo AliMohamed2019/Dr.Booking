@@ -23,7 +23,6 @@
 		3B24D15A237BFC0F008D3605 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D159237BFC0F008D3605 /* Login.swift */; };
 		3B24D15E237BFC53008D3605 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D15C237BFC52008D3605 /* Register.swift */; };
 		3B24D163237BFCEE008D3605 /* FavoriteDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */; };
-		3B24D164237BFCEE008D3605 /* AllFavoriteDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D162237BFCED008D3605 /* AllFavoriteDoctor.swift */; };
 		3B24D168237C0119008D3605 /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D167237C0119008D3605 /* Failure.swift */; };
 		3B24D16A237C2C9C008D3605 /* ForgetPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D169237C2C9C008D3605 /* ForgetPass.swift */; };
 		3B24D16D237C34C4008D3605 /* UpdatePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D16C237C34C4008D3605 /* UpdatePassword.swift */; };
@@ -72,7 +71,6 @@
 		3B24D159237BFC0F008D3605 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		3B24D15C237BFC52008D3605 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteDoctor.swift; sourceTree = "<group>"; };
-		3B24D162237BFCED008D3605 /* AllFavoriteDoctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllFavoriteDoctor.swift; sourceTree = "<group>"; };
 		3B24D167237C0119008D3605 /* Failure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
 		3B24D169237C2C9C008D3605 /* ForgetPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPass.swift; sourceTree = "<group>"; };
 		3B24D16C237C34C4008D3605 /* UpdatePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePassword.swift; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 		3B24D160237BFCC5008D3605 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3B24D162237BFCED008D3605 /* AllFavoriteDoctor.swift */,
 				3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */,
 				81B61518237D6A8500C2E6B3 /* Doctors.swift */,
 			);
@@ -517,7 +514,6 @@
 				81DEBC65237ABA4A0096CF47 /* ProductTableViewCell.swift in Sources */,
 				81F2A7FF2378488C003DFCD1 /* CardView.swift in Sources */,
 				813FFBE62379A141004897AE /* ProductVC.swift in Sources */,
-				3B24D164237BFCEE008D3605 /* AllFavoriteDoctor.swift in Sources */,
 				81DEBC60237AABB20096CF47 /* EditProfileVC.swift in Sources */,
 				3B24D15A237BFC0F008D3605 /* Login.swift in Sources */,
 				3B046B97237D67250032C7D1 /* FavoriteDetailsViewController.swift in Sources */,

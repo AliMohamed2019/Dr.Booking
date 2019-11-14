@@ -17,14 +17,44 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
        @IBOutlet weak var doctorAddress: UILabel!
        @IBOutlet weak var DoctorDetailsBtn: UIButton!
        @IBOutlet weak var likeBtn: UIButton!
-    
+       var doctorId : String?
+        var check = 0
     @IBOutlet weak var rateOfDoctor: CosmosView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    @IBAction func addToFavoriets(_ sender: UIButton) {
+    
+    
+    
+    
+    
+    func deleteFavoriteDoctor() {
+         if let idOfDoctor = doctorId{
+       APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: idOfDoctor){(Result) in
+            switch Result {
+            case.success(let response):
+                DispatchQueue.main.async {
+                    print("aaaaaaaa")
+                    print(response)
+                }
+            case.failure(let error):
+                DispatchQueue.main.async {
+                    print("bbbbbbbbb")
+                    print(error.localizedDescription)
+                }
+        }
+            }
+            
+        }
+    }
+    
+     @IBAction func addToFavoriets(_ sender: UIButton) {
+        
+        deleteFavoriteDoctor()
+        check = 1
+        print(<#T##items: Any...##Any#>)
       }
       @IBAction func viewOnMap(_ sender: UIButton) {
       }
