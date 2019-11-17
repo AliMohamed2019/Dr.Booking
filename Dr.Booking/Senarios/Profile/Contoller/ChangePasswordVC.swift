@@ -39,7 +39,8 @@ class ChangePasswordVC: UIViewController {
                     print("aaaaaaaa")
                     print(response)
                     self.updatePassword = response
-                    Alert.show("Error", massege: self.updatePassword!.message ,context: self)
+                    Alert.show("", massege: self.updatePassword!.message ,context: self)
+                    self.emptyText()
                }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -51,6 +52,14 @@ class ChangePasswordVC: UIViewController {
             }
         }
             
+    }
+    
+    func emptyText()  {
+        currentPassword.text = ""
+        newPassword.text = ""
+        comfirmPassword.text = ""
+        
+        
     }
     
 }

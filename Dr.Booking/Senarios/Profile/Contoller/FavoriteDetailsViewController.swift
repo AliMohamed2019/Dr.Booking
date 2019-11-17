@@ -8,45 +8,27 @@
 
 import UIKit
 
-class FavoriteDetailsViewController: UIViewController {
+class FavoriteDetailsViewController: UIViewController , CustomCellUpdater {
      var alFavoriteDoctorArray:[SearchDoctor]?
-     var doctorId = ""
-    var favoriteDoctor : FavoriteDoctor?
+    var failure:Failure?
+    //var favoriteDoctor : FavoriteDoctor?
 
     @IBOutlet weak var doctorFavoriteTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         getFavoriteDoctors()
-       // configureTableView()
         doctorFavoriteTableView.rowHeight = 280
-        // Do any additional setup after loading the view.
+   
     }
     
 
   
-     
-     
-     func deleteFavoriteDoctor() {
-        APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: "29"){(Result) in
-             switch Result {
-             case.success(let response):
-                 DispatchQueue.main.async {
-                     print("aaaaaaaa")
-                     print(response)
-                 }
-             case.failure(let error):
-                 DispatchQueue.main.async {
-                     print("bbbbbbbbb")
-                     print(error.localizedDescription)
-                 }
-             }
-             
-         }
-     }
-     
-  
+
      
      func getFavoriteDoctors() {
+        
+        self.alFavoriteDoctorArray?.removeAll()
+        
         APIClient.getFavoriteDoctors(user_id: UserDefault.getId()){(Result) in
                switch Result {
                case.success(let response):
@@ -55,7 +37,6 @@ class FavoriteDetailsViewController: UIViewController {
                       print(response)
                     self.alFavoriteDoctorArray = response.doctors
                     self.doctorFavoriteTableView.reloadData()
-                   
                    }
                case.failure(let error):
                    DispatchQueue.main.async {
@@ -67,6 +48,10 @@ class FavoriteDetailsViewController: UIViewController {
                          DispatchQueue.main.async {
                              print("aaaaaaaa")
                              print(response)
+                            self.failure = response
+                            self.doctorFavoriteTableView.reloadData()
+                            Alert.show("Error", massege: self.failure!.message, context: self)
+
                          }
                      case.failure(let error):
                          DispatchQueue.main.async {
@@ -99,21 +84,16 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     cell.doctorName.text = doctor.name
     cell.DoctorTitle.text = doctor.jobTitle
     cell.doctorFees.text = doctor.price
-    cell.doctorFees.text = doctor.price
     cell.doctorAddress.text = doctor.address
     cell.rateOfDoctor.rating = doctor.rating
     cell.doctorId = doctor.id
-        if cell.check == 1{
-            getFavoriteDoctors()
-            print("newwwwwwwwww")
-
-        }
+    cell.delegate = self
+ 
     }
     return cell
 }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
         
         vc.doctor = alFavoriteDoctorArray?[indexPath.row]

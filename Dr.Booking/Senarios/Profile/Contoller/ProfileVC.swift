@@ -12,8 +12,8 @@ class ProfileVC: UIViewController {
     
     let photsArray = ["product","profile","callender","house"]
     let namesArray = ["منتجاتي","تعديل البيانات","حجوزاتي","مفضلتي"]
-    let viewControllerArray = ["GoToProductDetails","GoToProfileDetails" , "" , "GoToFavoriteDetails "]
-    let nameViewControllerArray = ["ProductVC" , "EditProfileVC" , "" , "SearchResultVC"]
+    let viewControllerArray = ["GoToProductDetails","GoToProfileDetails" , "GoToReservationDetails" , "GoToFavoriteDetails "]
+    //let nameViewControllerArray = ["ProductVC" , "EditProfileVC" , "" , "SearchResultVC"]
     
 
     @IBOutlet weak var profileImage: UIImageView!{

@@ -62,7 +62,7 @@ class EditProfileVC: UIViewController {
                         print("aaaaaaaa")
                         print(response)
                         self.editProfile = response
-                        Alert.show("Error", massege: self.editProfile!.message ,context: self)
+                        Alert.show("", massege: self.editProfile!.message ,context: self)
                    }
                 case .failure(let error):
                     DispatchQueue.main.async {
