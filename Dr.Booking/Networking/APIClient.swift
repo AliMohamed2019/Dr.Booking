@@ -138,6 +138,14 @@ class APIClient {
     static func getReservationString(user_id : String , doctor_id: String , completion:@escaping(Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.viewDoctor(user_id: user_id, doctor_id: doctor_id), completion: completion)
     }
+    
+    static func view_reservations (user_id : String , completion:@escaping(Result<UserReservation,AFError>)->Void){
+          performRequest(route: APIRouter.view_reservations(user_id: user_id), completion: completion)
+      }
+      static func view_reservationsFailure (user_id : String , completion:@escaping(Result<Failure,AFError>)->Void){
+          performRequest(route: APIRouter.view_reservations(user_id: user_id), completion: completion)
+      }
+
 }
 
 

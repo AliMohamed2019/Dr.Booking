@@ -573,7 +573,7 @@
                         <segue destination="2na-Om-r9D" kind="show" identifier="GoToProfileDetails" id="mPW-w7-3zz"/>
                         <segue destination="U8s-i3-iNo" kind="show" identifier="GoToFavoriteDetails " id="IO5-26-y2S"/>
                         <segue destination="Dhr-2l-v14" kind="show" identifier="GoToProductDetails" id="c1L-ui-DWE"/>
-                        <segue destination="pvg-2S-pYj" kind="show" id="8bG-9f-xaf"/>
+                        <segue destination="pvg-2S-pYj" kind="show" identifier="GoToReservationDetails" id="8bG-9f-xaf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcb-Kf-IVn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -840,10 +840,10 @@
             </objects>
             <point key="canvasLocation" x="-1594" y="3112"/>
         </scene>
-        <!--View Controller-->
+        <!--Reservations View Controller-->
         <scene sceneID="vUl-EP-IVx">
             <objects>
-                <viewController id="pvg-2S-pYj" sceneMemberID="viewController">
+                <viewController id="pvg-2S-pYj" customClass="ReservationsViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SzF-zS-Cba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -853,7 +853,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="320" id="lI5-dl-NjI" customClass="FavoriteDetailsTableViewCell" customModule="Dr_Booking" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="320" id="lI5-dl-NjI" customClass="ReservationDetailsTableViewCell" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lI5-dl-NjI" id="BOw-1V-hlE">
@@ -941,51 +941,15 @@
                                                                                     <fragment content="رؤية الخريطة">
                                                                                         <attributes>
                                                                                             <font key="NSFont" size="17" name=".ArabicUIText-Regular"/>
-                                                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                                                                <tabStops>
-                                                                                                    <textTab alignment="left" location="28">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="56">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="84">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="112">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="140">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="168">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="196">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="224">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="252">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="280">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="308">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                    <textTab alignment="left" location="336">
-                                                                                                        <options/>
-                                                                                                    </textTab>
-                                                                                                </tabStops>
-                                                                                            </paragraphStyle>
+                                                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                                             <integer key="NSUnderline" value="1"/>
                                                                                         </attributes>
                                                                                     </fragment>
                                                                                 </attributedString>
                                                                             </state>
+                                                                            <connections>
+                                                                                <action selector="goToMap:" destination="lI5-dl-NjI" eventType="touchUpInside" id="a4H-zH-icI"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="طريق الملك عبدالعزيز" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjp-FZ-NwI">
                                                                             <rect key="frame" x="174" y="0.0" width="146.5" height="31"/>
@@ -1041,8 +1005,21 @@
                                                 <constraint firstItem="MuD-YS-0GZ" firstAttribute="top" secondItem="BOw-1V-hlE" secondAttribute="topMargin" id="vAs-P0-kRk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="DoctorTitle" destination="au9-eh-7fx" id="sJ4-Nc-LoC"/>
+                                            <outlet property="doctorAddress" destination="Sjp-FZ-NwI" id="vbA-Ua-FBl"/>
+                                            <outlet property="doctorDate" destination="RPl-Zg-ge8" id="kaS-S3-fJQ"/>
+                                            <outlet property="doctorFees" destination="I7q-8E-xZe" id="GtZ-ss-LcW"/>
+                                            <outlet property="doctorImage" destination="dkB-Kn-DLY" id="FXZ-LE-rjc"/>
+                                            <outlet property="doctorName" destination="gEK-Rw-01l" id="Jqh-Wc-MnM"/>
+                                            <outlet property="rateOfDoctor" destination="u9M-Ci-XxC" id="DkP-0f-IuE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pvg-2S-pYj" id="TPw-KB-W9r"/>
+                                    <outlet property="delegate" destination="pvg-2S-pYj" id="adj-UO-SES"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1055,6 +1032,9 @@
                         <viewLayoutGuide key="safeArea" id="ufQ-la-Ymb"/>
                     </view>
                     <navigationItem key="navigationItem" id="qk1-tx-nzj"/>
+                    <connections>
+                        <outlet property="reservationsTableVie" destination="oe8-Qb-RJf" id="MRR-ts-BJe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0AL-i7-P10" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1782,7 +1762,7 @@
                                             <constraint firstAttribute="height" constant="1" id="kyU-2g-a3I"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDL-n9-LTW" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDL-n9-LTW" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="8" y="56" width="240" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <userDefinedRuntimeAttributes>
