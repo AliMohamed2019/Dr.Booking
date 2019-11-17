@@ -15,18 +15,21 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var buyBtn: UIButton!
     
+    var product: Product?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+    
+    @IBAction func butButtonPressed(_ sender: UIButton) {
+        DispatchQueue.global().async {
+            APIClient.buyProduct(user_id: UserDefault.getId() , product_id: self.product?.id ?? "" ) { (Result) in
+                switch Result {
+                case .success(let response):
+                    print("Done")
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
         
     }
-    
-    
     
 }
