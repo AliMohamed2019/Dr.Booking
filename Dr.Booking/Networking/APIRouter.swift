@@ -104,11 +104,11 @@ enum APIRouter: URLRequestConvertible {
         case .Search(let search_words, let order_by, let user_id):
             return "/Search/index/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(search_words)/\(order_by)/\(user_id)"
         case .viewDoctor(let user_id, let doctor_id):
-            return "/\(K.ProductionServer.DoctorType)/view/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(user_id)/\(doctor_id)"
+            return "/\(K.ProductionServer.DoctorType)/view/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(doctor_id)/\(user_id)"
         case .make_reservation(let user_id, let doctor_id, let docotor_reservation_date_id):
-            return "/\(K.ProductionServer.userType)/make_reservation/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)\(user_id)/\(doctor_id)/\(docotor_reservation_date_id)"
+            return "/\(K.ProductionServer.userType)/make_reservation/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(user_id)/\(doctor_id)/\(docotor_reservation_date_id)"
         case .view_reservations(let user_id):
-            return "/\(K.ProductionServer.userType)/view_reservations/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)\(user_id)"
+            return "/\(K.ProductionServer.userType)/view_reservations/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(user_id)"
         case .getAllDoctors(let user_id):
             return "/\(K.ProductionServer.DoctorType)/getAll/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(user_id)"
        case .viewProfile(let user_id):

@@ -20,29 +20,45 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var doctorFees: UILabel!
     @IBOutlet weak var doctorAddress: UILabel!
     @IBOutlet weak var DoctorDetailsBtn: UIButton!
+    @IBOutlet weak var rateView: CosmosView!
     @IBOutlet weak var likeBtn: UIButton!{
         didSet{
             likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
         }
     }
-    @IBOutlet weak var rateView: CosmosView!
     
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
+    var doctorID = ""
+    
     @IBAction func addToFavoriets(_ sender: UIButton) {
         if likeBtn.currentBackgroundImage == UIImage(named: "heart") {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
-        }else {
+            
+            DispatchQueue.main.async { [weak self] in
+                APIClient.addFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctorID ?? "" ) { (Result) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            
+        } else {
           likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
+            
+            DispatchQueue.main.async { [weak self] in
+                APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctorID ?? "") { (Result) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            
         }
     }
     @IBAction func viewOnMap(_ sender: UIButton) {

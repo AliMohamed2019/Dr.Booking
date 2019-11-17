@@ -34,6 +34,8 @@
 		818283AC237C4DCF00C10EFD /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818283AB237C4DCF00C10EFD /* ProductDetails.swift */; };
 		81970DEE23795AA5001CD992 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81970DED23795AA5001CD992 /* ProfileVC.swift */; };
 		81B61519237D6A8500C2E6B3 /* Doctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61518237D6A8500C2E6B3 /* Doctors.swift */; };
+		81BFDAB82381442D00025ACF /* ReservationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFDAB72381442D00025ACF /* ReservationCollectionViewCell.swift */; };
+		81BFDABA23815C5900025ACF /* DoctorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFDAB923815C5900025ACF /* DoctorInfo.swift */; };
 		81DEBC5E237AAB1E0096CF47 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBC5D237AAB1E0096CF47 /* ProfileTableViewCell.swift */; };
 		81DEBC60237AABB20096CF47 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBC5F237AABB20096CF47 /* EditProfileVC.swift */; };
 		81DEBC62237AB9A70096CF47 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBC61237AB9A70096CF47 /* ForgotPasswordVC.swift */; };
@@ -83,6 +85,8 @@
 		818283AB237C4DCF00C10EFD /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		81970DED23795AA5001CD992 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		81B61518237D6A8500C2E6B3 /* Doctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctors.swift; sourceTree = "<group>"; };
+		81BFDAB72381442D00025ACF /* ReservationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCollectionViewCell.swift; sourceTree = "<group>"; };
+		81BFDAB923815C5900025ACF /* DoctorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInfo.swift; sourceTree = "<group>"; };
 		81DEBC5D237AAB1E0096CF47 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		81DEBC5F237AABB20096CF47 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		81DEBC61237AB9A70096CF47 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			children = (
 				3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */,
 				81B61518237D6A8500C2E6B3 /* Doctors.swift */,
+				81BFDAB923815C5900025ACF /* DoctorInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				81DEBC6F237AC5D50096CF47 /* SearchResultTableViewCell.swift */,
+				81BFDAB72381442D00025ACF /* ReservationCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -489,12 +495,14 @@
 				3B119CDC23782DC700FC4FC2 /* AppDelegate.swift in Sources */,
 				3B046B9B237D6BDF0032C7D1 /* ProductDetailsViewController.swift in Sources */,
 				81DEBC76237AEBCF0096CF47 /* Rate.swift in Sources */,
+				81BFDAB82381442D00025ACF /* ReservationCollectionViewCell.swift in Sources */,
 				3B24D15E237BFC53008D3605 /* Register.swift in Sources */,
 				81DEBC67237ABC0A0096CF47 /* ProductDetailsVC.swift in Sources */,
 				818283AC237C4DCF00C10EFD /* ProductDetails.swift in Sources */,
 				3B24D155237BFAAA008D3605 /* APIClient.swift in Sources */,
 				81DEBC72237ADC330096CF47 /* DoctorDetailsVC.swift in Sources */,
 				813FFBE12379A019004897AE /* RegesterVC.swift in Sources */,
+				81BFDABA23815C5900025ACF /* DoctorInfo.swift in Sources */,
 				3B24D16D237C34C4008D3605 /* UpdatePassword.swift in Sources */,
 				81DEBC5E237AAB1E0096CF47 /* ProfileTableViewCell.swift in Sources */,
 				3B24D168237C0119008D3605 /* Failure.swift in Sources */,

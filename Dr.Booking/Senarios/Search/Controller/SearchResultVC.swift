@@ -77,7 +77,12 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
             cell.DoctorTitle.text = doctor.jobTitle
             cell.doctorAddress.text = doctor.address
             cell.rateView.rating = doctor.rating
+            
             cell.doctorImage.sd_setImage(with: URL(string: doctor.image), placeholderImage: UIImage(named: "user"))
+            cell.doctorID = doctor.id
+            if doctor.favorite == 1 {
+                cell.likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
+            }
         }
         return cell
     }
