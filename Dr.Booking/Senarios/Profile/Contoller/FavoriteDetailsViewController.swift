@@ -9,21 +9,19 @@
 import UIKit
 
 class FavoriteDetailsViewController: UIViewController , CustomCellUpdater {
-     var alFavoriteDoctorArray:[SearchDoctor]?
-    var failure:Failure?
-    //var favoriteDoctor : FavoriteDoctor?
-
-    @IBOutlet weak var doctorFavoriteTableView: UITableView!
+    
+       @IBOutlet weak var doctorFavoriteTableView: UITableView!
+    
+       var alFavoriteDoctorArray:[SearchDoctor]?
+       var failure:Failure?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getFavoriteDoctors()
-        doctorFavoriteTableView.rowHeight = 280
+        doctorFavoriteTableView.estimatedRowHeight = 300
+        doctorFavoriteTableView.rowHeight = UITableView.automaticDimension
    
     }
-    
-
-  
-
      
      func getFavoriteDoctors() {
         
@@ -66,10 +64,9 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater {
                
            }
        }
-     
-     
- 
 }
+
+
 
 extension FavoriteDetailsViewController: UITableViewDelegate , UITableViewDataSource {
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

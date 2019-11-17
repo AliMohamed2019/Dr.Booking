@@ -16,8 +16,9 @@ class ReservationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserReservations()
-        reservationsTableVie.rowHeight = 320
-
+        
+        reservationsTableVie.rowHeight = UITableView.automaticDimension
+        reservationsTableVie.estimatedRowHeight = 300
         // Do any additional setup after loading the view.
     }
 
@@ -78,7 +79,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
          cell.doctorFees.text = reservation.price
          cell.doctorAddress.text = reservation.place
          cell.rateOfDoctor.rating = reservation.rate
-            cell.doctorDate.text = "\(String(describing: reservation.date)) من الساعة  \(String(describing: reservation.timeFrom)) الي \(String(describing: reservation.timeTo))"
+            cell.doctorDate.text = "\(reservation.date!), من الساعة  \(reservation.timeFrom!) الي \( reservation.timeTo!)"
         
       
          }

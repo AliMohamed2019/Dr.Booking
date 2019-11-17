@@ -34,6 +34,7 @@
 		7D9E1F34C178B97034237E04 /* Pods_Dr_Booking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E65729F7C7618EC01EBDF39 /* Pods_Dr_Booking.framework */; };
 		813FFBE12379A019004897AE /* RegesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FFBE02379A019004897AE /* RegesterVC.swift */; };
 		813FFBE62379A141004897AE /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FFBE52379A141004897AE /* ProductVC.swift */; };
+		816E23AB2381888E002ADB7C /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E23AA2381888E002ADB7C /* Maps.swift */; };
 		818283AC237C4DCF00C10EFD /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818283AB237C4DCF00C10EFD /* ProductDetails.swift */; };
 		81970DEE23795AA5001CD992 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81970DED23795AA5001CD992 /* ProfileVC.swift */; };
 		81B61519237D6A8500C2E6B3 /* Doctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61518237D6A8500C2E6B3 /* Doctors.swift */; };
@@ -88,6 +89,7 @@
 		63E33EA26FA4806F422DB503 /* Pods-Dr.Booking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr.Booking.debug.xcconfig"; path = "Target Support Files/Pods-Dr.Booking/Pods-Dr.Booking.debug.xcconfig"; sourceTree = "<group>"; };
 		813FFBE02379A019004897AE /* RegesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegesterVC.swift; sourceTree = "<group>"; };
 		813FFBE52379A141004897AE /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
+		816E23AA2381888E002ADB7C /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		818283AB237C4DCF00C10EFD /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		81970DED23795AA5001CD992 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		81B61518237D6A8500C2E6B3 /* Doctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctors.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				81F2A7FA2378488C003DFCD1 /* Alert.swift */,
 				81F2A7FB2378488C003DFCD1 /* CardView.swift */,
 				81F2A7FC2378488C003DFCD1 /* DesignableUITextField.swift */,
+				816E23AA2381888E002ADB7C /* Maps.swift */,
 			);
 			path = Utitlites;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				3B046B9D237D6C170032C7D1 /* ProductDetailsTableViewCell.swift in Sources */,
 				81DEBC6B237AC4D80096CF47 /* SearchVC.swift in Sources */,
 				3B119CDE23782DC700FC4FC2 /* SceneDelegate.swift in Sources */,
+				816E23AB2381888E002ADB7C /* Maps.swift in Sources */,
 				3B3B327123815ED100B8D0C1 /* ReservationsViewController.swift in Sources */,
 				81B61519237D6A8500C2E6B3 /* Doctors.swift in Sources */,
 				81DEBC78237AEF8D0096CF47 /* ChangePasswordVC.swift in Sources */,

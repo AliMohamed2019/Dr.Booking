@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import MapKit
 class SearchResultTableViewCell: UITableViewCell {
 
     @IBOutlet weak var doctorImage: UIImageView!{
@@ -28,14 +29,14 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     
-    var doctorID = ""
+    var doctor: SearchDoctor?
     
     @IBAction func addToFavoriets(_ sender: UIButton) {
         if likeBtn.currentBackgroundImage == UIImage(named: "heart") {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
             
             DispatchQueue.main.async { [weak self] in
-                APIClient.addFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctorID ?? "" ) { (Result) in
+                APIClient.addFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctor?.id ?? "" ) { (Result) in
                     switch Result {
                     case .success(let response):
                         print(response)
@@ -49,7 +50,7 @@ class SearchResultTableViewCell: UITableViewCell {
           likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
             
             DispatchQueue.main.async { [weak self] in
-                APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctorID ?? "") { (Result) in
+                APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctor?.id ?? "") { (Result) in
                     switch Result {
                     case .success(let response):
                         print(response)
@@ -62,7 +63,9 @@ class SearchResultTableViewCell: UITableViewCell {
         }
     }
     @IBAction func viewOnMap(_ sender: UIButton) {
-        
+        Maps.openMaps(lat: doctor?.latitude ?? "0", long: doctor?.longitude ?? "0", distance: 10000.0 ,name: doctor?.name ?? "")
+    
+
     }
     @IBAction func showDoctorDetails(_ sender: UIButton) {
         

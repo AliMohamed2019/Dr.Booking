@@ -15,6 +15,10 @@ class SearchResultVC: UIViewController {
     @IBOutlet weak var TableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        TableView.rowHeight = UITableView.automaticDimension
+        TableView.estimatedRowHeight = 280
+        
+        
         
     }
     
@@ -79,7 +83,7 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
             cell.rateView.rating = doctor.rating
             
             cell.doctorImage.sd_setImage(with: URL(string: doctor.image), placeholderImage: UIImage(named: "user"))
-            cell.doctorID = doctor.id
+            cell.doctor = doctor
             if doctor.favorite == 1 {
                 cell.likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
             }
@@ -87,9 +91,9 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 280
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 320
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC

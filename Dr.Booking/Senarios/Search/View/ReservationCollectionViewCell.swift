@@ -18,7 +18,7 @@ class ReservationCollectionViewCell: UICollectionViewCell {
     @IBAction func reserveButtonPressed(_ sender: UIButton) {
         if let Date = date {
             DispatchQueue.global().async {
-                APIClient.addReservation(user_id: "75" , doctor_id: Date.idUser, docotor_reservation_date_id: Date.id) { (Result) in
+                APIClient.addReservation(user_id: UserDefault.getId() , doctor_id: Date.idUser, docotor_reservation_date_id: Date.id) { (Result) in
                     switch Result {
                     case .success(let response):
                         print(response)

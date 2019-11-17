@@ -13,36 +13,31 @@ protocol CustomCellUpdater: class { // the name of the protocol you can put any
     func getFavoriteDoctors()
 }
 class FavoriteDetailsTableViewCell: UITableViewCell {
-    var favoriteDoctor:FavoriteDoctor?
-    var favoriteDetailsViewController : FavoriteDetailsViewController?
-
+    
+       @IBOutlet weak var rateOfDoctor: CosmosView!
        @IBOutlet weak var doctorImage: UIImageView!
        @IBOutlet weak var doctorName: UILabel!
        @IBOutlet weak var DoctorTitle: UILabel!
        @IBOutlet weak var doctorFees: UILabel!
        @IBOutlet weak var doctorAddress: UILabel!
        @IBOutlet weak var DoctorDetailsBtn: UIButton!
-       @IBOutlet weak var likeBtn: UIButton!
-       var doctorId : String?
-        var check = 0
-    @IBOutlet weak var rateOfDoctor: CosmosView!
-    
-     weak var delegate: CustomCellUpdater?
+       @IBOutlet weak var likeBtn: UIButton!{
+        didSet {
+            likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
 
+          }
+       }
+    
+    weak var delegate: CustomCellUpdater?
+    var favoriteDoctor:FavoriteDoctor?
+    var favoriteDetailsViewController : FavoriteDetailsViewController?
+    var doctorId : String?
+    var check = 0
+    
     func yourFunctionWhichDoesNotHaveASender () {
         deleteFavoriteDoctor()
         delegate?.getFavoriteDoctors()
-        print("123456789123456789")
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-         likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
-    }
-    
-    
-    
-    
     
     
     func deleteFavoriteDoctor() {
@@ -69,20 +64,14 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
         }
     }
     
-     @IBAction func addToFavoriets(_ sender: UIButton) {
-        
+      @IBAction func addToFavoriets(_ sender: UIButton) {
         yourFunctionWhichDoesNotHaveASender()
-       
       }
+    
       @IBAction func viewOnMap(_ sender: UIButton) {
       }
+    
       @IBAction func showDoctorDetails(_ sender: UIButton) {
       }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
