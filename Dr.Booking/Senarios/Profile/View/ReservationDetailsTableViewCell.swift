@@ -11,7 +11,11 @@ import Cosmos
 
 class ReservationDetailsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var doctorImage: UIImageView!
+    @IBOutlet weak var doctorImage: UIImageView!{
+        didSet{
+                  Rounded.roundedImage(imageView: self.doctorImage)
+              }
+    }
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var rateOfDoctor: CosmosView!
     @IBOutlet weak var DoctorTitle: UILabel!

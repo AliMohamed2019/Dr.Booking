@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class ProductDetailsViewController: UIViewController {
+import NVActivityIndicatorView
+class ProductDetailsViewController: UIViewController , NVActivityIndicatorViewable {
      var userProductsArray:[Product]?
      var failure:Failure?
 
@@ -23,10 +23,12 @@ class ProductDetailsViewController: UIViewController {
     
     
     func getUserProducts() {
+        self.startAnimating()
         APIClient.getUserProducts(user_id: UserDefault.getId()) { (Result) in
                 switch Result {
                 case .success(let response):
                     DispatchQueue.main.async {
+                        self.stopAnimating()
                         print("aaaaaaaa")
                         print(response)
                         self.userProductsArray = response.products
@@ -35,6 +37,7 @@ class ProductDetailsViewController: UIViewController {
                    }
                 case .failure(let error):
                       DispatchQueue.main.async {
+                        self.stopAnimating()
                         print("bbbbbbbbb")
                         print(error.localizedDescription)
                         APIClient.getUserProductsfailure(user_id: UserDefault.getId()) { (Result) in
@@ -44,10 +47,12 @@ class ProductDetailsViewController: UIViewController {
                                     print("aaaaaaaa")
                                     print(response)
                                     self.failure = response
-                                    Alert.show("Error", massege: self.failure!.message, context: self)
+                                    Rounded.emptyData(TabelView: self.orderTableView, View: self.view, MessageText: self.failure!.message)
+                                   // Alert.show("Error", massege: self.failure!.message, context: self)
                                }
                             case .failure(let error):
                                 DispatchQueue.main.async {
+                                    self.stopAnimating()
                                     print("bbbbbbbbb")
                                     print(error.localizedDescription)
                                 }}}

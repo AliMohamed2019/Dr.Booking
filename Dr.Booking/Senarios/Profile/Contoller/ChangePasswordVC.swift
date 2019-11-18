@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class ChangePasswordVC: UIViewController {
+class ChangePasswordVC: UIViewController  , NVActivityIndicatorViewable{
     var updatePassword:UpdatePassword?
 
     @IBOutlet weak var currentPassword: DesignableUITextField!
@@ -31,11 +32,13 @@ class ChangePasswordVC: UIViewController {
     
     
     func getupdatePassword(){
+        self.startAnimating()
         if let currentPassword = currentPassword.text ,let newPassword = newPassword.text , let comfirmPassword = comfirmPassword.text{
             APIClient.updatePassword(user_id: UserDefault.getId(), Current_Password: currentPassword, New_Password: newPassword, ReType_New_Password: comfirmPassword) { (Result) in
             switch Result {
             case .success(let response):
                 DispatchQueue.main.async {
+                    self.stopAnimating()
                     print("aaaaaaaa")
                     print(response)
                     self.updatePassword = response
@@ -44,6 +47,7 @@ class ChangePasswordVC: UIViewController {
                }
             case .failure(let error):
                 DispatchQueue.main.async {
+                    self.stopAnimating()
                     print("bbbbbbbbb")
                     print(error.localizedDescription)
                    

@@ -15,7 +15,12 @@ protocol CustomCellUpdater: class { // the name of the protocol you can put any
 class FavoriteDetailsTableViewCell: UITableViewCell {
     
        @IBOutlet weak var rateOfDoctor: CosmosView!
-       @IBOutlet weak var doctorImage: UIImageView!
+       @IBOutlet weak var doctorImage: UIImageView! {
+        didSet{
+                  Rounded.roundedImage(imageView: self.doctorImage)
+              }
+        }
+   
        @IBOutlet weak var doctorName: UILabel!
        @IBOutlet weak var DoctorTitle: UILabel!
        @IBOutlet weak var doctorFees: UILabel!
@@ -28,11 +33,13 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
           }
        }
     
+   
     weak var delegate: CustomCellUpdater?
     var favoriteDoctor:FavoriteDoctor?
     var favoriteDetailsViewController : FavoriteDetailsViewController?
-    var doctorId : String?
-    var check = 0
+   
+    var doctor : SearchDoctor?
+  
     
     func yourFunctionWhichDoesNotHaveASender () {
         deleteFavoriteDoctor()
@@ -41,9 +48,8 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
     
     
     func deleteFavoriteDoctor() {
-         if let idOfDoctor = doctorId{
-            print("--------------------------------------------------\(idOfDoctor)")
-       APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: idOfDoctor){(Result) in
+       
+            APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: doctor?.id ?? ""){(Result) in
             switch Result {
             case.success(let response):
                 DispatchQueue.main.async {
@@ -61,7 +67,7 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
         }
             }
             
-        }
+        
     }
     
       @IBAction func addToFavoriets(_ sender: UIButton) {
@@ -69,6 +75,7 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
       }
     
       @IBAction func viewOnMap(_ sender: UIButton) {
+        Maps.openMaps(lat: doctor?.latitude ?? "0", long: doctor?.longitude ?? "0", distance: 10000.0 ,name: doctor?.name ?? "")
       }
     
       @IBAction func showDoctorDetails(_ sender: UIButton) {

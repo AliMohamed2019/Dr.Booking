@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class RegesterVC: UIViewController {
+
+class RegesterVC: UIViewController  , NVActivityIndicatorViewable{
     
     var register:Register?
     var failure:Failure?
@@ -34,6 +36,7 @@ class RegesterVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     func getregister(){
+        self.startAnimating()
         if let name = name.text ,let mail = email.text , let phone = phone.text , let pass = passwrod.text {
             if  name.count  >= 4 {
                 print("cvbnm,")
@@ -41,6 +44,7 @@ class RegesterVC: UIViewController {
                        switch Result {
                        case .success(let response):
                            DispatchQueue.main.async {
+                            self.stopAnimating()
                                print("aaaaaaaa")
                                print(response)
                                self.register = response
@@ -48,12 +52,14 @@ class RegesterVC: UIViewController {
                           }
                        case .failure(let error):
                            DispatchQueue.main.async {
+                            self.stopAnimating()
                                print("bbbbbbbbb")
                                print(error.localizedDescription)
                                APIClient.registerfailure(user_name: name , mail: mail, phone: phone, pass: pass) {(Result) in
                                switch Result {
                                case .success(let response):
                                    DispatchQueue.main.async {
+                                    self.stopAnimating()
                                        print("aaaaaaaa")
                                        print(response)
                                        self.failure = response
@@ -61,6 +67,7 @@ class RegesterVC: UIViewController {
                                   }
                                case .failure(let error):
                                    DispatchQueue.main.async {
+                                    self.stopAnimating()
                                        print("bbbbbbbbb")
                                        print(error.localizedDescription)
                                    }

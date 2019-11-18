@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class ReservationsViewController: UIViewController {
+
+class ReservationsViewController: UIViewController , NVActivityIndicatorViewable{
     var userReservationsArray:[Reservation]?
     var failure:Failure?
 
@@ -23,10 +25,12 @@ class ReservationsViewController: UIViewController {
     }
 
    func getUserReservations() {
+    self.startAnimating()
            APIClient.view_reservations(user_id: UserDefault.getId()) { (Result) in
                    switch Result {
                    case .success(let response):
                        DispatchQueue.main.async {
+                        self.stopAnimating()
                            print("aaaaaaaa")
                            print(response)
                            self.userReservationsArray = response.reservations
@@ -35,19 +39,24 @@ class ReservationsViewController: UIViewController {
                       }
                    case .failure(let error):
                          DispatchQueue.main.async {
+                            self.stopAnimating()
                            print("bbbbbbbbb")
                            print(error.localizedDescription)
                            APIClient.view_reservationsFailure(user_id: UserDefault.getId()) { (Result) in
                                switch Result {
                                case .success(let response):
                                    DispatchQueue.main.async {
+                                    self.stopAnimating()
                                        print("aaaaaaaa")
                                        print(response)
                                        self.failure = response
-                                       Alert.show("Error", massege: self.failure!.message, context: self)
+                                    Rounded.emptyData(TabelView: self.reservationsTableVie, View: self.view, MessageText: self.failure!.message)
+
+                                   //    Alert.show("Error", massege: self.failure!.message, context: self)
                                   }
                                case .failure(let error):
                                    DispatchQueue.main.async {
+                                    self.stopAnimating()
                                        print("bbbbbbbbb")
                                        print(error.localizedDescription)
                                    }}}
@@ -79,7 +88,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
          cell.doctorFees.text = reservation.price
          cell.doctorAddress.text = reservation.place
          cell.rateOfDoctor.rating = reservation.rate
-            cell.doctorDate.text = "\(reservation.date!), من الساعة  \(reservation.timeFrom!) الي \( reservation.timeTo!)"
+            cell.doctorDate.text = "\(reservation.date ?? ""), من الساعة  \(reservation.timeFrom ?? "") الي \( reservation.timeTo ?? "")"
         
       
          }
@@ -88,7 +97,15 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
+        
+            navigationController?.pushViewController(vc, animated: true)
+
            
+           
+         
+        
+           //  vc.productID = userProductsArray?[indexPath.row].id ?? ""
           
        }
 }

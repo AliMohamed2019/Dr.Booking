@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class FavoriteDetailsViewController: UIViewController , CustomCellUpdater {
+
+class FavoriteDetailsViewController: UIViewController , CustomCellUpdater  , NVActivityIndicatorViewable{
     
        @IBOutlet weak var doctorFavoriteTableView: UITableView!
     
@@ -24,6 +26,7 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater {
     }
      
      func getFavoriteDoctors() {
+        self.startAnimating()
         
         self.alFavoriteDoctorArray?.removeAll()
         
@@ -31,6 +34,7 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater {
                switch Result {
                case.success(let response):
                    DispatchQueue.main.async {
+                    self.stopAnimating()
                       print("aaaaaaaa")
                       print(response)
                     self.alFavoriteDoctorArray = response.doctors
@@ -38,21 +42,25 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater {
                    }
                case.failure(let error):
                    DispatchQueue.main.async {
+                    self.stopAnimating()
                        print("bbbbbbbbb")
                        print(error.localizedDescription)
                     APIClient.getFavoriteDoctorsfailure(user_id: UserDefault.getId()){(Result) in
                      switch Result {
                      case.success(let response):
                          DispatchQueue.main.async {
+                            self.stopAnimating()
                              print("aaaaaaaa")
                              print(response)
                             self.failure = response
                             self.doctorFavoriteTableView.reloadData()
-                            Alert.show("Error", massege: self.failure!.message, context: self)
+                            Rounded.emptyData(TabelView: self.doctorFavoriteTableView, View: self.view, MessageText: self.failure!.message)
+                          //  Alert.show("Error", massege: self.failure!.message, context: self)
 
                          }
                      case.failure(let error):
                          DispatchQueue.main.async {
+                            self.stopAnimating()
                              print("bbbbbbbbb")
                              print(error.localizedDescription)
                          }
@@ -83,9 +91,9 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     cell.doctorFees.text = doctor.price
     cell.doctorAddress.text = doctor.address
     cell.rateOfDoctor.rating = doctor.rating
-    cell.doctorId = doctor.id
-    cell.delegate = self
  
+       cell.delegate = self
+        cell.doctor = doctor
     }
     return cell
 }
