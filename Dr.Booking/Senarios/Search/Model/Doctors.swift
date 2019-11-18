@@ -8,25 +8,8 @@ import Foundation
 // MARK: - Doctors
 struct Doctors: Codable {
     let status: Int
-    let doctors: [SearchDoctor]
+    let doctors: [Doctor]
 }
 
-// MARK: - Doctor
-struct SearchDoctor: Codable {
-    let favorite: Int
-    let id, name: String
-    let address: String
-    let image: String
-    let price, jobTitle, doctorDescription, longitude: String?
-    let latitude: String?
-    let rating: Double
-
-    enum CodingKeys: String, CodingKey {
-        case favorite, id, name, address, image, price
-        case jobTitle = "job_title"
-        case doctorDescription = "description"
-        case longitude, latitude, rating
-    }
-}
 
 

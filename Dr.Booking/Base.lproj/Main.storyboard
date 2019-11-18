@@ -457,8 +457,9 @@
                                                         <rect key="frame" x="0.0" y="202" width="414" height="215"/>
                                                         <subviews>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mny-OJ-scv">
-                                                                <rect key="frame" x="20" y="20" width="374" height="174"/>
+                                                                <rect key="frame" x="20" y="20" width="374" height="176"/>
                                                                 <color key="separatorColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <prototypes>
                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="r91-zR-Eug" customClass="ProfileTableViewCell" customModule="Dr_Booking" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="28" width="374" height="45"/>
@@ -506,7 +507,7 @@
                                                         <constraints>
                                                             <constraint firstItem="Mny-OJ-scv" firstAttribute="top" secondItem="Tes-C7-nW0" secondAttribute="top" constant="20" id="o09-ym-Sjt"/>
                                                             <constraint firstItem="Mny-OJ-scv" firstAttribute="leading" secondItem="Tes-C7-nW0" secondAttribute="leading" constant="20" id="qoa-xP-B0l"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Mny-OJ-scv" secondAttribute="bottom" constant="21" id="uJg-vX-HNr"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Mny-OJ-scv" secondAttribute="bottom" constant="19" id="uJg-vX-HNr"/>
                                                             <constraint firstAttribute="height" constant="215" id="uqK-Di-hMx"/>
                                                             <constraint firstAttribute="trailing" secondItem="Mny-OJ-scv" secondAttribute="trailing" constant="20" id="vbX-Ym-qYo"/>
                                                         </constraints>
@@ -584,7 +585,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcb-Kf-IVn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-894.20289855072474" y="1565.625"/>
+            <point key="canvasLocation" x="-688" y="1566"/>
         </scene>
         <!--تعديل-->
         <scene sceneID="85C-cp-leI">
@@ -1058,7 +1059,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Zk-ap-HUI">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RYB-PP-ind">
                                                 <rect key="frame" x="20" y="41" width="374" height="374"/>
@@ -1165,7 +1166,7 @@
                                             <constraint firstItem="RYB-PP-ind" firstAttribute="leading" secondItem="3Zk-ap-HUI" secondAttribute="leading" constant="20" id="VGg-P3-Azo"/>
                                             <constraint firstAttribute="trailing" secondItem="Ebv-5x-zvo" secondAttribute="trailing" constant="20" id="XJn-jE-JjC"/>
                                             <constraint firstAttribute="trailing" secondItem="xt5-n2-sQ6" secondAttribute="trailing" constant="20" id="fcZ-PI-xbE"/>
-                                            <constraint firstAttribute="height" constant="1100" id="h87-l2-ymc"/>
+                                            <constraint firstAttribute="height" constant="900" id="h87-l2-ymc"/>
                                             <constraint firstItem="xt5-n2-sQ6" firstAttribute="leading" secondItem="3Zk-ap-HUI" secondAttribute="leading" constant="20" id="hyu-MM-brf"/>
                                             <constraint firstItem="iez-pA-UjN" firstAttribute="top" secondItem="xt5-n2-sQ6" secondAttribute="bottom" constant="15" id="mw6-3t-632"/>
                                             <constraint firstAttribute="trailing" secondItem="iez-pA-UjN" secondAttribute="trailing" constant="20" id="rLS-Hw-kym"/>
@@ -1838,7 +1839,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.15068493150684931" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4OP-P3-CCj" firstAttribute="centerX" secondItem="LHh-JB-NDv" secondAttribute="centerX" id="F3y-ez-3mp"/>
                             <constraint firstItem="4OP-P3-CCj" firstAttribute="centerY" secondItem="LHh-JB-NDv" secondAttribute="centerY" id="sXa-Xq-ev8"/>

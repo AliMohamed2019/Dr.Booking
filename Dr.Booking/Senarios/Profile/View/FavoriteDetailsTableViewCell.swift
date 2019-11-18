@@ -14,42 +14,35 @@ protocol CustomCellUpdater: class { // the name of the protocol you can put any
 }
 class FavoriteDetailsTableViewCell: UITableViewCell {
     
-       @IBOutlet weak var rateOfDoctor: CosmosView!
-       @IBOutlet weak var doctorImage: UIImageView! {
+    @IBOutlet weak var rateOfDoctor: CosmosView!
+    @IBOutlet weak var doctorImage: UIImageView! {
         didSet{
-                  Rounded.roundedImage(imageView: self.doctorImage)
-              }
+            Rounded.roundedImage(imageView: self.doctorImage)
         }
-   
-       @IBOutlet weak var doctorName: UILabel!
-       @IBOutlet weak var DoctorTitle: UILabel!
-       @IBOutlet weak var doctorFees: UILabel!
-       @IBOutlet weak var doctorAddress: UILabel!
-       @IBOutlet weak var DoctorDetailsBtn: UIButton!
-       @IBOutlet weak var likeBtn: UIButton!{
+    }
+    
+    @IBOutlet weak var doctorName: UILabel!
+    @IBOutlet weak var DoctorTitle: UILabel!
+    @IBOutlet weak var doctorFees: UILabel!
+    @IBOutlet weak var doctorAddress: UILabel!
+    @IBOutlet weak var DoctorDetailsBtn: UIButton!
+    @IBOutlet weak var likeBtn: UIButton!{
         didSet {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
-
-          }
-       }
-    
-   
+            
+        }
+    }
     weak var delegate: CustomCellUpdater?
     var favoriteDoctor:FavoriteDoctor?
-    var favoriteDetailsViewController : FavoriteDetailsViewController?
-   
-    var doctor : SearchDoctor?
-  
-    
+    var doctor : Doctor?
     func yourFunctionWhichDoesNotHaveASender () {
         deleteFavoriteDoctor()
         delegate?.getFavoriteDoctors()
     }
     
-    
     func deleteFavoriteDoctor() {
-       
-            APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: doctor?.id ?? ""){(Result) in
+        
+        APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: doctor?.id ?? ""){(Result) in
             switch Result {
             case.success(let response):
                 DispatchQueue.main.async {
@@ -64,21 +57,21 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
                     print("bbbbbbbbb")
                     print(error.localizedDescription)
                 }
-        }
             }
-            
+        }
+        
         
     }
     
-      @IBAction func addToFavoriets(_ sender: UIButton) {
+    @IBAction func addToFavoriets(_ sender: UIButton) {
         yourFunctionWhichDoesNotHaveASender()
-      }
+    }
     
-      @IBAction func viewOnMap(_ sender: UIButton) {
+    @IBAction func viewOnMap(_ sender: UIButton) {
         Maps.openMaps(lat: doctor?.latitude ?? "0", long: doctor?.longitude ?? "0", distance: 10000.0 ,name: doctor?.name ?? "")
-      }
+    }
     
-      @IBAction func showDoctorDetails(_ sender: UIButton) {
-      }
+    @IBAction func showDoctorDetails(_ sender: UIButton) {
+    }
     
 }

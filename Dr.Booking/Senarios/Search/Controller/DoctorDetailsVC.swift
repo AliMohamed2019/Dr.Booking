@@ -10,7 +10,6 @@ import UIKit
 import Cosmos
 class DoctorDetailsVC: UIViewController {
 
-    @IBOutlet weak var doctorImage: UIImageView!
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var doctorTitle: UILabel!
     @IBOutlet weak var doctorDescreption: UILabel!
@@ -19,7 +18,11 @@ class DoctorDetailsVC: UIViewController {
     @IBOutlet weak var doctorFees: UILabel!
     @IBOutlet weak var doctorJobTitle: UILabel!
     @IBOutlet weak var reservationCollectionView: UICollectionView!
-    
+    @IBOutlet weak var doctorImage: UIImageView!{
+        didSet{
+            Rounded.roundedImage(imageView: doctorImage)
+        }
+    }
     @IBOutlet weak var likeBtn: UIButton!{
         didSet{
             self.likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
@@ -27,15 +30,15 @@ class DoctorDetailsVC: UIViewController {
     }
     @IBOutlet weak var hieghtConstraint: NSLayoutConstraint!
     
-    var doctor: SearchDoctor?
+    var doctor: Doctor?
     var userID: String?
+    var doctorID: String?
     var reservDates: [ReserveDate]?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         getReservations()
         updateView()
-        
     }
     
     func updateView(){
@@ -46,7 +49,6 @@ class DoctorDetailsVC: UIViewController {
             hieghtConstraint.constant = 0
         }
         
-        Rounded.roundedImage(imageView: doctorImage)
         doctorImage.sd_setImage(with: URL(string: doctor?.image ?? ""), placeholderImage: UIImage(named: ""))
         doctorName.text = doctor?.name
         doctorTitle.text = doctor?.jobTitle
@@ -62,7 +64,7 @@ class DoctorDetailsVC: UIViewController {
     }
     
     func getReservations(){
-        if let doctorID = doctor?.id {
+        if let doctorID = doctorID {
             DispatchQueue.global().async { [weak self] in
                 APIClient.getReservation(user_id: UserDefault.getId(), doctor_id: doctorID) { (Result) in
                     switch Result {
@@ -70,7 +72,10 @@ class DoctorDetailsVC: UIViewController {
                         DispatchQueue.main.async {
                             print("success")
                             self?.reservDates = response.dates
+                            self?.doctor = response.doctor
+                            
                             self?.reservationCollectionView.reloadData()
+                            self?.updateView()
                             if self?.reservationCollectionView.numberOfItems(inSection: 0) != 0 {
                                 self?.hieghtConstraint.constant = 174
                             }
@@ -84,7 +89,6 @@ class DoctorDetailsVC: UIViewController {
                 }
             }
         }
-        
     }
 
     @IBAction func likeButtonPressed(_ sender: UIButton) {
@@ -115,15 +119,13 @@ class DoctorDetailsVC: UIViewController {
                     }
                 }
             }
-            
         }
-        
     }
     
     //MARK:- show RateVc
     @IBAction func rateButtonPressed(_ sender: UIButton) {
         let RateVC = storyboard?.instantiateViewController(withIdentifier: "Rate") as! Rate
-//        RateVC.modalPresentationStyle = .fullScreen
+        RateVC.modalPresentationStyle = .overFullScreen
         RateVC.doctorID = doctor?.id ?? ""
         present(RateVC, animated: true, completion: nil)
     }

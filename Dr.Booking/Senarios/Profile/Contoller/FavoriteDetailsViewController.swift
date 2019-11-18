@@ -14,7 +14,7 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater  , NVA
     
        @IBOutlet weak var doctorFavoriteTableView: UITableView!
     
-       var alFavoriteDoctorArray:[SearchDoctor]?
+       var alFavoriteDoctorArray:[Doctor]?
        var failure:Failure?
     
     override func viewDidLoad() {
@@ -100,9 +100,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
-        
         vc.doctor = alFavoriteDoctorArray?[indexPath.row]
-       //  vc.productID = userProductsArray?[indexPath.row].id ?? ""
         navigationController?.pushViewController(vc, animated: true)
     }
 }
