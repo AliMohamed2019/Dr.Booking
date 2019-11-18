@@ -9,18 +9,20 @@
 import UIKit
 import SDWebImage
 class ProductVC: UIViewController {
-
+    
+    //MARK: - IBOutlet
     
     @IBOutlet weak var TableView: UITableView!
     
+    //MARK: - Var
     var productsArray:[Product]?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         TableView.rowHeight = 140
         getProductsData()
         
     }
+    //MARK: - Func getProduct of User
     
     func getProductsData(){
         DispatchQueue.global().async {
@@ -39,22 +41,26 @@ class ProductVC: UIViewController {
             }
         }
     }
-
- 
+    
+    
 }
 
+//MARK: - TableView DataSource Methods
 extension ProductVC : UITableViewDelegate , UITableViewDataSource {
     
+    //TODO: Declare numberOfRowsInSection here:
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return productsArray?.count ?? 0
     }
-
+    
+    //TODO: Declare cellForRowAtIndexPath here:
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProductTableViewCell
-
+        
         cell.productName.text = productsArray?[indexPath.row].name ?? "منتج"
         cell.productPrice.text = productsArray?[indexPath.row].price ?? "١٠٠"
         cell.productImage.sd_setImage(with: URL(string: productsArray?[indexPath.row].image ?? ""), placeholderImage: UIImage(named: "user"))
@@ -63,13 +69,15 @@ extension ProductVC : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        //TODO: Declare didSelectRowAt here:
+        
         let vc = storyboard?.instantiateViewController(identifier: "ProductDetails") as! ProductDetailsVC
-         vc.productID = productsArray?[indexPath.row].id ?? ""
+        vc.productID = productsArray?[indexPath.row].id ?? ""
         navigationController?.pushViewController(vc, animated: true)
     }
     
     
-   
+    
     
     
 }

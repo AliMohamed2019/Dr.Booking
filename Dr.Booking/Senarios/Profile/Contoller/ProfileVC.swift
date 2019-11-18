@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileVC: UIViewController {
     
-    
+    //MARK: - IBOutlet
     @IBOutlet weak var profileImage: UIImageView!{
         didSet{
             Rounded.roundedImage(imageView: self.profileImage)
@@ -22,19 +22,24 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var signOutBtn: UIButton!
     
-   let photsArray = ["product","profile","callender","house"]
-   let namesArray = ["منتجاتي","تعديل البيانات","حجوزاتي","مفضلتي"]
-   let viewControllerArray = ["GoToProductDetails","GoToProfileDetails" , "GoToReservationDetails" , "GoToFavoriteDetails "]
+    //MARK: - Var
+    
+    let photsArray = ["product","profile","callender","house"]
+    let namesArray = ["منتجاتي","تعديل البيانات","حجوزاتي","مفضلتي"]
+    let viewControllerArray = ["GoToProductDetails","GoToProfileDetails" , "GoToReservationDetails" , "GoToFavoriteDetails "]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         getData()
     }
     
+    //MARK: - IBAction
+    
     @IBAction func signOutPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    //MARK: - Func GetData Of User Login
     
     func getData() {
         name.text = UserDefault.getName()
@@ -45,20 +50,27 @@ class ProfileVC: UIViewController {
     }
 }
 
+//MARK: - TableView DataSource Methods
 
 extension ProfileVC: UITableViewDelegate , UITableViewDataSource {
+    
+    //TODO: Declare numberOfRowsInSection here:
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photsArray.count
     }
+    
+    //TODO: Declare cellForRowAtIndexPath here:
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProfileTableViewCell
         cell.iconImage.image = UIImage(named: photsArray[indexPath.row])
         cell.title.text = namesArray[indexPath.row]
-       return cell
-               
+        return cell
+        
     }
+    //TODO: Declare didSelectRowAt here:
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: viewControllerArray[indexPath.row], sender: self)

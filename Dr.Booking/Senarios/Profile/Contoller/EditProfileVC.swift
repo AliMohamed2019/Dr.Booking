@@ -10,6 +10,8 @@ import UIKit
 import NVActivityIndicatorView
 class EditProfileVC: UIViewController ,NVActivityIndicatorViewable {
     
+    //MARK: - IBOutlet
+    
     @IBOutlet weak var name: DesignableUITextField!
     @IBOutlet weak var phone: DesignableUITextField!
     @IBOutlet weak var email: DesignableUITextField!
@@ -19,6 +21,8 @@ class EditProfileVC: UIViewController ,NVActivityIndicatorViewable {
         }
     }
     
+    //MARK: - Var
+    
     var editProfile:EditProfile?
     let ImagePicker = UIImagePickerController()
     
@@ -27,6 +31,8 @@ class EditProfileVC: UIViewController ,NVActivityIndicatorViewable {
         getData()
         ImagePicker.delegate = self
     }
+    
+    //MARK: - IBAction
     
     @IBAction func editProfile(_ sender: UIButton) {
         getEditProfile()
@@ -40,6 +46,7 @@ class EditProfileVC: UIViewController ,NVActivityIndicatorViewable {
     @IBAction func changePassword(_ sender: UIButton) {
     }
     
+    //MARK: - Func GetData Of User Login
     
     func getData() {
         profileImage.sd_setImage(with: URL(string: UserDefault.getPhoto()), placeholderImage: UIImage(named: "user"))
@@ -47,6 +54,8 @@ class EditProfileVC: UIViewController ,NVActivityIndicatorViewable {
         phone.text = UserDefault.getPhone()
         email.text = UserDefault.getEmail()
     }
+    
+    //MARK: - Func EditProfile
     
     func getEditProfile() {
         if let name = name.text ,let phone = phone.text , let email = email.text{
@@ -58,12 +67,12 @@ class EditProfileVC: UIViewController ,NVActivityIndicatorViewable {
                         self.stopAnimating()
                         self.editProfile = response
                         Alert.show("", massege: self.editProfile!.message ,context: self)
-                   }
+                    }
                 case .failure(let error):
                     DispatchQueue.main.async {
                         self.stopAnimating()
                         print(error.localizedDescription)
-                       
+                        
                     }
                 }
             }
@@ -71,12 +80,13 @@ class EditProfileVC: UIViewController ,NVActivityIndicatorViewable {
     }
     
 }
+//MARK: - UIImagePickerController Delegate , UINavigationControllerDelegate
 
 extension EditProfileVC: UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let imageData = info[.originalImage] as! UIImage
         profileImage.image = imageData
         _ = FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: ImagePicker, didFinishPickingMediaWithInfo: info)
-
+        
     }
 }

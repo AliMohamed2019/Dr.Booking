@@ -9,7 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 class LogInViewController: UIViewController , NVActivityIndicatorViewable{
-  
+    
     //MARK: - IBOutlet
     @IBOutlet weak var email: DesignableUITextField!
     @IBOutlet weak var password: DesignableUITextField!
@@ -40,24 +40,24 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
                         self.setData()
                         self.clearText()
                         self.performSegue(withIdentifier: "GoToTapBar", sender: self)
-                   }
+                    }
                 case .failure(let error):
                     DispatchQueue.main.async {
                         self.stopAnimating()
                         print(error.localizedDescription)
                         APIClient.loginfailure(mail: mail, password: pass) { (Result) in
                             switch Result {
-                                case .success(let response):
-                                    DispatchQueue.main.async {
-                                        self.stopAnimating()
-                                        self.failure = response
-                                        Alert.show("خطاء", massege: self.failure!.message, context: self)
-                                        
-                                   }
-                                case .failure(let error):
-                                    DispatchQueue.main.async {
-                                        self.stopAnimating()
-                                        print(error.localizedDescription)
+                            case .success(let response):
+                                DispatchQueue.main.async {
+                                    self.stopAnimating()
+                                    self.failure = response
+                                    Alert.show("خطاء", massege: self.failure!.message, context: self)
+                                    
+                                }
+                            case .failure(let error):
+                                DispatchQueue.main.async {
+                                    self.stopAnimating()
+                                    print(error.localizedDescription)
                                 }
                             }
                         }
@@ -69,8 +69,8 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToTapBar" {
-         let vc = segue.destination as! TabBar
-         vc.modalPresentationStyle = .fullScreen
+            let vc = segue.destination as! TabBar
+            vc.modalPresentationStyle = .fullScreen
         }
     }
     //MARK: - Func To Save Date in UserDefault
@@ -79,7 +79,7 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
         UserDefault.setName((self.login?.userData.name)!)
         UserDefault.setEmail((self.login?.userData.mail)!)
         UserDefault.setPhone((self.login?.userData.phone)!)
-          
+        
     }
     //MARK: - Func to Empty TextFaild
     func clearText()  {

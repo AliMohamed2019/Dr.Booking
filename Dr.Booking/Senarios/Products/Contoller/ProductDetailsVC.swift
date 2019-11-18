@@ -9,7 +9,9 @@
 import UIKit
 import NVActivityIndicatorView
 class ProductDetailsVC: UIViewController, NVActivityIndicatorViewable{
-
+    
+    //MARK: - IBOutelt
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productName: UILabel!
@@ -17,9 +19,9 @@ class ProductDetailsVC: UIViewController, NVActivityIndicatorViewable{
     @IBOutlet weak var descreption: UITextView!
     @IBOutlet weak var benefitsTitle: UILabel!
     @IBOutlet weak var benefits: UITextView!
-    
     @IBOutlet weak var imageConst: NSLayoutConstraint!
     
+    //MARK: - Var
     var productID = ""
     var productData: Product?
     
@@ -28,6 +30,8 @@ class ProductDetailsVC: UIViewController, NVActivityIndicatorViewable{
         startAnimating()
         getDetails(with : productID)
     }
+    
+    //MARK: - Func getDetails Of Product
     
     func getDetails(with ID : String){
         APIClient.getProductDetails(product_id: ID) { (Result) in
@@ -43,9 +47,11 @@ class ProductDetailsVC: UIViewController, NVActivityIndicatorViewable{
                 self.stopAnimating()
             }
         }
-
+        
     }
-
+    
+    //MARK: - Func updatView
+    
     func updateView(){
         if let details = productData {
             productName.text = details.name
@@ -58,8 +64,10 @@ class ProductDetailsVC: UIViewController, NVActivityIndicatorViewable{
         }
     }
     
+    //MARK: - IBAction
+    
     @IBAction func buyProduct(_ sender: UIButton) {
-
+        
         APIClient.buyProduct(user_id: UserDefault.getId() , product_id: productID ) { (Result) in
             switch Result {
             case .success(let response):
