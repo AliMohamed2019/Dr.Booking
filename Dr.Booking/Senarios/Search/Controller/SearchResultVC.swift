@@ -8,18 +8,21 @@
 
 import UIKit
 import Cosmos
-class SearchResultVC: UIViewController {
+import NVActivityIndicatorView
+class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
     
+    @IBOutlet weak var TableView: UITableView!{
+        didSet{
+            TableView.rowHeight = UITableView.automaticDimension
+            TableView.estimatedRowHeight = 280
+        }
+    }
     
     var doctorsArray: [Doctor]?
-    @IBOutlet weak var TableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        TableView.rowHeight = UITableView.automaticDimension
-        TableView.estimatedRowHeight = 280
-        
-        
-        
+        self.startAnimating()
     }
     
     func searchDoctors(SortBy:String , keyWord: String , userId: String){
@@ -27,28 +30,30 @@ class SearchResultVC: UIViewController {
             APIClient.getDoctors(user_id: userId) { (Result) in
                 switch Result {
                 case .success(let response):
-                    print("success")
+                    self.stopAnimating()
                     self.doctorsArray = response.doctors
                     self.TableView.reloadData()
                 case .failure(let error):
-                    print("error")
+                    self.startAnimating()
                     print(error.localizedDescription)
                 }
             }
         } else {
             APIClient.getSearchedDoctors(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
                 switch Result {
-                case .success(let response):
-                    print(response)
+                case .success( _):
+                    self.stopAnimating()
                 case.failure(let error):
+                    self.stopAnimating()
                     print(error.localizedDescription)
                     APIClient.getSearchedDoctorsFailure(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
                         switch Result {
-                            case .success(let response):
-                                print(response)
+                        case .success( _):
+                                self.stopAnimating()
                                 self.TableView.reloadData()
                                 Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "البحث غير صحيح")
                             case.failure(let error):
+                                self.stopAnimating()
                                 print(error.localizedDescription)
                                 Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "البحث غير صحيح")
                         }

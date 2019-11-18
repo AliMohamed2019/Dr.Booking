@@ -29,10 +29,8 @@ class Rate: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTap()
-        
-
-        
     }
+    
     override  func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1609589041)
@@ -42,6 +40,8 @@ class Rate: UIViewController {
     func addTap() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         view.addGestureRecognizer(tapGesture)
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: nil)
+        rateView.addGestureRecognizer(tapGesture2)
     }
     
     @objc func tableViewTapped()  {
