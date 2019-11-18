@@ -9,7 +9,8 @@
 import UIKit
 import NVActivityIndicatorView
 class LogInViewController: UIViewController , NVActivityIndicatorViewable{
-    
+  
+    //MARK: - IBOutlet
     @IBOutlet weak var email: DesignableUITextField!
     @IBOutlet weak var password: DesignableUITextField!
     @IBOutlet weak var logInBtn: UIButton!
@@ -21,11 +22,12 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
         super.viewDidLoad()
         
     }
-    
+    //MARK: - IBAction
     @IBAction func logInPressed(_ sender: UIButton) {
         getLogin()
     }
     
+    //MARK: - Func Login
     func getLogin(){
         if let mail = email.text , let pass = password.text {
             self.startAnimating()
@@ -71,7 +73,7 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
          vc.modalPresentationStyle = .fullScreen
         }
     }
-    
+    //MARK: - Func To Save Date in UserDefault
     func setData() {
         UserDefault.setId((self.login?.userData.id)!)
         UserDefault.setName((self.login?.userData.name)!)
@@ -79,7 +81,7 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
         UserDefault.setPhone((self.login?.userData.phone)!)
           
     }
-    
+    //MARK: - Func to Empty TextFaild
     func clearText()  {
         email.text = ""
         password.text = ""

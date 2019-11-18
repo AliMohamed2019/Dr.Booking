@@ -24,16 +24,34 @@ class Rate: UIViewController {
     @IBOutlet weak var rateStars: CosmosView!
     
     var doctorID = ""
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTap()
+        
 
         
     }
+    override  func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1609589041)
+    }
     
+    //TODO: Set the tapGesture here:
+    func addTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func tableViewTapped()  {
+         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+       dismiss(animated: true, completion: nil)
+    }
 
     @IBAction func rateButtonPressed(_ sender: UIButton) {
         
-        APIClient.rateDoctor(user_id: "77", doctor_id: doctorID, rate: rateStars.rating) { (Result) in
+        APIClient.rateDoctor(user_id: UserDefault.getId(), doctor_id: doctorID, rate: rateStars.rating) { (Result) in
             switch Result {
             case .success(let response):
                 print(response)
