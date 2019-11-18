@@ -24,6 +24,8 @@ class ForgotPasswordVC: UIViewController , NVActivityIndicatorViewable{
         getForgotPassword()
     }
     
+    
+    //Func
     func getForgotPassword(){
          if let mail = email.text {
             self.startAnimating()
