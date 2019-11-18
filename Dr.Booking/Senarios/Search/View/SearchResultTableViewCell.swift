@@ -29,7 +29,7 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     
-    var doctor: SearchDoctor?
+    var doctor: Doctor?
     
     @IBAction func addToFavoriets(_ sender: UIButton) {
         if likeBtn.currentBackgroundImage == UIImage(named: "heart") {

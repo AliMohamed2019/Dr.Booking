@@ -11,7 +11,7 @@ import Cosmos
 class SearchResultVC: UIViewController {
     
     
-    var doctorsArray: [SearchDoctor]?
+    var doctorsArray: [Doctor]?
     @IBOutlet weak var TableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,8 +89,8 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
         vc.doctor = doctorsArray?[indexPath.row]
+        vc.doctorID = doctorsArray?[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
-
     }
     
 }
