@@ -20,6 +20,7 @@ class DoctorDetailsVC: UIViewController {
     @IBOutlet weak var reservationCollectionView: UICollectionView!
     @IBOutlet weak var doctorImage: UIImageView!{
         didSet{
+            doctorImage.image = UIImage(named: "")
             Rounded.roundedImage(imageView: doctorImage)
         }
     }

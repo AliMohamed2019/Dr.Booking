@@ -454,10 +454,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tes-C7-nW0">
-                                                        <rect key="frame" x="0.0" y="202" width="414" height="215"/>
+                                                        <rect key="frame" x="0.0" y="202" width="414" height="218"/>
                                                         <subviews>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mny-OJ-scv">
-                                                                <rect key="frame" x="20" y="20" width="374" height="176"/>
+                                                                <rect key="frame" x="20" y="20" width="374" height="179"/>
                                                                 <color key="separatorColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <prototypes>
@@ -508,12 +508,12 @@
                                                             <constraint firstItem="Mny-OJ-scv" firstAttribute="top" secondItem="Tes-C7-nW0" secondAttribute="top" constant="20" id="o09-ym-Sjt"/>
                                                             <constraint firstItem="Mny-OJ-scv" firstAttribute="leading" secondItem="Tes-C7-nW0" secondAttribute="leading" constant="20" id="qoa-xP-B0l"/>
                                                             <constraint firstAttribute="bottom" secondItem="Mny-OJ-scv" secondAttribute="bottom" constant="19" id="uJg-vX-HNr"/>
-                                                            <constraint firstAttribute="height" constant="215" id="uqK-Di-hMx"/>
+                                                            <constraint firstAttribute="height" constant="218" id="uqK-Di-hMx"/>
                                                             <constraint firstAttribute="trailing" secondItem="Mny-OJ-scv" secondAttribute="trailing" constant="20" id="vbX-Ym-qYo"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUN-F7-AOP">
-                                                        <rect key="frame" x="0.0" y="417" width="414" height="369"/>
+                                                        <rect key="frame" x="0.0" y="420" width="414" height="366"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4u-af-ih8">
                                                                 <rect key="frame" x="20" y="20" width="374" height="50"/>
@@ -1487,7 +1487,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="KeO-Dm-Poc"/>
                                                         </constraints>
                                                         <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" backgroundImage="star"/>
+                                                        <state key="normal" backgroundImage="star1"/>
                                                         <connections>
                                                             <action selector="rateButtonPressed:" destination="cW4-2L-9ZH" eventType="touchUpInside" id="MAx-tp-s3A"/>
                                                         </connections>
@@ -2649,7 +2649,7 @@
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="phone.fill" catalog="system" width="64" height="56"/>
-        <image name="star" width="64" height="64"/>
+        <image name="star1" width="64" height="64"/>
         <image name="user" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
