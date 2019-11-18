@@ -166,7 +166,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYx-Nc-8c4" customClass="CardView" customModule="Dr_Booking" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="398" height="124"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qae-Mr-dRK">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicines" translatesAutoresizingMaskIntoConstraints="NO" id="Qae-Mr-dRK">
                                                             <rect key="frame" x="278" y="0.0" width="120" height="124"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="120" id="H8a-bu-ay7"/>
@@ -232,6 +232,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bgh-zL-SXB" id="uOf-vu-SFR"/>
+                                    <outlet property="delegate" destination="bgh-zL-SXB" id="1rt-rK-BzR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -642,7 +646,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mahmoud" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-pk-XZK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-pk-XZK">
                                 <rect key="frame" x="152" y="191.5" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="NEM-gc-LNQ"/>
@@ -861,7 +865,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dkB-Kn-DLY">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dkB-Kn-DLY">
                                                     <rect key="frame" x="314" y="11" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="E5M-zI-hFB"/>
@@ -1243,7 +1247,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wAi-1c-M5r">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="wAi-1c-M5r">
                                                     <rect key="frame" x="314" y="11" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="c7Z-03-AuE"/>
@@ -1624,7 +1628,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="CC8-Qy-1Ig" secondAttribute="trailing" constant="20" id="qo8-cU-8zo"/>
                                                 </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="dIb-rI-am3">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dIb-rI-am3">
                                                 <rect key="frame" x="162" y="0.0" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="DAM-5H-UN0"/>
@@ -1873,7 +1877,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="296"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wAi-aK-fhp">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="wAi-aK-fhp">
                                                     <rect key="frame" x="314" y="11" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="phB-Ed-N8a"/>
@@ -2238,7 +2242,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LID-ar-yCz" customClass="CardView" customModule="Dr_Booking" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="398" height="124"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SUx-sW-sZa">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicines" translatesAutoresizingMaskIntoConstraints="NO" id="SUx-sW-sZa">
                                                             <rect key="frame" x="278" y="0.0" width="120" height="124"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="5Wt-eQ-EvG"/>
@@ -2633,6 +2637,7 @@
         <image name="booking" width="231.5" height="49.5"/>
         <image name="clock" width="64" height="64"/>
         <image name="doctor" width="64" height="64"/>
+        <image name="doctor-placeholder" width="91" height="67.5"/>
         <image name="doctor2" width="64" height="64"/>
         <image name="dollar" width="16" height="16"/>
         <image name="dollar2" width="64" height="64"/>
@@ -2641,7 +2646,7 @@
         <image name="location2" width="64" height="64"/>
         <image name="lock.fill" catalog="system" width="64" height="64"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
-        <image name="mahmoud" width="37" height="48"/>
+        <image name="medicines" width="64" height="64"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="phone.fill" catalog="system" width="64" height="56"/>
@@ -2649,7 +2654,7 @@
         <image name="user" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JhW-jy-Ctz"/>
+        <segue reference="lAX-Pr-IXo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

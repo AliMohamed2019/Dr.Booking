@@ -10,28 +10,25 @@ import UIKit
 
 class ProfileVC: UIViewController {
     
-    let photsArray = ["product","profile","callender","house"]
-    let namesArray = ["منتجاتي","تعديل البيانات","حجوزاتي","مفضلتي"]
-    let viewControllerArray = ["GoToProductDetails","GoToProfileDetails" , "GoToReservationDetails" , "GoToFavoriteDetails "]
-    //let nameViewControllerArray = ["ProductVC" , "EditProfileVC" , "" , "SearchResultVC"]
     
-
     @IBOutlet weak var profileImage: UIImageView!{
         didSet{
             Rounded.roundedImage(imageView: self.profileImage)
             
         }
     }
-    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var signOutBtn: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+   let photsArray = ["product","profile","callender","house"]
+   let namesArray = ["منتجاتي","تعديل البيانات","حجوزاتي","مفضلتي"]
+   let viewControllerArray = ["GoToProductDetails","GoToProfileDetails" , "GoToReservationDetails" , "GoToFavoriteDetails "]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         getData()
-       
     }
     
     @IBAction func signOutPressed(_ sender: UIButton) {
@@ -42,14 +39,13 @@ class ProfileVC: UIViewController {
     func getData() {
         name.text = UserDefault.getName()
         phone.text = UserDefault.getPhone()
-    /*    profileImage.sd_setImage(with: URL(string: UserDefault.getPhoto() ?? ""), placeholderImage: UIImage(named: "user"))
-    */
-         
+        profileImage.sd_setImage(with: URL(string: UserDefault.getPhoto()), placeholderImage: UIImage(named: "user"))
         TableView.reloadData()
         
     }
-    
 }
+
+
 extension ProfileVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photsArray.count
@@ -63,11 +59,9 @@ extension ProfileVC: UITableViewDelegate , UITableViewDataSource {
        return cell
                
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: viewControllerArray[indexPath.row], sender: self)
-        
-        
     }
-    
     
 }

@@ -7,46 +7,44 @@
 //
 
 import UIKit
-
-class ForgotPasswordVC: UIViewController {
-    var forgetpass:ForgetPass?
+import NVActivityIndicatorView
+class ForgotPasswordVC: UIViewController , NVActivityIndicatorViewable{
+    
     @IBOutlet weak var email: DesignableUITextField!
     @IBOutlet weak var submitBtn: UIButton!
+    
+    var forgetpass:ForgetPass?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-
     @IBAction func changePassword(_ sender: UIButton) {
         getForgotPassword()
     }
     
-
     func getForgotPassword(){
-         if let mail = email.text  {
-         APIClient.forgetPass(user_email: mail) { (Result) in
-             switch Result {
-             case .success(let response):
-                 DispatchQueue.main.async {
-                     print("aaaaaaaa")
-                     print(response)
-                     self.forgetpass = response
-                    Alert.show("Error", massege: self.forgetpass!.message, context: self)
+         if let mail = email.text {
+            self.startAnimating()
+                APIClient.forgetPass(user_email: mail) { (Result) in
+                    switch Result {
+                        case .success(let response):
+                            DispatchQueue.main.async {
+                                self.stopAnimating()
+                                print(response)
+                                self.forgetpass = response
+                                Alert.show("Error", massege: self.forgetpass!.message, context: self)
+                            }
+                        case .failure(let error):
+                            DispatchQueue.main.async {
+                                self.stopAnimating()
+                                print(error.localizedDescription)
+
+                            }
+                    }
                 }
-             case .failure(let error):
-                 DispatchQueue.main.async {
-                     print("bbbbbbbbb")
-                     print(error.localizedDescription)
-                    
-                 }
-             }
-             }
          }
-             
      }
-    
-    
     
 }

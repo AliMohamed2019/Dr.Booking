@@ -26,20 +26,26 @@ class DoctorDetailsVC: UIViewController {
         }
     }
     @IBOutlet weak var hieghtConstraint: NSLayoutConstraint!
+    
     var doctor: SearchDoctor?
     var userID: String?
     var reservDates: [ReserveDate]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getReservations()
         updateView()
-        if reservationCollectionView.numberOfItems(inSection: 0) == 0 {
-            hieghtConstraint.constant = 0
-        }
+        
     }
     
     func updateView(){
+        
         navigationItem.title = doctor?.name
+        
+        if reservationCollectionView.numberOfItems(inSection: 0) == 0 {
+            hieghtConstraint.constant = 0
+        }
+        
         Rounded.roundedImage(imageView: doctorImage)
         doctorImage.sd_setImage(with: URL(string: doctor?.image ?? ""), placeholderImage: UIImage(named: ""))
         doctorName.text = doctor?.name
@@ -53,7 +59,6 @@ class DoctorDetailsVC: UIViewController {
         if doctor?.favorite == 1 {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
         }
-        
     }
     
     func getReservations(){
@@ -115,16 +120,17 @@ class DoctorDetailsVC: UIViewController {
         
     }
     
+    //MARK:- show RateVc
     @IBAction func rateButtonPressed(_ sender: UIButton) {
         let RateVC = storyboard?.instantiateViewController(withIdentifier: "Rate") as! Rate
-        RateVC.modalPresentationStyle = .fullScreen
+//        RateVC.modalPresentationStyle = .fullScreen
         RateVC.doctorID = doctor?.id ?? ""
         present(RateVC, animated: true, completion: nil)
     }
     
 }
 
-
+//MARK:- TableView set up
 extension DoctorDetailsVC: UICollectionViewDelegate , UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return reservDates?.count ?? 0
