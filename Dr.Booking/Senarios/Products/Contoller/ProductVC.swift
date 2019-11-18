@@ -16,11 +16,10 @@ class ProductVC: UIViewController {
     var productsArray:[Product]?
     override func viewDidLoad() {
         super.viewDidLoad()
-        TableView.delegate = self
-        TableView.dataSource = self
-        TableView.rowHeight = 140
         
+        TableView.rowHeight = 140
         getProductsData()
+        
     }
     
     func getProductsData(){
@@ -32,6 +31,7 @@ class ProductVC: UIViewController {
                         self.productsArray = response.products
                         print(self.productsArray)
                         self.TableView.reloadData()
+                        Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "لا توجد أدوية متاحة")
                     }
                 case.failure(let error):
                     print(error.localizedDescription)

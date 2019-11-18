@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RealmSwift
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,16 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        print(Realm.Configuration.defaultConfiguration.fileURL)
-        
-        
-        do {
-            let realm = try Realm()
-        } catch let error {
-            print(error.localizedDescription)
-        }
-        
-        
+        FirebaseApp.configure()
+
         return true
     }
 

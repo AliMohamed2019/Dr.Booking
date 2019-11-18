@@ -11,9 +11,8 @@ target 'Dr.Booking' do
     pod 'SDWebImage'
     pod 'Firebase/Core'
     pod 'Firebase/Storage'
-    pod 'BEMCheckBox'
+    pod 'Firebase/Firestore'
     pod 'NVActivityIndicatorView'
     pod 'SwiftyJSON'
     pod 'Cosmos'
-    pod 'RealmSwift'
 end

@@ -39,21 +39,18 @@ class SearchResultVC: UIViewController {
             APIClient.getSearchedDoctors(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
                 switch Result {
                 case .success(let response):
-                    print("===============================")
                     print(response)
                 case.failure(let error):
-                    print("===============================")
                     print(error.localizedDescription)
                     APIClient.getSearchedDoctorsFailure(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
                         switch Result {
                             case .success(let response):
-                                print("===============================")
                                 print(response)
                                 self.TableView.reloadData()
-                                Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "No Doctors Available")
+                                Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "البحث غير صحيح")
                             case.failure(let error):
-                                print("===============================")
                                 print(error.localizedDescription)
+                                Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "البحث غير صحيح")
                         }
                     }
             }
@@ -65,8 +62,6 @@ class SearchResultVC: UIViewController {
     
     
 }
-
-
 
 extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,16 +86,11 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 320
-//    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
         vc.doctor = doctorsArray?[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
 
     }
-    
     
 }
