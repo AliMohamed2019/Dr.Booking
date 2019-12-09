@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
     
@@ -17,11 +17,11 @@ class ProfileTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         
     }
-
+    
 }

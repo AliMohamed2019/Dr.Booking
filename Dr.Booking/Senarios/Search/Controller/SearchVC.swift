@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchVC: UIViewController , UITextFieldDelegate{
-
+    
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var searchTv: UITextField!
     
@@ -25,9 +25,9 @@ class SearchVC: UIViewController , UITextFieldDelegate{
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         sortBy = "rate"
-       performSegue(withIdentifier: "GoToSearch", sender: self)
+        performSegue(withIdentifier: "GoToSearch", sender: self)
     }
-
+    
     
     @IBAction func skipButtonPressed(_ sender: UIButton) {
         sortBy = "all"

@@ -9,7 +9,7 @@
 import UIKit
 import Cosmos
 class DoctorDetailsVC: UIViewController {
-
+    
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var doctorTitle: UILabel!
     @IBOutlet weak var doctorDescreption: UILabel!
@@ -25,7 +25,7 @@ class DoctorDetailsVC: UIViewController {
         }
     }
     
-   
+    
     @IBOutlet weak var likeBtn: UIButton!{
         didSet{
             self.likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
@@ -87,13 +87,13 @@ class DoctorDetailsVC: UIViewController {
                     case.failure(let error):
                         print("failed")
                         print(error.localizedDescription)
-                            
+                        
                     }
                 }
             }
         }
     }
-
+    
     @IBAction func likeButtonPressed(_ sender: UIButton) {
         if likeBtn.currentBackgroundImage == UIImage(named: "heart") {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
@@ -110,7 +110,7 @@ class DoctorDetailsVC: UIViewController {
             }
             
         } else {
-          likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
+            likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
             
             DispatchQueue.main.async { [weak self] in
                 APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctor?.id ?? "") { (Result) in

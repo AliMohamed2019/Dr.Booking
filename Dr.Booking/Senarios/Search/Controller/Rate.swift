@@ -9,7 +9,7 @@
 import UIKit
 import Cosmos
 class Rate: UIViewController {
-
+    
     
     @IBOutlet weak var rateView2: UIView!{
         didSet{
@@ -24,7 +24,7 @@ class Rate: UIViewController {
     @IBOutlet weak var rateStars: CosmosView!
     
     var doctorID = ""
- 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,10 +45,10 @@ class Rate: UIViewController {
     }
     
     @objc func tableViewTapped()  {
-         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-       dismiss(animated: true, completion: nil)
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func rateButtonPressed(_ sender: UIButton) {
         
         APIClient.rateDoctor(user_id: UserDefault.getId(), doctor_id: doctorID, rate: rateStars.rating) { (Result) in

@@ -20,18 +20,18 @@ class ReservationsViewController: UIViewController , NVActivityIndicatorViewable
     
     var userReservationsArray:[Reservation]?
     var failure:Failure?
- 
-     var dID: String?
+    
+    var dID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserReservations()
-       
+        
     }
     
     
     
-
+    
     func getUserReservations() {
         self.startAnimating()
         APIClient.view_reservations(user_id: UserDefault.getId()) { (Result) in
@@ -65,8 +65,8 @@ class ReservationsViewController: UIViewController , NVActivityIndicatorViewable
             }
         }
     }
-   
-   
+    
+    
     
     
     
@@ -77,12 +77,12 @@ extension ReservationsViewController: UITableViewDelegate , UITableViewDataSourc
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userReservationsArray?.count ?? 0
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReservationDetailsTableViewCell
         if let reservation = userReservationsArray?[indexPath.row] {
             cell.doctorImage.sd_setImage(with: URL(string: userReservationsArray?[indexPath.row].image ?? ""),
-            placeholderImage: UIImage(named: "user"))
+                                         placeholderImage: UIImage(named: "user"))
             cell.doctorName.text = reservation.doctor
             cell.DoctorTitle.text = reservation.jobTitle
             cell.doctorFees.text = reservation.price
@@ -93,7 +93,7 @@ extension ReservationsViewController: UITableViewDelegate , UITableViewDataSourc
             cell.doctorId = reservation.doctorID
             cell.delegate = self
             
-           
+            
             
             
         }
@@ -108,7 +108,7 @@ extension ReservationsViewController: UITableViewDelegate , UITableViewDataSourc
             vc.doctorID = doc
             navigationController?.pushViewController(vc, animated: true)
         }
-                  
+        
     }
 }
 
@@ -116,13 +116,13 @@ extension ReservationsViewController: UITableViewDelegate , UITableViewDataSourc
 extension ReservationsViewController: DectorsDetailsProtcolDelegate {
     func details(id: String) {
         let vc = storyboard?.instantiateViewController(identifier: "DectorDataViewController") as! DectorDataViewController
-                   vc.doctorID = id
-                   navigationController?.pushViewController(vc, animated: true)
+        vc.doctorID = id
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     
+    
+}
 
-  }
-    
-    
+
 

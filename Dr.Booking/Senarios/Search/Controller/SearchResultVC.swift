@@ -11,7 +11,7 @@ import Cosmos
 import NVActivityIndicatorView
 class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
     
- 
+    
     @IBOutlet weak var TableView: UITableView!{
         didSet{
             TableView.rowHeight = UITableView.automaticDimension
@@ -108,13 +108,13 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
 extension SearchResultVC: DectorDetailsDelegate {
     func details(id: String, doctor: Doctor) {
         let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
-               vc.doctor = doctor
-               vc.doctorID = id
-               navigationController?.pushViewController(vc, animated: true)
+        vc.doctor = doctor
+        vc.doctorID = id
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     
-  
+    
     
     
 }

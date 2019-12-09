@@ -16,8 +16,8 @@ class ReservationDetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var doctorImage: UIImageView!{
         didSet{
-                  Rounded.roundedImage(imageView: self.doctorImage)
-              }
+            Rounded.roundedImage(imageView: self.doctorImage)
+        }
     }
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var rateOfDoctor: CosmosView!
@@ -29,16 +29,16 @@ class ReservationDetailsTableViewCell: UITableViewCell {
     var location: Reservation?
     var delegate: DectorsDetailsProtcolDelegate?
     var doctorId : String?
-
-
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     @IBAction func goToMap(_ sender: UIButton) {
@@ -46,5 +46,5 @@ class ReservationDetailsTableViewCell: UITableViewCell {
     }
     @IBAction func showDoctorDetails(_ sender: UIButton) {
         delegate?.details(id: doctorId!)
-       }
+    }
 }
