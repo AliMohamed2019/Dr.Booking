@@ -65,6 +65,7 @@ extension ProductVC : UITableViewDelegate , UITableViewDataSource {
         cell.productPrice.text = productsArray?[indexPath.row].price ?? "١٠٠"
         cell.productImage.sd_setImage(with: URL(string: productsArray?[indexPath.row].image ?? ""), placeholderImage: UIImage(named: "user"))
         cell.product = productsArray?[indexPath.row]
+        cell.delegate = self
         return cell
     }
     
@@ -78,7 +79,14 @@ extension ProductVC : UITableViewDelegate , UITableViewDataSource {
     }
     
     
+}
+
+
+
+extension ProductVC: BuyProductDelegate {
+    func showAlert() {
+        Alert.show("تم الشراء", massege: "تم شراء المنتج بنجاح", context: self)
+    }
     
-    
-    
+   
 }

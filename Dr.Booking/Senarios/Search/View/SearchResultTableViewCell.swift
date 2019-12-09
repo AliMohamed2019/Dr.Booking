@@ -9,6 +9,9 @@
 import UIKit
 import Cosmos
 import MapKit
+protocol DectorDetailsDelegate {
+    func details(id: String , doctor : Doctor )
+}
 class SearchResultTableViewCell: UITableViewCell {
 
     @IBOutlet weak var doctorImage: UIImageView!{
@@ -27,7 +30,7 @@ class SearchResultTableViewCell: UITableViewCell {
             likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
         }
     }
-    
+    var delegate: DectorDetailsDelegate?
     
     var doctor: Doctor?
     
@@ -68,7 +71,7 @@ class SearchResultTableViewCell: UITableViewCell {
 
     }
     @IBAction func showDoctorDetails(_ sender: UIButton) {
-        
+        delegate?.details(id: doctor!.id, doctor:  doctor!)
     }
     
 }

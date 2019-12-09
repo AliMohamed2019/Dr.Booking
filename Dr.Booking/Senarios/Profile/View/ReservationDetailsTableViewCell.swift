@@ -9,6 +9,9 @@
 import UIKit
 import Cosmos
 
+protocol DectorsDetailsProtcolDelegate {
+    func details(id: String )
+}
 class ReservationDetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var doctorImage: UIImageView!{
@@ -24,6 +27,9 @@ class ReservationDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var doctorDate: UILabel!
     
     var location: Reservation?
+    var delegate: DectorsDetailsProtcolDelegate?
+    var doctorId : String?
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,5 +44,7 @@ class ReservationDetailsTableViewCell: UITableViewCell {
     @IBAction func goToMap(_ sender: UIButton) {
         Maps.openMaps(lat: location?.latitude ?? "0", long: location?.longitude ?? "0", distance:  10000 , name: location?.doctor ?? "")
     }
-    
+    @IBAction func showDoctorDetails(_ sender: UIButton) {
+        delegate?.details(id: doctorId!)
+       }
 }

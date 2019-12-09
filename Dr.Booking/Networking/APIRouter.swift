@@ -23,7 +23,7 @@ enum APIRouter: URLRequestConvertible {
     case getUserProducts(user_id : String)
     case editProfile(user_id : String , user_name : String , user_mail : String ,user_phone : String)
     case Search(search_words : String ,order_by : String ,user_id : String)
-    case viewDoctor(user_id : String, doctor_id : String )
+    case viewDoctor( doctor_id : String ,user_id : String )
     case make_reservation(user_id : String, doctor_id : String , docotor_reservation_date_id : String)
     case view_reservations(user_id : String)
     case getAllDoctors(user_id : String)
@@ -103,7 +103,7 @@ enum APIRouter: URLRequestConvertible {
             return "/\(K.ProductionServer.userType)/editProfile/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(user_id)/\(user_name)/\(user_mail)/\(user_phone)"
         case .Search(let search_words, let order_by, let user_id):
             return "/Search/index/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(search_words)/\(order_by)/\(user_id)"
-        case .viewDoctor(let user_id, let doctor_id):
+        case .viewDoctor( let doctor_id , let user_id):
             return "/\(K.ProductionServer.DoctorType)/view/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(doctor_id)/\(user_id)"
         case .make_reservation(let user_id, let doctor_id, let docotor_reservation_date_id):
             return "/\(K.ProductionServer.userType)/make_reservation/\(K.ProductionServer.webserviceUser)/\(K.ProductionServer.webservicePass)/\(user_id)/\(doctor_id)/\(docotor_reservation_date_id)"

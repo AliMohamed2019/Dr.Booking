@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol BuyProductDelegate {
+    func showAlert()
+}
 
 class ProductTableViewCell: UITableViewCell {
     
@@ -16,6 +19,7 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var buyBtn: UIButton!
     
     var product: Product?
+    var delegate: BuyProductDelegate?
     
     
     @IBAction func butButtonPressed(_ sender: UIButton) {
@@ -24,6 +28,7 @@ class ProductTableViewCell: UITableViewCell {
                 switch Result {
                 case .success( _):
                     print("Done")
+                    self.delegate?.showAlert()
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

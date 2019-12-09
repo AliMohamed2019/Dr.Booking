@@ -20,10 +20,12 @@ class DoctorDetailsVC: UIViewController {
     @IBOutlet weak var reservationCollectionView: UICollectionView!
     @IBOutlet weak var doctorImage: UIImageView!{
         didSet{
-            doctorImage.image = UIImage(named: "")
+            doctorImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "user123"))
             Rounded.roundedImage(imageView: doctorImage)
         }
     }
+    
+   
     @IBOutlet weak var likeBtn: UIButton!{
         didSet{
             self.likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
@@ -44,7 +46,7 @@ class DoctorDetailsVC: UIViewController {
     
     func updateView(){
         
-        navigationItem.title = doctor?.name
+        navigationItem.title =  doctor?.name
         
         if reservationCollectionView.numberOfItems(inSection: 0) == 0 {
             hieghtConstraint.constant = 0
@@ -67,7 +69,7 @@ class DoctorDetailsVC: UIViewController {
     func getReservations(){
         if let doctorID = doctorID {
             DispatchQueue.global().async { [weak self] in
-                APIClient.getReservation(user_id: UserDefault.getId(), doctor_id: doctorID) { (Result) in
+                APIClient.getReservation( doctor_id: doctorID,user_id: UserDefault.getId()) { (Result) in
                     switch Result {
                     case .success(let response):
                         DispatchQueue.main.async {

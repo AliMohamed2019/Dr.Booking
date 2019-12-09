@@ -35,6 +35,8 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
     weak var delegate: CustomCellUpdater?
     var favoriteDoctor:FavoriteDoctor?
     var doctor : Doctor?
+    var delegateDetails: DectorDetailsDelegate?
+     
     func yourFunctionWhichDoesNotHaveASender () {
         deleteFavoriteDoctor()
         delegate?.getFavoriteDoctors()
@@ -72,6 +74,8 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
     }
     
     @IBAction func showDoctorDetails(_ sender: UIButton) {
+        delegateDetails?.details(id: doctor!.id, doctor:  doctor!)
+
     }
     
 }

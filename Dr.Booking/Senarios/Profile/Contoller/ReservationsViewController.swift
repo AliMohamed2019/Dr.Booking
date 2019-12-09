@@ -20,11 +20,17 @@ class ReservationsViewController: UIViewController , NVActivityIndicatorViewable
     
     var userReservationsArray:[Reservation]?
     var failure:Failure?
+ 
+     var dID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserReservations()
+       
     }
+    
+    
+    
 
     func getUserReservations() {
         self.startAnimating()
@@ -59,6 +65,12 @@ class ReservationsViewController: UIViewController , NVActivityIndicatorViewable
             }
         }
     }
+   
+   
+    
+    
+    
+    
 }
 
 extension ReservationsViewController: UITableViewDelegate , UITableViewDataSource {
@@ -78,13 +90,39 @@ extension ReservationsViewController: UITableViewDelegate , UITableViewDataSourc
             cell.rateOfDoctor.rating = reservation.rate
             cell.doctorDate.text = "\(reservation.date ?? ""), من الساعة  \(reservation.timeFrom ?? "") الي \( reservation.timeTo ?? "")"
             cell.location = reservation
+            cell.doctorId = reservation.doctorID
+            cell.delegate = self
+            
+           
+            
+            
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
-        vc.doctorID = userReservationsArray?[indexPath.row].doctorID
-        navigationController?.pushViewController(vc, animated: true)
+        dID = userReservationsArray?[indexPath.row].doctorID
+        if let doc = dID {
+            print(doc)
+            let vc = storyboard?.instantiateViewController(identifier: "DectorDataViewController") as! DectorDataViewController
+            vc.doctorID = doc
+            navigationController?.pushViewController(vc, animated: true)
+        }
+                  
     }
 }
+
+
+extension ReservationsViewController: DectorsDetailsProtcolDelegate {
+    func details(id: String) {
+        let vc = storyboard?.instantiateViewController(identifier: "DectorDataViewController") as! DectorDataViewController
+                   vc.doctorID = id
+                   navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+
+  }
+    
+    
+

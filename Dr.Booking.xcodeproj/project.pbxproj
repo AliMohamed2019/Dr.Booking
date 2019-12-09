@@ -11,6 +11,8 @@
 		3B046B99237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B98237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift */; };
 		3B046B9B237D6BDF0032C7D1 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */; };
 		3B046B9D237D6C170032C7D1 /* ProductDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B9C237D6C170032C7D1 /* ProductDetailsTableViewCell.swift */; };
+		3B0BA497239E769C0043D9FE /* DectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BA496239E769C0043D9FE /* DectorView.swift */; };
+		3B0BA499239E8ABA0043D9FE /* DectorDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BA498239E8ABA0043D9FE /* DectorDataViewController.swift */; };
 		3B119CDC23782DC700FC4FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */; };
 		3B119CDE23782DC700FC4FC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */; };
 		3B119CE023782DC700FC4FC2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDF23782DC700FC4FC2 /* LogInViewController.swift */; };
@@ -65,6 +67,8 @@
 		3B046B98237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		3B046B9C237D6C170032C7D1 /* ProductDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		3B0BA496239E769C0043D9FE /* DectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DectorView.swift; sourceTree = "<group>"; };
+		3B0BA498239E8ABA0043D9FE /* DectorDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DectorDataViewController.swift; sourceTree = "<group>"; };
 		3B119CD823782DC700FC4FC2 /* Dr.Booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dr.Booking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				3B24D16C237C34C4008D3605 /* UpdatePassword.swift */,
 				3B24D170237C49A1008D3605 /* EditProfile.swift */,
 				3B3B326E23815CD700B8D0C1 /* UserReservation.swift */,
+				3B0BA496239E769C0043D9FE /* DectorView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				3B046B96237D67250032C7D1 /* FavoriteDetailsViewController.swift */,
 				3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */,
 				3B3B327023815ED100B8D0C1 /* ReservationsViewController.swift */,
+				3B0BA498239E8ABA0043D9FE /* DectorDataViewController.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				81DEBC6D237AC55A0096CF47 /* SearchResultVC.swift in Sources */,
 				3B3B326F23815CD700B8D0C1 /* UserReservation.swift in Sources */,
 				3B24D16A237C2C9C008D3605 /* ForgetPass.swift in Sources */,
+				3B0BA499239E8ABA0043D9FE /* DectorDataViewController.swift in Sources */,
 				3B24D171237C49A1008D3605 /* EditProfile.swift in Sources */,
 				3B119CE023782DC700FC4FC2 /* LogInViewController.swift in Sources */,
 				3B3B327323815F2900B8D0C1 /* ReservationDetailsTableViewCell.swift in Sources */,
@@ -544,6 +551,7 @@
 				81DEBC62237AB9A70096CF47 /* ForgotPasswordVC.swift in Sources */,
 				3B24D163237BFCEE008D3605 /* FavoriteDoctor.swift in Sources */,
 				81DEBC65237ABA4A0096CF47 /* ProductTableViewCell.swift in Sources */,
+				3B0BA497239E769C0043D9FE /* DectorView.swift in Sources */,
 				81F2A7FF2378488C003DFCD1 /* CardView.swift in Sources */,
 				813FFBE62379A141004897AE /* ProductVC.swift in Sources */,
 				81DEBC60237AABB20096CF47 /* EditProfileVC.swift in Sources */,

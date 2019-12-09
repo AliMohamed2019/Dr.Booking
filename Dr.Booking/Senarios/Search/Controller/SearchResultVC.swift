@@ -11,8 +11,7 @@ import Cosmos
 import NVActivityIndicatorView
 class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
     
-    @IBOutlet weak var dropDownList: UIView!
-    @IBOutlet var listButton: [UIButton]!
+ 
     @IBOutlet weak var TableView: UITableView!{
         didSet{
             TableView.rowHeight = UITableView.automaticDimension
@@ -24,6 +23,7 @@ class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.startAnimating()
     }
     
@@ -65,28 +65,10 @@ class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
             }
         }
     }
-    @IBAction func sort(_ sender: UIButton) {
-        dropDownList.isHidden = true
-        switch sender.tag {
-        case 0:
-            return searchDoctors(SortBy: "price_desc", keyWord: "", userId: UserDefault.getId())
-        case 1:
-            return searchDoctors(SortBy: "price_asc", keyWord: "", userId: UserDefault.getId())
-        case 2:
-            return searchDoctors(SortBy: "rate", keyWord: "", userId: UserDefault.getId())
-        case 3:
-            return searchDoctors(SortBy: "all", keyWord: "", userId: UserDefault.getId())
-        default:
-            return searchDoctors(SortBy: "price_asc", keyWord: "", userId: UserDefault.getId())
-        }
-        
-    }
     
     
-    @IBAction func sortBy(_ sender: UIBarButtonItem) {
-        
-        dropDownList.isHidden = !dropDownList.isHidden
-    }
+    
+    
     
 }
 
@@ -106,6 +88,7 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
             
             cell.doctorImage.sd_setImage(with: URL(string: doctor.image), placeholderImage: UIImage(named: "user"))
             cell.doctor = doctor
+            cell.delegate = self
             if doctor.favorite == 1 {
                 cell.likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
             }
@@ -119,5 +102,19 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
         vc.doctorID = doctorsArray?[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+}
+
+extension SearchResultVC: DectorDetailsDelegate {
+    func details(id: String, doctor: Doctor) {
+        let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
+               vc.doctor = doctor
+               vc.doctorID = id
+               navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+  
+    
     
 }

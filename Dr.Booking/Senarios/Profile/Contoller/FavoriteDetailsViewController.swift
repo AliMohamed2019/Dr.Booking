@@ -93,6 +93,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     cell.rateOfDoctor.rating = doctor.rating
  
        cell.delegate = self
+          cell.delegateDetails = self
         cell.doctor = doctor
     }
     return cell
@@ -103,4 +104,13 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         vc.doctor = alFavoriteDoctorArray?[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
+}
+extension FavoriteDetailsViewController: DectorDetailsDelegate {
+func details(id: String, doctor: Doctor) {
+    let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
+           vc.doctor = doctor
+           vc.doctorID = id
+           navigationController?.pushViewController(vc, animated: true)
+    
+}
 }
