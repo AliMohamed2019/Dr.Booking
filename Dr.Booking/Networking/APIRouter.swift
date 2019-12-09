@@ -127,42 +127,42 @@ enum APIRouter: URLRequestConvertible {
         
         case .login( _, _):
             return nil
-        case .register( _ , _ , _ , _ ):
+        case .register( _  ):
             return nil
-        case .addFavoriteDoctor(let user_id, let doctor_id ):
+        case .addFavoriteDoctor(_):
              return nil
         
-        case .deleteFavoriteDoctor(let user_id, let doctor_id):
+        case .deleteFavoriteDoctor(_):
              return nil
-        case .getFavoriteDoctors(let user_id):
+        case .getFavoriteDoctors(_):
              return nil
-        case .addRate(let user_id, let doctor_id, let rate):
+        case .addRate(_):
              return nil
         case .getAllProducts:
              return nil
-        case .viewProduct(let product_id):
+        case .viewProduct(_):
              return nil
-        case .buyProduct(let user_id, let product_id):
+        case .buyProduct(_):
              return nil
-        case .getUserProducts(let user_id):
+        case .getUserProducts(_):
              return nil
-        case .editProfile(let user_id, let user_name, let user_mail, let user_phone):
+        case .editProfile(_):
              return nil
-        case .Search(let search_words, let order_by, let user_id):
+        case .Search(_):
              return nil
-        case .viewDoctor(let user_id, let doctor_id):
+        case .viewDoctor(_):
              return nil
-        case .make_reservation(let user_id, let doctor_id, let docotor_reservation_date_id):
+        case .make_reservation(_):
              return nil
-        case .view_reservations(let user_id):
+        case .view_reservations(_):
              return nil
-        case .getAllDoctors(let user_id):
+        case .getAllDoctors(_):
              return nil
-        case .viewProfile(let user_id):
+        case .viewProfile(_):
              return nil
-        case .forget_pass(let user_email):
+        case .forget_pass(_):
              return nil
-        case .update_password(let user_id, let Current_Password, let New_Password, let ReType_New_Password):
+        case .update_password(_):
              return nil
         }
 }

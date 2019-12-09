@@ -22,7 +22,7 @@ class ProductTableViewCell: UITableViewCell {
         DispatchQueue.global().async {
             APIClient.buyProduct(user_id: UserDefault.getId() , product_id: self.product?.id ?? "" ) { (Result) in
                 switch Result {
-                case .success(let response):
+                case .success( _):
                     print("Done")
                 case .failure(let error):
                     print(error.localizedDescription)

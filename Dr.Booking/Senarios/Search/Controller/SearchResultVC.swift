@@ -11,6 +11,8 @@ import Cosmos
 import NVActivityIndicatorView
 class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
     
+    @IBOutlet weak var dropDownList: UIView!
+    @IBOutlet var listButton: [UIButton]!
     @IBOutlet weak var TableView: UITableView!{
         didSet{
             TableView.rowHeight = UITableView.automaticDimension
@@ -26,6 +28,7 @@ class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
     }
     
     func searchDoctors(SortBy:String , keyWord: String , userId: String){
+        
         if SortBy == "all" {
             APIClient.getDoctors(user_id: userId) { (Result) in
                 switch Result {
@@ -49,22 +52,41 @@ class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
                     APIClient.getSearchedDoctorsFailure(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
                         switch Result {
                         case .success( _):
-                                self.stopAnimating()
-                                self.TableView.reloadData()
-                                Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "البحث غير صحيح")
-                            case.failure(let error):
-                                self.stopAnimating()
-                                print(error.localizedDescription)
-                                Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "البحث غير صحيح")
+                            self.stopAnimating()
+                            self.TableView.reloadData()
+                            Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "البحث غير صحيح")
+                        case.failure(let error):
+                            self.stopAnimating()
+                            print(error.localizedDescription)
+                            Rounded.emptyData(TabelView: self.TableView, View: self.view, MessageText: "البحث غير صحيح")
                         }
                     }
+                }
             }
-            
-            }
-            
         }
     }
+    @IBAction func sort(_ sender: UIButton) {
+        dropDownList.isHidden = true
+        switch sender.tag {
+        case 0:
+            return searchDoctors(SortBy: "price_desc", keyWord: "", userId: UserDefault.getId())
+        case 1:
+            return searchDoctors(SortBy: "price_asc", keyWord: "", userId: UserDefault.getId())
+        case 2:
+            return searchDoctors(SortBy: "rate", keyWord: "", userId: UserDefault.getId())
+        case 3:
+            return searchDoctors(SortBy: "all", keyWord: "", userId: UserDefault.getId())
+        default:
+            return searchDoctors(SortBy: "price_asc", keyWord: "", userId: UserDefault.getId())
+        }
+        
+    }
     
+    
+    @IBAction func sortBy(_ sender: UIBarButtonItem) {
+        
+        dropDownList.isHidden = !dropDownList.isHidden
+    }
     
 }
 

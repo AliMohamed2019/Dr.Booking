@@ -1417,24 +1417,96 @@
                                     <outlet property="delegate" destination="j6o-a0-UxD" id="lDL-ai-EMI"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lL-e1-s8t" customClass="CardView" customModule="Dr_Booking" customModuleProvider="target">
+                                <rect key="frame" x="264" y="56" width="150" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2K0-Ae-zIM">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lN7-zb-ogk">
+                                                <rect key="frame" x="21.5" y="0.0" width="107" height="44"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="بالسعر تنازليا">
+                                                    <color key="titleColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sort:" destination="j6o-a0-UxD" eventType="touchUpInside" id="abh-gs-5Hn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ko-55-s9b">
+                                                <rect key="frame" x="11.5" y="52" width="127" height="44"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="بالسعر تصاعديا">
+                                                    <color key="titleColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sort:" destination="j6o-a0-UxD" eventType="touchUpInside" id="ydh-RY-2aQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvb-mu-QaM">
+                                                <rect key="frame" x="42.5" y="104" width="65" height="44"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="بالتقييم">
+                                                    <color key="titleColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sort:" destination="j6o-a0-UxD" eventType="touchUpInside" id="9Bt-kS-3mt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1T4-Xd-Jb8">
+                                                <rect key="frame" x="57" y="156" width="36" height="44"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="الكل">
+                                                    <color key="titleColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sort:" destination="j6o-a0-UxD" eventType="touchUpInside" id="ERg-5Y-Srs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2K0-Ae-zIM" firstAttribute="leading" secondItem="0lL-e1-s8t" secondAttribute="leading" id="8FU-KF-w4m"/>
+                                    <constraint firstItem="2K0-Ae-zIM" firstAttribute="top" secondItem="0lL-e1-s8t" secondAttribute="top" id="9CM-Pw-bnP"/>
+                                    <constraint firstAttribute="width" constant="150" id="mXO-SI-N7O"/>
+                                    <constraint firstAttribute="trailing" secondItem="2K0-Ae-zIM" secondAttribute="trailing" id="o0j-VH-s5f"/>
+                                    <constraint firstAttribute="height" constant="200" id="qlM-N3-zc4"/>
+                                    <constraint firstAttribute="bottom" secondItem="2K0-Ae-zIM" secondAttribute="bottom" id="t7H-H0-V76"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="x6L-2m-y8e" firstAttribute="trailing" secondItem="B2F-mj-A3V" secondAttribute="trailing" id="Q3j-Ai-y05"/>
                             <constraint firstItem="B2F-mj-A3V" firstAttribute="top" secondItem="x6L-2m-y8e" secondAttribute="top" id="RDc-vd-1OF"/>
+                            <constraint firstItem="0lL-e1-s8t" firstAttribute="top" secondItem="x6L-2m-y8e" secondAttribute="top" id="RMu-Uw-NRM"/>
                             <constraint firstItem="x6L-2m-y8e" firstAttribute="bottom" secondItem="B2F-mj-A3V" secondAttribute="bottom" id="W2K-zS-lpc"/>
                             <constraint firstItem="B2F-mj-A3V" firstAttribute="leading" secondItem="x6L-2m-y8e" secondAttribute="leading" id="Y4u-4v-SR3"/>
+                            <constraint firstItem="x6L-2m-y8e" firstAttribute="trailing" secondItem="0lL-e1-s8t" secondAttribute="trailing" id="YDb-Jc-FWC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x6L-2m-y8e"/>
                     </view>
-                    <navigationItem key="navigationItem" title="جميع الاطباء" id="g5Z-Ze-jlK"/>
+                    <navigationItem key="navigationItem" title="جميع الاطباء" id="g5Z-Ze-jlK">
+                        <barButtonItem key="rightBarButtonItem" title="تصنيف" id="jYG-4Y-i6I">
+                            <connections>
+                                <action selector="sortBy:" destination="j6o-a0-UxD" id="zW8-E4-ceh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="TableView" destination="B2F-mj-A3V" id="aob-gh-Izs"/>
+                        <outlet property="dropDownList" destination="0lL-e1-s8t" id="Mva-mZ-28h"/>
+                        <outletCollection property="listButton" destination="lN7-zb-ogk" collectionClass="NSMutableArray" id="UJt-xX-GGv"/>
+                        <outletCollection property="listButton" destination="7Ko-55-s9b" collectionClass="NSMutableArray" id="0bT-jy-a71"/>
+                        <outletCollection property="listButton" destination="rvb-mu-QaM" collectionClass="NSMutableArray" id="hVk-iu-0fY"/>
+                        <outletCollection property="listButton" destination="1T4-Xd-Jb8" collectionClass="NSMutableArray" id="9pt-Nb-Yka"/>
                         <segue destination="cW4-2L-9ZH" kind="show" identifier="GoToSearchDetails" id="EO3-pg-ZLj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJp-ZL-gnp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2326" y="2317"/>
+            <point key="canvasLocation" x="-2326.0869565217395" y="2316.9642857142858"/>
         </scene>
         <!--Doctor DetailsVC-->
         <scene sceneID="Q3t-PC-Cpp">
@@ -1772,6 +1844,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDL-n9-LTW" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="8" y="56" width="240" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="HJq-Oh-gKb"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                                 <real key="value" value="44"/>

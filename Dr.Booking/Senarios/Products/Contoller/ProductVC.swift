@@ -64,6 +64,7 @@ extension ProductVC : UITableViewDelegate , UITableViewDataSource {
         cell.productName.text = productsArray?[indexPath.row].name ?? "منتج"
         cell.productPrice.text = productsArray?[indexPath.row].price ?? "١٠٠"
         cell.productImage.sd_setImage(with: URL(string: productsArray?[indexPath.row].image ?? ""), placeholderImage: UIImage(named: "user"))
+        cell.product = productsArray?[indexPath.row]
         return cell
     }
     
