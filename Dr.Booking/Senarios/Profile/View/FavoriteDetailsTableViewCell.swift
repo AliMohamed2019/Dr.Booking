@@ -14,18 +14,18 @@ protocol CustomCellUpdater: class { // the name of the protocol you can put any
 }
 class FavoriteDetailsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var rateOfDoctor: CosmosView!
-    @IBOutlet weak var doctorImage: UIImageView! {
+    @IBOutlet weak var rateOfCar: CosmosView!
+    @IBOutlet weak var CarImage: UIImageView! {
         didSet{
-            Rounded.roundedImage(imageView: self.doctorImage)
+            Rounded.roundedImage(imageView: self.CarImage)
         }
     }
     
-    @IBOutlet weak var doctorName: UILabel!
-    @IBOutlet weak var DoctorTitle: UILabel!
-    @IBOutlet weak var doctorFees: UILabel!
-    @IBOutlet weak var doctorAddress: UILabel!
-    @IBOutlet weak var DoctorDetailsBtn: UIButton!
+    @IBOutlet weak var carName: UILabel!
+    @IBOutlet weak var carTitle: UILabel!
+    @IBOutlet weak var carFees: UILabel!
+    @IBOutlet weak var carAddress: UILabel!
+    @IBOutlet weak var carDetailsBtn: UIButton!
     @IBOutlet weak var likeBtn: UIButton!{
         didSet {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
@@ -33,24 +33,24 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
         }
     }
     weak var delegate: CustomCellUpdater?
-    var favoriteDoctor:FavoriteDoctor?
-    var doctor : Doctor?
-    var delegateDetails: DectorDetailsDelegate?
+    var favoriteCars:FavoriteCar?
+    var car : Car?
+    var delegateDetails: CarDetailsDelegate?
     
     func yourFunctionWhichDoesNotHaveASender () {
-        deleteFavoriteDoctor()
+        deleteFavoriteCar()
         delegate?.getFavoriteDoctors()
     }
     
-    func deleteFavoriteDoctor() {
+    func deleteFavoriteCar() {
         
-        APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: doctor?.id ?? ""){(Result) in
+        APIClient.deleteFavoriteCar(user_id: UserDefault.getId(), car_id: car?.id ?? ""){(Result) in
             switch Result {
             case.success(let response):
                 DispatchQueue.main.async {
                     print("aaaaaaaa")
                     print(response)
-                    self.favoriteDoctor = response
+                    self.favoriteCars = response
                     
                     //self.yourFunctionWhichDoesNotHaveASender()
                 }
@@ -70,11 +70,11 @@ class FavoriteDetailsTableViewCell: UITableViewCell {
     }
     
     @IBAction func viewOnMap(_ sender: UIButton) {
-        Maps.openMaps(lat: doctor?.latitude ?? "0", long: doctor?.longitude ?? "0", distance: 10000.0 ,name: doctor?.name ?? "")
+        Maps.openMaps(lat: car?.latitude ?? "0", long: car?.longitude ?? "0", distance: 10000.0 ,name: car?.name ?? "")
     }
     
-    @IBAction func showDoctorDetails(_ sender: UIButton) {
-        delegateDetails?.details(id: doctor!.id, doctor:  doctor!)
+    @IBAction func showDetails(_ sender: UIButton) {
+        delegateDetails?.details(id: car!.id, car:  car!)
         
     }
     

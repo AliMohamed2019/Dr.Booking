@@ -14,7 +14,7 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater  , NVA
     
     @IBOutlet weak var doctorFavoriteTableView: UITableView!
     
-    var alFavoriteDoctorArray:[Doctor]?
+    var alFavoriteDoctorArray:[Car]?
     var failure:Failure?
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater  , NVA
         
         self.alFavoriteDoctorArray?.removeAll()
         
-        APIClient.getFavoriteDoctors(user_id: UserDefault.getId()){(Result) in
+        APIClient.getFavoriteCars(user_id: UserDefault.getId()){(Result) in
             switch Result {
             case.success(let response):
                 DispatchQueue.main.async {
@@ -45,7 +45,7 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater  , NVA
                     self.stopAnimating()
                     print("bbbbbbbbb")
                     print(error.localizedDescription)
-                    APIClient.getFavoriteDoctorsfailure(user_id: UserDefault.getId()){(Result) in
+                    APIClient.getFavoriteCarsfailure(user_id: UserDefault.getId()){(Result) in
                         switch Result {
                         case.success(let response):
                             DispatchQueue.main.async {
@@ -83,33 +83,33 @@ extension FavoriteDetailsViewController: UITableViewDelegate , UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FavoriteDetailsTableViewCell
-        if let doctor = alFavoriteDoctorArray?[indexPath.row] {
-            cell.doctorImage.sd_setImage(with: URL(string: alFavoriteDoctorArray?[indexPath.row].image ?? ""),
+        if let car = alFavoriteDoctorArray?[indexPath.row] {
+            cell.CarImage.sd_setImage(with: URL(string: alFavoriteDoctorArray?[indexPath.row].image ?? ""),
                                          placeholderImage: UIImage(named: "user"))
-            cell.doctorName.text = doctor.name
-            cell.DoctorTitle.text = doctor.jobTitle
-            cell.doctorFees.text = doctor.price
-            cell.doctorAddress.text = doctor.address
-            cell.rateOfDoctor.rating = doctor.rating
+            cell.carName.text = car.name
+            cell.carTitle.text = car.jobTitle
+            cell.carFees.text = car.price
+            cell.carAddress.text = car.address
+            cell.rateOfCar.rating = car.rating
             
             cell.delegate = self
             cell.delegateDetails = self
-            cell.doctor = doctor
+            cell.car = car
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
-        vc.doctor = alFavoriteDoctorArray?[indexPath.row]
+        vc.car = alFavoriteDoctorArray?[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-extension FavoriteDetailsViewController: DectorDetailsDelegate {
-    func details(id: String, doctor: Doctor) {
+extension FavoriteDetailsViewController: CarDetailsDelegate {
+    func details(id: String, car: Car) {
         let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
-        vc.doctor = doctor
-        vc.doctorID = id
+        vc.car = car
+        vc.carID = id
         navigationController?.pushViewController(vc, animated: true)
         
     }

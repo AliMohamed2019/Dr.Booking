@@ -11,7 +11,7 @@ import Cosmos
 import NVActivityIndicatorView
 
 
-class DectorDataViewController: UIViewController , NVActivityIndicatorViewable {
+class CarDataViewController: UIViewController , NVActivityIndicatorViewable {
     //outlet
     @IBOutlet weak var doctorName: UILabel!
     @IBOutlet weak var doctorTitle: UILabel!
@@ -34,8 +34,8 @@ class DectorDataViewController: UIViewController , NVActivityIndicatorViewable {
         }
     }
     
-    var doctorID: String?
-    var doctor: DoctorV?
+    var carID: String?
+    var car: CarV?
     
     
     
@@ -49,19 +49,19 @@ class DectorDataViewController: UIViewController , NVActivityIndicatorViewable {
     
     func updateView(){
         
-        navigationItem.title =  doctor?.name
+        navigationItem.title =  car?.name
         
         
-        doctorImage.sd_setImage(with: URL(string: doctor?.image ?? ""), placeholderImage: UIImage(named: ""))
-        doctorName.text = doctor?.name
-        doctorTitle.text = doctor?.jobTitle
-        doctorDescreption.text = doctor?.doctorDescription
-        doctorRate.rating = doctor?.rating ?? 0.0
-        doctorFees.text = doctor?.price
-        doctorLocation.text = doctor?.address
-        doctorJobTitle.text = doctor?.jobTitle
+        doctorImage.sd_setImage(with: URL(string: car?.image ?? ""), placeholderImage: UIImage(named: ""))
+        doctorName.text = car?.name
+        doctorTitle.text = car?.jobTitle
+        doctorDescreption.text = car?.doctorDescription
+        doctorRate.rating = car?.rating ?? 0.0
+        doctorFees.text = car?.price
+        doctorLocation.text = car?.address
+        doctorJobTitle.text = car?.jobTitle
         
-        if doctor?.favorite == 1 {
+        if car?.favorite == 1 {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
         }
     }
@@ -70,16 +70,16 @@ class DectorDataViewController: UIViewController , NVActivityIndicatorViewable {
     
     func getDectorDate(){
          self.startAnimating()
-        if let doctorID = doctorID {
+        if let doctorID = carID {
             DispatchQueue.global().async { [weak self] in
-                APIClient.viewDoctor( doctor_id: doctorID,user_id: UserDefault.getId()) { (Result) in
+                APIClient.viewCar( car_id: doctorID,user_id: UserDefault.getId()) { (Result) in
                     switch Result {
                     case .success(let response):
                         DispatchQueue.main.async {
                             self!.stopAnimating()
                             print("success")
                             
-                            self?.doctor = response.doctor
+                            self?.car = response.doctor
                             self?.updateView()
                             
                             
@@ -102,7 +102,7 @@ class DectorDataViewController: UIViewController , NVActivityIndicatorViewable {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
             
             DispatchQueue.main.async { [weak self] in
-                APIClient.addFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctorID ?? "") { (Result) in
+                APIClient.addFavoriteCar(user_id: UserDefault.getId(), car_id: self?.carID ?? "") { (Result) in
                     switch Result {
                     case .success(let response):
                         print(response)
@@ -116,7 +116,7 @@ class DectorDataViewController: UIViewController , NVActivityIndicatorViewable {
             likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
             
             DispatchQueue.main.async { [weak self] in
-                APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctorID ?? "") { (Result) in
+                APIClient.deleteFavoriteCar(user_id: UserDefault.getId(), car_id: self?.carID ?? "") { (Result) in
                     switch Result {
                     case .success(let response):
                         print(response)
@@ -132,7 +132,7 @@ class DectorDataViewController: UIViewController , NVActivityIndicatorViewable {
     @IBAction func rateButtonPressed(_ sender: UIButton) {
         let RateVC = storyboard?.instantiateViewController(withIdentifier: "Rate") as! Rate
         RateVC.modalPresentationStyle = .overFullScreen
-        RateVC.doctorID = doctorID ?? ""
+        RateVC.carID = carID ?? ""
         present(RateVC, animated: true, completion: nil)
     }
     

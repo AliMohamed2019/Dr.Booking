@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -265,14 +265,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ابحث الان عن الطبيب المناسب " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMJ-hj-iRK">
-                                <rect key="frame" x="91" y="410.5" width="232.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ابحث الان عن السيارة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMJ-hj-iRK">
+                                <rect key="frame" x="128" y="410" width="158" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dl-DL-7S1" userLabel="logo">
-                                <rect key="frame" x="0.0" y="56" width="414" height="354.5"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="354"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="booking" translatesAutoresizingMaskIntoConstraints="NO" id="1R5-Hm-q16">
                                         <rect key="frame" x="91.5" y="152.5" width="231.5" height="49.5"/>
@@ -285,9 +285,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spT-gU-bdC">
-                                <rect key="frame" x="0.0" y="431.5" width="414" height="410.5"/>
+                                <rect key="frame" x="0.0" y="432" width="414" height="410"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يتم الفصل بين الاعراض ب , مثال(بوتكس,جراحة عيون,شفط دهون)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryb-kQ-9Lq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يتم الفصل بين كلمات البحث ب , مثال(مرسيدس , المدينة , أحمر)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryb-kQ-9Lq">
                                         <rect key="frame" x="20" y="115" width="374" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -314,7 +314,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7b-gi-u46" customClass="CardView" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="20" y="39" width="374" height="50"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ما هى اعراض مرضك ؟" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TI0-Nr-5or">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ابحث عن ؟" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TI0-Nr-5or">
                                                 <rect key="frame" x="78" y="0.0" width="288" height="50"/>
                                                 <color key="tintColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -847,10 +847,10 @@
             </objects>
             <point key="canvasLocation" x="-1594" y="3112"/>
         </scene>
-        <!--Dector Data View Controller-->
+        <!--Car Data View Controller-->
         <scene sceneID="713-RB-DQ6">
             <objects>
-                <viewController storyboardIdentifier="DectorDataViewController" id="ZKT-Q8-T99" customClass="DectorDataViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DectorDataViewController" id="ZKT-Q8-T99" customClass="CarDataViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D3a-ix-8iA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1237,13 +1237,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="DoctorTitle" destination="au9-eh-7fx" id="sJ4-Nc-LoC"/>
-                                            <outlet property="doctorAddress" destination="Sjp-FZ-NwI" id="vbA-Ua-FBl"/>
-                                            <outlet property="doctorDate" destination="RPl-Zg-ge8" id="kaS-S3-fJQ"/>
-                                            <outlet property="doctorFees" destination="I7q-8E-xZe" id="GtZ-ss-LcW"/>
-                                            <outlet property="doctorImage" destination="dkB-Kn-DLY" id="FXZ-LE-rjc"/>
-                                            <outlet property="doctorName" destination="gEK-Rw-01l" id="Jqh-Wc-MnM"/>
-                                            <outlet property="rateOfDoctor" destination="u9M-Ci-XxC" id="DkP-0f-IuE"/>
+                                            <outlet property="carAddress" destination="Sjp-FZ-NwI" id="vbA-Ua-FBl"/>
+                                            <outlet property="carDate" destination="RPl-Zg-ge8" id="kaS-S3-fJQ"/>
+                                            <outlet property="carFees" destination="I7q-8E-xZe" id="GtZ-ss-LcW"/>
+                                            <outlet property="carImage" destination="dkB-Kn-DLY" id="FXZ-LE-rjc"/>
+                                            <outlet property="carName" destination="gEK-Rw-01l" id="Jqh-Wc-MnM"/>
+                                            <outlet property="carTitle" destination="au9-eh-7fx" id="sJ4-Nc-LoC"/>
+                                            <outlet property="rateOfAdd" destination="u9M-Ci-XxC" id="DkP-0f-IuE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1480,16 +1480,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="5cq-N7-CAF">
-                                                    <rect key="frame" x="196" y="11" width="110" height="40"/>
+                                                    <rect key="frame" x="58" y="11" width="248" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="د. خالد النبوي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycO-1O-Pzb">
-                                                            <rect key="frame" x="9" y="0.0" width="101" height="21.5"/>
+                                                            <rect key="frame" x="147" y="0.0" width="101" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPT-ka-AH0" customClass="CosmosView" customModule="Cosmos">
-                                                            <rect key="frame" x="0.0" y="21.5" width="110" height="18.5"/>
+                                                            <rect key="frame" x="138" y="21.5" width="110" height="18.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="rating">
@@ -1555,7 +1555,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="showDoctorDetails:" destination="dfC-EN-gKQ" eventType="touchUpInside" id="15p-KN-kE6"/>
+                                                        <action selector="showDetails:" destination="dfC-EN-gKQ" eventType="touchUpInside" id="15p-KN-kE6"/>
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xf2-ur-zYq">
@@ -1564,7 +1564,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-j1-6sc">
                                                             <rect key="frame" x="0.0" y="2" width="261.5" height="91.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="استشاري جراحة تجميل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsh-2O-JHo">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوع السيارة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsh-2O-JHo">
                                                                     <rect key="frame" x="0.0" y="0.0" width="261.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1587,7 +1587,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bmb-dk-5sE">
                                                             <rect key="frame" x="281.5" y="0.0" width="25" height="95"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="yrZ-tk-577">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="yrZ-tk-577">
                                                                     <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
@@ -1614,6 +1614,7 @@
                                                 <constraint firstItem="KA5-Gt-Qui" firstAttribute="centerX" secondItem="gLI-aM-KE1" secondAttribute="centerX" id="Tfr-au-ClQ"/>
                                                 <constraint firstItem="wAi-1c-M5r" firstAttribute="trailing" secondItem="gLI-aM-KE1" secondAttribute="trailingMargin" id="Uv0-9Z-dv2"/>
                                                 <constraint firstItem="Arh-8N-XgW" firstAttribute="leading" secondItem="gLI-aM-KE1" secondAttribute="leading" constant="7" id="WGW-VG-evX"/>
+                                                <constraint firstItem="5cq-N7-CAF" firstAttribute="leading" secondItem="cIk-Ew-8gf" secondAttribute="trailing" constant="10" id="WO2-25-SiK"/>
                                                 <constraint firstItem="cIk-Ew-8gf" firstAttribute="leading" secondItem="gLI-aM-KE1" secondAttribute="leading" constant="13" id="brF-z9-AFm"/>
                                                 <constraint firstItem="5cq-N7-CAF" firstAttribute="top" secondItem="gLI-aM-KE1" secondAttribute="topMargin" id="dhy-es-NNJ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Xf2-ur-zYq" secondAttribute="trailing" constant="0.5" id="mZa-kp-dZF"/>
@@ -1625,12 +1626,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="DoctorDetailsBtn" destination="KA5-Gt-Qui" id="uNf-df-EAr"/>
-                                            <outlet property="DoctorTitle" destination="Nsh-2O-JHo" id="U5T-ih-F15"/>
-                                            <outlet property="doctorAddress" destination="asC-1Y-coW" id="jqG-Qw-FBj"/>
-                                            <outlet property="doctorFees" destination="6UV-JI-Zvh" id="rAY-p0-NC7"/>
-                                            <outlet property="doctorImage" destination="wAi-1c-M5r" id="9u9-Vo-MHQ"/>
-                                            <outlet property="doctorName" destination="ycO-1O-Pzb" id="Az5-WM-r0d"/>
+                                            <outlet property="CarImage" destination="wAi-1c-M5r" id="9u9-Vo-MHQ"/>
+                                            <outlet property="DetailsBtn" destination="KA5-Gt-Qui" id="uNf-df-EAr"/>
+                                            <outlet property="addFees" destination="6UV-JI-Zvh" id="rAY-p0-NC7"/>
+                                            <outlet property="addName" destination="ycO-1O-Pzb" id="Az5-WM-r0d"/>
+                                            <outlet property="addTitle" destination="Nsh-2O-JHo" id="U5T-ih-F15"/>
+                                            <outlet property="carAddress" destination="asC-1Y-coW" id="jqG-Qw-FBj"/>
                                             <outlet property="likeBtn" destination="cIk-Ew-8gf" id="Xib-Mz-JaM"/>
                                             <outlet property="rateView" destination="XPT-ka-AH0" id="IMc-Nl-reS"/>
                                         </connections>
@@ -1891,8 +1892,9 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5J7-ED-bHD">
                                                         <rect key="frame" x="324" y="0.0" width="30" height="130"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor2" translatesAutoresizingMaskIntoConstraints="NO" id="zg9-AQ-cWw">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car 2" translatesAutoresizingMaskIntoConstraints="NO" id="zg9-AQ-cWw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="3To-yS-cUb"/>
                                                                     <constraint firstAttribute="height" constant="30" id="my7-QQ-00Q"/>
@@ -1949,14 +1951,14 @@
                     <navigationItem key="navigationItem" id="8rB-Uj-og4"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="doctorDescreption" destination="CC8-Qy-1Ig" id="AE5-jp-qxo"/>
-                        <outlet property="doctorFees" destination="Yiw-u6-dc3" id="OL5-vq-QX3"/>
-                        <outlet property="doctorImage" destination="dIb-rI-am3" id="eft-et-Wxi"/>
-                        <outlet property="doctorJobTitle" destination="DS7-Kr-90U" id="uoM-K5-nK9"/>
-                        <outlet property="doctorLocation" destination="kGx-zm-ob6" id="LuG-R5-Dz1"/>
-                        <outlet property="doctorName" destination="kDM-46-3oX" id="vKz-F4-imS"/>
-                        <outlet property="doctorRate" destination="DlA-FD-w3J" id="eMY-ei-bBW"/>
-                        <outlet property="doctorTitle" destination="F7Q-Al-eGO" id="9qu-qF-syt"/>
+                        <outlet property="Descreption" destination="CC8-Qy-1Ig" id="AE5-jp-qxo"/>
+                        <outlet property="addFees" destination="Yiw-u6-dc3" id="OL5-vq-QX3"/>
+                        <outlet property="addName" destination="kDM-46-3oX" id="vKz-F4-imS"/>
+                        <outlet property="addRate" destination="DlA-FD-w3J" id="eMY-ei-bBW"/>
+                        <outlet property="addTitle" destination="F7Q-Al-eGO" id="9qu-qF-syt"/>
+                        <outlet property="carImage" destination="dIb-rI-am3" id="eft-et-Wxi"/>
+                        <outlet property="carLocation" destination="kGx-zm-ob6" id="LuG-R5-Dz1"/>
+                        <outlet property="carModel" destination="DS7-Kr-90U" id="uoM-K5-nK9"/>
                         <outlet property="hieghtConstraint" destination="LzW-bD-r4f" id="qIs-Mi-haF"/>
                         <outlet property="likeBtn" destination="V32-6O-k7u" id="djy-Lx-Mw4"/>
                         <outlet property="reservationCollectionView" destination="fFq-OL-Y02" id="Xyq-fN-KjG"/>
@@ -2112,16 +2114,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="2ZO-5Q-Gwc">
-                                                    <rect key="frame" x="196" y="11" width="110" height="40"/>
+                                                    <rect key="frame" x="58" y="11" width="248" height="40"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="د. خالد النبوي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzq-hJ-zbj">
-                                                            <rect key="frame" x="9" y="0.0" width="101" height="21.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم الاعلان" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzq-hJ-zbj">
+                                                            <rect key="frame" x="168" y="0.0" width="80" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XL3-BH-uPY" customClass="CosmosView" customModule="Cosmos">
-                                                            <rect key="frame" x="0.0" y="21.5" width="110" height="18.5"/>
+                                                            <rect key="frame" x="138" y="21.5" width="110" height="18.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="rating">
@@ -2179,7 +2181,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vob-Zv-jdu">
                                                     <rect key="frame" x="143.5" y="245" width="127" height="40"/>
-                                                    <color key="backgroundColor" red="0.52165889740000004" green="0.80826306339999998" blue="0.2478611171" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.52156862745098043" green="0.80784313725490198" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127" id="Yuw-Aq-PQG"/>
                                                         <constraint firstAttribute="height" constant="40" id="gxG-0E-Nji"/>
@@ -2188,7 +2190,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="showDoctorDetails:" destination="tuD-e6-iX5" eventType="touchUpInside" id="afe-fJ-pLf"/>
+                                                        <action selector="showDetails:" destination="tuD-e6-iX5" eventType="touchUpInside" id="afe-fJ-pLf"/>
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-0P-j94">
@@ -2197,7 +2199,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EDA-17-1yZ">
                                                             <rect key="frame" x="0.0" y="7.5" width="261.5" height="91.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="استشاري جراحة تجميل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-mD-sLV">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوع السيارة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-mD-sLV">
                                                                     <rect key="frame" x="0.0" y="0.0" width="261.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2220,7 +2222,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bgj-YZ-DX6">
                                                             <rect key="frame" x="281.5" y="5.5" width="25" height="95"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="9IV-p4-iEm">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="9IV-p4-iEm">
                                                                     <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
@@ -2248,6 +2250,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="dcn-0P-j94" secondAttribute="trailing" constant="0.5" id="BY6-ls-R01"/>
                                                 <constraint firstItem="Vob-Zv-jdu" firstAttribute="top" secondItem="dcn-0P-j94" secondAttribute="bottom" constant="40" id="Ch5-Gv-fZ1"/>
                                                 <constraint firstAttribute="bottom" secondItem="lbq-fW-WaL" secondAttribute="bottom" constant="82" id="HqO-gw-5LM"/>
+                                                <constraint firstItem="2ZO-5Q-Gwc" firstAttribute="leading" secondItem="BLO-zD-uXY" secondAttribute="trailing" constant="10" id="LFh-zL-O27"/>
                                                 <constraint firstItem="Vob-Zv-jdu" firstAttribute="bottom" secondItem="hAD-sz-abh" secondAttribute="bottomMargin" id="MvM-7f-Z2F"/>
                                                 <constraint firstItem="BLO-zD-uXY" firstAttribute="leading" secondItem="hAD-sz-abh" secondAttribute="leading" constant="13" id="PbX-ns-Dph"/>
                                                 <constraint firstItem="dcn-0P-j94" firstAttribute="leading" secondItem="lbq-fW-WaL" secondAttribute="trailing" constant="8" id="QIL-cM-bai"/>
@@ -2258,14 +2261,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="DoctorDetailsBtn" destination="Vob-Zv-jdu" id="DrN-ta-WYl"/>
-                                            <outlet property="DoctorTitle" destination="PLq-mD-sLV" id="7sw-dz-c4w"/>
-                                            <outlet property="doctorAddress" destination="Oqo-GX-2Nk" id="JHN-3K-QRi"/>
-                                            <outlet property="doctorFees" destination="rQZ-ab-6fN" id="8Ya-dR-Zy2"/>
-                                            <outlet property="doctorImage" destination="wAi-aK-fhp" id="VM1-3Q-0go"/>
-                                            <outlet property="doctorName" destination="Mzq-hJ-zbj" id="ofj-6u-3KZ"/>
+                                            <outlet property="CarImage" destination="wAi-aK-fhp" id="VM1-3Q-0go"/>
+                                            <outlet property="carAddress" destination="Oqo-GX-2Nk" id="JHN-3K-QRi"/>
+                                            <outlet property="carDetailsBtn" destination="Vob-Zv-jdu" id="DrN-ta-WYl"/>
+                                            <outlet property="carFees" destination="rQZ-ab-6fN" id="8Ya-dR-Zy2"/>
+                                            <outlet property="carName" destination="Mzq-hJ-zbj" id="ofj-6u-3KZ"/>
+                                            <outlet property="carTitle" destination="PLq-mD-sLV" id="7sw-dz-c4w"/>
                                             <outlet property="likeBtn" destination="BLO-zD-uXY" id="FVw-Md-up1"/>
-                                            <outlet property="rateOfDoctor" destination="XL3-BH-uPY" id="PLE-F0-3gd"/>
+                                            <outlet property="rateOfCar" destination="XL3-BH-uPY" id="PLE-F0-3gd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2290,7 +2293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2R-ZR-D43" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-799" y="2359"/>
+            <point key="canvasLocation" x="-800.00000000000011" y="2358.4821428571427"/>
         </scene>
         <!--منتجاتي-->
         <scene sceneID="HG4-bB-B7B">
@@ -2707,6 +2710,8 @@
     <resources>
         <image name="barcode.viewfinder" catalog="system" width="64" height="56"/>
         <image name="booking" width="231.5" height="49.5"/>
+        <image name="car" width="64" height="64"/>
+        <image name="car 2" width="64" height="64"/>
         <image name="clock" width="64" height="64"/>
         <image name="doctor" width="64" height="64"/>
         <image name="doctor-placeholder" width="91" height="67.5"/>

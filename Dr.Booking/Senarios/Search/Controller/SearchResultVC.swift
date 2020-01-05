@@ -19,7 +19,7 @@ class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
         }
     }
     
-    var doctorsArray: [Doctor]?
+    var CarsArray: [Car]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +27,14 @@ class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
         self.startAnimating()
     }
     
-    func searchDoctors(SortBy:String , keyWord: String , userId: String){
+    func searchCars(SortBy:String , keyWord: String , userId: String){
         
         if SortBy == "all" {
-            APIClient.getDoctors(user_id: userId) { (Result) in
+            APIClient.getCars(user_id: userId) { (Result) in
                 switch Result {
                 case .success(let response):
                     self.stopAnimating()
-                    self.doctorsArray = response.doctors
+                    self.CarsArray = response.doctors
                     self.TableView.reloadData()
                 case .failure(let error):
                     self.startAnimating()
@@ -42,14 +42,14 @@ class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
                 }
             }
         } else {
-            APIClient.getSearchedDoctors(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
+            APIClient.getSearchedCars(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
                 switch Result {
                 case .success( _):
                     self.stopAnimating()
                 case.failure(let error):
                     self.stopAnimating()
                     print(error.localizedDescription)
-                    APIClient.getSearchedDoctorsFailure(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
+                    APIClient.getSearchedCarsFailure(search_words: keyWord, order_by: SortBy, user_id: userId) { (Result) in
                         switch Result {
                         case .success( _):
                             self.stopAnimating()
@@ -74,22 +74,22 @@ class SearchResultVC: UIViewController , NVActivityIndicatorViewable {
 
 extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return doctorsArray?.count ?? 0
+        return CarsArray?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchResultTableViewCell
-        if let doctor = doctorsArray?[indexPath.row] {
-            cell.doctorName.text = doctor.name
-            cell.doctorFees.text = doctor.price
-            cell.DoctorTitle.text = doctor.jobTitle
-            cell.doctorAddress.text = doctor.address
-            cell.rateView.rating = doctor.rating
+        if let car = CarsArray?[indexPath.row] {
+            cell.addName.text = car.name
+            cell.addFees.text = car.price
+            cell.addTitle.text = car.jobTitle
+            cell.carAddress.text = car.address
+            cell.rateView.rating = car.rating
             
-            cell.doctorImage.sd_setImage(with: URL(string: doctor.image), placeholderImage: UIImage(named: "user"))
-            cell.doctor = doctor
+            cell.CarImage.sd_setImage(with: URL(string: car.image), placeholderImage: UIImage(named: "user"))
+            cell.car = car
             cell.delegate = self
-            if doctor.favorite == 1 {
+            if car.favorite == 1 {
                 cell.likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
             }
         }
@@ -98,18 +98,18 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
-        vc.doctor = doctorsArray?[indexPath.row]
-        vc.doctorID = doctorsArray?[indexPath.row].id
+        vc.car = CarsArray?[indexPath.row]
+        vc.carID = CarsArray?[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
     }
     
 }
 
-extension SearchResultVC: DectorDetailsDelegate {
-    func details(id: String, doctor: Doctor) {
+extension SearchResultVC: CarDetailsDelegate {
+    func details(id: String, car: Car) {
         let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
-        vc.doctor = doctor
-        vc.doctorID = id
+        vc.car = car
+        vc.carID = id
         navigationController?.pushViewController(vc, animated: true)
         
     }

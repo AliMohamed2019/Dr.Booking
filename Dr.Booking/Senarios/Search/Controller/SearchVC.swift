@@ -48,7 +48,7 @@ class SearchVC: UIViewController , UITextFieldDelegate{
         if segue.identifier == "GoToSearch" {
             let vc = segue.destination as! SearchResultVC
             vc.modalPresentationStyle = .fullScreen
-            vc.searchDoctors(SortBy: sortBy ?? "all", keyWord: searchTv.text ?? "", userId: UserDefault.getId())
+            vc.searchCars(SortBy: sortBy ?? "all", keyWord: searchTv.text ?? "", userId: UserDefault.getId())
         }
     }
 }

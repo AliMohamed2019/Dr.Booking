@@ -13,7 +13,7 @@ struct UserReservation: Codable {
 
 // MARK: - Reservation
 struct Reservation: Codable {
-    let id, doctorID, doctor: String
+    let id, carID, car: String
     let image: String
     let price, jobTitle, longitude, latitude: String
     let rate: Double
@@ -21,8 +21,8 @@ struct Reservation: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id
-        case doctorID = "doctor_id"
-        case doctor, image, price
+        case carID = "doctor_id"
+        case car, image, price
         case jobTitle = "job_title"
         case longitude, latitude, rate, date, timeFrom, timeTo, place
     }

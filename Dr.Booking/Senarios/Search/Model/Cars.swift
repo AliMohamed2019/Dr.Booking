@@ -6,9 +6,9 @@
 import Foundation
 
 // MARK: - Doctors
-struct Doctors: Codable {
+struct Cars: Codable {
     let status: Int
-    let doctors: [Doctor]
+    let doctors: [Car]
 }
 
 

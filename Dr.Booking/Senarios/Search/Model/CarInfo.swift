@@ -6,10 +6,10 @@
 import Foundation
 
 // MARK: - DoctorInfo
-struct DoctorInfo: Codable {
+struct CarInfo: Codable {
     let status: Int
     let dates: [ReserveDate]
-    let doctor: Doctor
+    let doctor: Car
 }
 
 // MARK: - DateElement
@@ -33,7 +33,7 @@ struct ReserveDate: Codable {
 }
 
 // MARK: - Doctor
-struct Doctor: Codable {
+struct Car: Codable {
     let favorite: Int
     let id, name, address: String
     let image: String

@@ -10,18 +10,18 @@ import UIKit
 import Cosmos
 class DoctorDetailsVC: UIViewController {
     
-    @IBOutlet weak var doctorName: UILabel!
-    @IBOutlet weak var doctorTitle: UILabel!
-    @IBOutlet weak var doctorDescreption: UILabel!
-    @IBOutlet weak var doctorRate: CosmosView!
-    @IBOutlet weak var doctorLocation: UILabel!
-    @IBOutlet weak var doctorFees: UILabel!
-    @IBOutlet weak var doctorJobTitle: UILabel!
+    @IBOutlet weak var addName: UILabel!
+    @IBOutlet weak var addTitle: UILabel!
+    @IBOutlet weak var Descreption: UILabel!
+    @IBOutlet weak var addRate: CosmosView!
+    @IBOutlet weak var carLocation: UILabel!
+    @IBOutlet weak var addFees: UILabel!
+    @IBOutlet weak var carModel: UILabel!
     @IBOutlet weak var reservationCollectionView: UICollectionView!
-    @IBOutlet weak var doctorImage: UIImageView!{
+    @IBOutlet weak var carImage: UIImageView!{
         didSet{
-            doctorImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "user123"))
-            Rounded.roundedImage(imageView: doctorImage)
+            carImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "user123"))
+            Rounded.roundedImage(imageView: carImage)
         }
     }
     
@@ -33,9 +33,9 @@ class DoctorDetailsVC: UIViewController {
     }
     @IBOutlet weak var hieghtConstraint: NSLayoutConstraint!
     
-    var doctor: Doctor?
+    var car: Car?
     var userID: String?
-    var doctorID: String?
+    var carID: String?
     var reservDates: [ReserveDate]?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,36 +46,36 @@ class DoctorDetailsVC: UIViewController {
     
     func updateView(){
         
-        navigationItem.title =  doctor?.name
+        navigationItem.title =  car?.name
         
         if reservationCollectionView.numberOfItems(inSection: 0) == 0 {
             hieghtConstraint.constant = 0
         }
         
-        doctorImage.sd_setImage(with: URL(string: doctor?.image ?? ""), placeholderImage: UIImage(named: ""))
-        doctorName.text = doctor?.name
-        doctorTitle.text = doctor?.jobTitle
-        doctorDescreption.text = doctor?.doctorDescription
-        doctorRate.rating = doctor?.rating ?? 0.0
-        doctorFees.text = doctor?.price
-        doctorLocation.text = doctor?.address
-        doctorJobTitle.text = doctor?.jobTitle
+        carImage.sd_setImage(with: URL(string: car?.image ?? ""), placeholderImage: UIImage(named: ""))
+        addName.text = car?.name
+        addTitle.text = car?.jobTitle
+        Descreption.text = car?.doctorDescription
+        addRate.rating = car?.rating ?? 0.0
+        addFees.text = car?.price
+        carLocation.text = car?.address
+        carModel.text = car?.jobTitle
         
-        if doctor?.favorite == 1 {
+        if car?.favorite == 1 {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
         }
     }
     
     func getReservations(){
-        if let doctorID = doctorID {
+        if let carId = carID {
             DispatchQueue.global().async { [weak self] in
-                APIClient.getReservation( doctor_id: doctorID,user_id: UserDefault.getId()) { (Result) in
+                APIClient.getReservation( car_id: carId,user_id: UserDefault.getId()) { (Result) in
                     switch Result {
                     case .success(let response):
                         DispatchQueue.main.async {
                             print("success")
                             self?.reservDates = response.dates
-                            self?.doctor = response.doctor
+                            self?.car = response.doctor
                             
                             self?.reservationCollectionView.reloadData()
                             self?.updateView()
@@ -99,7 +99,7 @@ class DoctorDetailsVC: UIViewController {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
             
             DispatchQueue.main.async { [weak self] in
-                APIClient.addFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctor?.id ?? "") { (Result) in
+                APIClient.addFavoriteCar(user_id: UserDefault.getId(), car_id: self?.car?.id ?? "") { (Result) in
                     switch Result {
                     case .success(let response):
                         print(response)
@@ -113,7 +113,7 @@ class DoctorDetailsVC: UIViewController {
             likeBtn.setBackgroundImage(UIImage(named: "heart"), for: .normal)
             
             DispatchQueue.main.async { [weak self] in
-                APIClient.deleteFavoriteDoctor(user_id: UserDefault.getId(), doctor_id: self?.doctor?.id ?? "") { (Result) in
+                APIClient.deleteFavoriteCar(user_id: UserDefault.getId(), car_id: self?.car?.id ?? "") { (Result) in
                     switch Result {
                     case .success(let response):
                         print(response)
@@ -129,7 +129,7 @@ class DoctorDetailsVC: UIViewController {
     @IBAction func rateButtonPressed(_ sender: UIButton) {
         let RateVC = storyboard?.instantiateViewController(withIdentifier: "Rate") as! Rate
         RateVC.modalPresentationStyle = .overFullScreen
-        RateVC.doctorID = doctor?.id ?? ""
+        RateVC.carID = car?.id ?? ""
         present(RateVC, animated: true, completion: nil)
     }
     

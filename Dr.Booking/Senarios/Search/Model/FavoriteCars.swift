@@ -6,7 +6,7 @@
 import Foundation
 
 // MARK: - FavoriteDoctor
-struct FavoriteDoctor: Codable {
+struct FavoriteCar: Codable {
     let status: Int
     let message: String
 }

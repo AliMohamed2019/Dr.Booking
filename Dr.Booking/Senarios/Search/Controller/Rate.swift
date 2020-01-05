@@ -23,7 +23,7 @@ class Rate: UIViewController {
     }
     @IBOutlet weak var rateStars: CosmosView!
     
-    var doctorID = ""
+    var carID = ""
     
     
     override func viewDidLoad() {
@@ -51,7 +51,7 @@ class Rate: UIViewController {
     
     @IBAction func rateButtonPressed(_ sender: UIButton) {
         
-        APIClient.rateDoctor(user_id: UserDefault.getId(), doctor_id: doctorID, rate: rateStars.rating) { (Result) in
+        APIClient.rateCar(user_id: UserDefault.getId(), car_id: carID, rate: rateStars.rating) { (Result) in
             switch Result {
             case .success(let response):
                 print(response)

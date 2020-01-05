@@ -11,8 +11,8 @@
 		3B046B99237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B98237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift */; };
 		3B046B9B237D6BDF0032C7D1 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */; };
 		3B046B9D237D6C170032C7D1 /* ProductDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B9C237D6C170032C7D1 /* ProductDetailsTableViewCell.swift */; };
-		3B0BA497239E769C0043D9FE /* DectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BA496239E769C0043D9FE /* DectorView.swift */; };
-		3B0BA499239E8ABA0043D9FE /* DectorDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BA498239E8ABA0043D9FE /* DectorDataViewController.swift */; };
+		3B0BA497239E769C0043D9FE /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BA496239E769C0043D9FE /* AddView.swift */; };
+		3B0BA499239E8ABA0043D9FE /* CarDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BA498239E8ABA0043D9FE /* CarDataViewController.swift */; };
 		3B119CDC23782DC700FC4FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */; };
 		3B119CDE23782DC700FC4FC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */; };
 		3B119CE023782DC700FC4FC2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDF23782DC700FC4FC2 /* LogInViewController.swift */; };
@@ -24,7 +24,7 @@
 		3B24D157237BFAAA008D3605 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D154237BFAAA008D3605 /* Constants.swift */; };
 		3B24D15A237BFC0F008D3605 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D159237BFC0F008D3605 /* Login.swift */; };
 		3B24D15E237BFC53008D3605 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D15C237BFC52008D3605 /* Register.swift */; };
-		3B24D163237BFCEE008D3605 /* FavoriteDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */; };
+		3B24D163237BFCEE008D3605 /* FavoriteCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D161237BFCED008D3605 /* FavoriteCars.swift */; };
 		3B24D168237C0119008D3605 /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D167237C0119008D3605 /* Failure.swift */; };
 		3B24D16A237C2C9C008D3605 /* ForgetPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D169237C2C9C008D3605 /* ForgetPass.swift */; };
 		3B24D16D237C34C4008D3605 /* UpdatePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D16C237C34C4008D3605 /* UpdatePassword.swift */; };
@@ -41,9 +41,9 @@
 		816E23AF23828C23002ADB7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 816E23AE23828C23002ADB7C /* GoogleService-Info.plist */; };
 		818283AC237C4DCF00C10EFD /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818283AB237C4DCF00C10EFD /* ProductDetails.swift */; };
 		81970DEE23795AA5001CD992 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81970DED23795AA5001CD992 /* ProfileVC.swift */; };
-		81B61519237D6A8500C2E6B3 /* Doctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61518237D6A8500C2E6B3 /* Doctors.swift */; };
+		81B61519237D6A8500C2E6B3 /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61518237D6A8500C2E6B3 /* Cars.swift */; };
 		81BFDAB82381442D00025ACF /* ReservationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFDAB72381442D00025ACF /* ReservationCollectionViewCell.swift */; };
-		81BFDABA23815C5900025ACF /* DoctorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFDAB923815C5900025ACF /* DoctorInfo.swift */; };
+		81BFDABA23815C5900025ACF /* CarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFDAB923815C5900025ACF /* CarInfo.swift */; };
 		81DEBC5E237AAB1E0096CF47 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBC5D237AAB1E0096CF47 /* ProfileTableViewCell.swift */; };
 		81DEBC60237AABB20096CF47 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBC5F237AABB20096CF47 /* EditProfileVC.swift */; };
 		81DEBC62237AB9A70096CF47 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBC61237AB9A70096CF47 /* ForgotPasswordVC.swift */; };
@@ -67,8 +67,8 @@
 		3B046B98237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		3B046B9C237D6C170032C7D1 /* ProductDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsTableViewCell.swift; sourceTree = "<group>"; };
-		3B0BA496239E769C0043D9FE /* DectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DectorView.swift; sourceTree = "<group>"; };
-		3B0BA498239E8ABA0043D9FE /* DectorDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DectorDataViewController.swift; sourceTree = "<group>"; };
+		3B0BA496239E769C0043D9FE /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		3B0BA498239E8ABA0043D9FE /* CarDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataViewController.swift; sourceTree = "<group>"; };
 		3B119CD823782DC700FC4FC2 /* Dr.Booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dr.Booking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		3B24D154237BFAAA008D3605 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3B24D159237BFC0F008D3605 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		3B24D15C237BFC52008D3605 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
-		3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteDoctor.swift; sourceTree = "<group>"; };
+		3B24D161237BFCED008D3605 /* FavoriteCars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCars.swift; sourceTree = "<group>"; };
 		3B24D167237C0119008D3605 /* Failure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
 		3B24D169237C2C9C008D3605 /* ForgetPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPass.swift; sourceTree = "<group>"; };
 		3B24D16C237C34C4008D3605 /* UpdatePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePassword.swift; sourceTree = "<group>"; };
@@ -100,9 +100,9 @@
 		816E23AE23828C23002ADB7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		818283AB237C4DCF00C10EFD /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		81970DED23795AA5001CD992 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		81B61518237D6A8500C2E6B3 /* Doctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctors.swift; sourceTree = "<group>"; };
+		81B61518237D6A8500C2E6B3 /* Cars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cars.swift; sourceTree = "<group>"; };
 		81BFDAB72381442D00025ACF /* ReservationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCollectionViewCell.swift; sourceTree = "<group>"; };
-		81BFDAB923815C5900025ACF /* DoctorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInfo.swift; sourceTree = "<group>"; };
+		81BFDAB923815C5900025ACF /* CarInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfo.swift; sourceTree = "<group>"; };
 		81DEBC5D237AAB1E0096CF47 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		81DEBC5F237AABB20096CF47 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		81DEBC61237AB9A70096CF47 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
@@ -202,9 +202,9 @@
 		3B24D160237BFCC5008D3605 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */,
-				81B61518237D6A8500C2E6B3 /* Doctors.swift */,
-				81BFDAB923815C5900025ACF /* DoctorInfo.swift */,
+				3B24D161237BFCED008D3605 /* FavoriteCars.swift */,
+				81B61518237D6A8500C2E6B3 /* Cars.swift */,
+				81BFDAB923815C5900025ACF /* CarInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,7 +215,7 @@
 				3B24D16C237C34C4008D3605 /* UpdatePassword.swift */,
 				3B24D170237C49A1008D3605 /* EditProfile.swift */,
 				3B3B326E23815CD700B8D0C1 /* UserReservation.swift */,
-				3B0BA496239E769C0043D9FE /* DectorView.swift */,
+				3B0BA496239E769C0043D9FE /* AddView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 				3B046B96237D67250032C7D1 /* FavoriteDetailsViewController.swift */,
 				3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */,
 				3B3B327023815ED100B8D0C1 /* ReservationsViewController.swift */,
-				3B0BA498239E8ABA0043D9FE /* DectorDataViewController.swift */,
+				3B0BA498239E8ABA0043D9FE /* CarDataViewController.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -516,7 +516,7 @@
 				81DEBC6D237AC55A0096CF47 /* SearchResultVC.swift in Sources */,
 				3B3B326F23815CD700B8D0C1 /* UserReservation.swift in Sources */,
 				3B24D16A237C2C9C008D3605 /* ForgetPass.swift in Sources */,
-				3B0BA499239E8ABA0043D9FE /* DectorDataViewController.swift in Sources */,
+				3B0BA499239E8ABA0043D9FE /* CarDataViewController.swift in Sources */,
 				3B24D171237C49A1008D3605 /* EditProfile.swift in Sources */,
 				3B119CE023782DC700FC4FC2 /* LogInViewController.swift in Sources */,
 				3B3B327323815F2900B8D0C1 /* ReservationDetailsTableViewCell.swift in Sources */,
@@ -530,7 +530,7 @@
 				3B24D155237BFAAA008D3605 /* APIClient.swift in Sources */,
 				81DEBC72237ADC330096CF47 /* DoctorDetailsVC.swift in Sources */,
 				813FFBE12379A019004897AE /* RegesterVC.swift in Sources */,
-				81BFDABA23815C5900025ACF /* DoctorInfo.swift in Sources */,
+				81BFDABA23815C5900025ACF /* CarInfo.swift in Sources */,
 				3B24D16D237C34C4008D3605 /* UpdatePassword.swift in Sources */,
 				81DEBC5E237AAB1E0096CF47 /* ProfileTableViewCell.swift in Sources */,
 				3B24D168237C0119008D3605 /* Failure.swift in Sources */,
@@ -546,12 +546,12 @@
 				3B119CDE23782DC700FC4FC2 /* SceneDelegate.swift in Sources */,
 				816E23AB2381888E002ADB7C /* Maps.swift in Sources */,
 				3B3B327123815ED100B8D0C1 /* ReservationsViewController.swift in Sources */,
-				81B61519237D6A8500C2E6B3 /* Doctors.swift in Sources */,
+				81B61519237D6A8500C2E6B3 /* Cars.swift in Sources */,
 				81DEBC78237AEF8D0096CF47 /* ChangePasswordVC.swift in Sources */,
 				81DEBC62237AB9A70096CF47 /* ForgotPasswordVC.swift in Sources */,
-				3B24D163237BFCEE008D3605 /* FavoriteDoctor.swift in Sources */,
+				3B24D163237BFCEE008D3605 /* FavoriteCars.swift in Sources */,
 				81DEBC65237ABA4A0096CF47 /* ProductTableViewCell.swift in Sources */,
-				3B0BA497239E769C0043D9FE /* DectorView.swift in Sources */,
+				3B0BA497239E769C0043D9FE /* AddView.swift in Sources */,
 				81F2A7FF2378488C003DFCD1 /* CardView.swift in Sources */,
 				813FFBE62379A141004897AE /* ProductVC.swift in Sources */,
 				81DEBC60237AABB20096CF47 /* EditProfileVC.swift in Sources */,

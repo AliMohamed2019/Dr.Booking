@@ -14,21 +14,21 @@ protocol DectorsDetailsProtcolDelegate {
 }
 class ReservationDetailsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var doctorImage: UIImageView!{
+    @IBOutlet weak var carImage: UIImageView!{
         didSet{
-            Rounded.roundedImage(imageView: self.doctorImage)
+            Rounded.roundedImage(imageView: self.carImage)
         }
     }
-    @IBOutlet weak var doctorName: UILabel!
-    @IBOutlet weak var rateOfDoctor: CosmosView!
-    @IBOutlet weak var DoctorTitle: UILabel!
-    @IBOutlet weak var doctorFees: UILabel!
-    @IBOutlet weak var doctorAddress: UILabel!
-    @IBOutlet weak var doctorDate: UILabel!
+    @IBOutlet weak var carName: UILabel!
+    @IBOutlet weak var rateOfAdd: CosmosView!
+    @IBOutlet weak var carTitle: UILabel!
+    @IBOutlet weak var carFees: UILabel!
+    @IBOutlet weak var carAddress: UILabel!
+    @IBOutlet weak var carDate: UILabel!
     
     var location: Reservation?
     var delegate: DectorsDetailsProtcolDelegate?
-    var doctorId : String?
+    var carId : String?
     
     
     override func awakeFromNib() {
@@ -42,9 +42,9 @@ class ReservationDetailsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func goToMap(_ sender: UIButton) {
-        Maps.openMaps(lat: location?.latitude ?? "0", long: location?.longitude ?? "0", distance:  10000 , name: location?.doctor ?? "")
+        Maps.openMaps(lat: location?.latitude ?? "0", long: location?.longitude ?? "0", distance:  10000 , name: location?.car ?? "")
     }
     @IBAction func showDoctorDetails(_ sender: UIButton) {
-        delegate?.details(id: doctorId!)
+        delegate?.details(id: carId!)
     }
 }

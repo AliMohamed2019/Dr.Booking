@@ -57,8 +57,8 @@ class ProductDetailsVC: UIViewController, NVActivityIndicatorViewable{
             productName.text = details.name
             productPrice.text = details.price
             productImage.sd_setImage(with: URL(string: details.image), placeholderImage: UIImage(named: ""))
-            descreptionTitle.text = "ما هو \(details.name)"
-            benefitsTitle.text = "فوائد \(details.name)"
+            descreptionTitle.text = "عن المنتج"
+            benefitsTitle.text = "تفاصيل"
             descreption.text = details.productDescription
             benefits.text = details.benefits
         }
@@ -70,7 +70,7 @@ class ProductDetailsVC: UIViewController, NVActivityIndicatorViewable{
         
         APIClient.buyProduct(user_id: UserDefault.getId() , product_id: productID ) { (Result) in
             switch Result {
-            case .success(let response):
+            case .success(let _):
                 DispatchQueue.main.async {
                     Alert.show("تم الشراء", massege: "تم شراء المنتج بنجاح", context: self)
                 }

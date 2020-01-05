@@ -6,14 +6,14 @@
 import Foundation
 
 // MARK: - DectorView
-struct DectorView: Codable {
+struct AddView: Codable {
     let status: Int
     let dates: String?
-    let doctor: DoctorV
+    let doctor: CarV
 }
 
 // MARK: - Doctor
-struct DoctorV: Codable {
+struct CarV: Codable {
     let favorite: Int
     let id, name, address: String
     let image: String

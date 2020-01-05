@@ -21,7 +21,7 @@ class ReservationsViewController: UIViewController , NVActivityIndicatorViewable
     var userReservationsArray:[Reservation]?
     var failure:Failure?
     
-    var dID: String?
+    var carID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,16 +81,16 @@ extension ReservationsViewController: UITableViewDelegate , UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReservationDetailsTableViewCell
         if let reservation = userReservationsArray?[indexPath.row] {
-            cell.doctorImage.sd_setImage(with: URL(string: userReservationsArray?[indexPath.row].image ?? ""),
+            cell.carImage.sd_setImage(with: URL(string: userReservationsArray?[indexPath.row].image ?? ""),
                                          placeholderImage: UIImage(named: "user"))
-            cell.doctorName.text = reservation.doctor
-            cell.DoctorTitle.text = reservation.jobTitle
-            cell.doctorFees.text = reservation.price
-            cell.doctorAddress.text = reservation.place
-            cell.rateOfDoctor.rating = reservation.rate
-            cell.doctorDate.text = "\(reservation.date ?? ""), من الساعة  \(reservation.timeFrom ?? "") الي \( reservation.timeTo ?? "")"
+            cell.carName.text = reservation.car
+            cell.carTitle.text = reservation.jobTitle
+            cell.carFees.text = reservation.price
+            cell.carAddress.text = reservation.place
+            cell.rateOfAdd.rating = reservation.rate
+            cell.carDate.text = "\(reservation.date ?? ""), من الساعة  \(reservation.timeFrom ?? "") الي \( reservation.timeTo ?? "")"
             cell.location = reservation
-            cell.doctorId = reservation.doctorID
+            cell.carId = reservation.carID
             cell.delegate = self
             
             
@@ -101,11 +101,11 @@ extension ReservationsViewController: UITableViewDelegate , UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dID = userReservationsArray?[indexPath.row].doctorID
-        if let doc = dID {
+        carID = userReservationsArray?[indexPath.row].carID
+        if let doc = carID {
             print(doc)
-            let vc = storyboard?.instantiateViewController(identifier: "DectorDataViewController") as! DectorDataViewController
-            vc.doctorID = doc
+            let vc = storyboard?.instantiateViewController(identifier: "DectorDataViewController") as! CarDataViewController
+            vc.carID = doc
             navigationController?.pushViewController(vc, animated: true)
         }
         
@@ -115,8 +115,8 @@ extension ReservationsViewController: UITableViewDelegate , UITableViewDataSourc
 
 extension ReservationsViewController: DectorsDetailsProtcolDelegate {
     func details(id: String) {
-        let vc = storyboard?.instantiateViewController(identifier: "DectorDataViewController") as! DectorDataViewController
-        vc.doctorID = id
+        let vc = storyboard?.instantiateViewController(identifier: "DectorDataViewController") as! CarDataViewController
+        vc.carID = id
         navigationController?.pushViewController(vc, animated: true)
         
     }
