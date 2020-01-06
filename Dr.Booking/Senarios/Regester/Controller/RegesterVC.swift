@@ -10,7 +10,7 @@ import UIKit
 import NVActivityIndicatorView
 
 
-class RegesterVC: UIViewController  , NVActivityIndicatorViewable{
+class RegesterVC: UIViewController, NVActivityIndicatorViewable{
     //MARK: - var
     
     var register:Register?
@@ -18,10 +18,10 @@ class RegesterVC: UIViewController  , NVActivityIndicatorViewable{
     
     //MARK: - IBOutlet
     
-    @IBOutlet weak var name: DesignableUITextField!
-    @IBOutlet weak var passwrod: DesignableUITextField!
-    @IBOutlet weak var phone: DesignableUITextField!
-    @IBOutlet weak var email: DesignableUITextField!
+    @IBOutlet weak var name: DesignableUITextField!{didSet{ name.delegate = self }}
+    @IBOutlet weak var passwrod: DesignableUITextField!{didSet{ passwrod.delegate = self }}
+    @IBOutlet weak var phone: DesignableUITextField!{didSet{ phone.delegate = self }}
+    @IBOutlet weak var email: DesignableUITextField!{didSet{ email.delegate = self }}
     @IBOutlet weak var regesterBtn: UIButton!
     
     

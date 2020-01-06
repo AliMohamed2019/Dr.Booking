@@ -36,6 +36,7 @@
 		7D9E1F34C178B97034237E04 /* Pods_Dr_Booking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E65729F7C7618EC01EBDF39 /* Pods_Dr_Booking.framework */; };
 		813FFBE12379A019004897AE /* RegesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FFBE02379A019004897AE /* RegesterVC.swift */; };
 		813FFBE62379A141004897AE /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FFBE52379A141004897AE /* ProductVC.swift */; };
+		8150344523C35C9300C40552 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8150344423C35C9300C40552 /* Extentions.swift */; };
 		816E23AB2381888E002ADB7C /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E23AA2381888E002ADB7C /* Maps.swift */; };
 		816E23AD2381A20F002ADB7C /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E23AC2381A20F002ADB7C /* Upload.swift */; };
 		816E23AF23828C23002ADB7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 816E23AE23828C23002ADB7C /* GoogleService-Info.plist */; };
@@ -95,6 +96,7 @@
 		63E33EA26FA4806F422DB503 /* Pods-Dr.Booking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr.Booking.debug.xcconfig"; path = "Target Support Files/Pods-Dr.Booking/Pods-Dr.Booking.debug.xcconfig"; sourceTree = "<group>"; };
 		813FFBE02379A019004897AE /* RegesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegesterVC.swift; sourceTree = "<group>"; };
 		813FFBE52379A141004897AE /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
+		8150344423C35C9300C40552 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		816E23AA2381888E002ADB7C /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		816E23AC2381A20F002ADB7C /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		816E23AE23828C23002ADB7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -157,16 +159,16 @@
 			children = (
 				3B24D151237BFAAA008D3605 /* Networking */,
 				81F2A7F92378488C003DFCD1 /* Utitlites */,
-				3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */,
-				3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */,
 				813FFBDA23799F6E004897AE /* Senarios */,
 				3B119CE123782DC700FC4FC2 /* Main.storyboard */,
-				3B24D167237C0119008D3605 /* Failure.swift */,
+				3B119CDD23782DC700FC4FC2 /* SceneDelegate.swift */,
+				3B119CDB23782DC700FC4FC2 /* AppDelegate.swift */,
 				81F2A802237853EA003DFCD1 /* TabBar.swift */,
 				3B119CE423782DC800FC4FC2 /* Assets.xcassets */,
 				3B119CE623782DC800FC4FC2 /* LaunchScreen.storyboard */,
 				3B119CE923782DC800FC4FC2 /* Info.plist */,
 				816E23AE23828C23002ADB7C /* GoogleService-Info.plist */,
+				8150344423C35C9300C40552 /* Extentions.swift */,
 				3B24D16E237C37DF008D3605 /* UserDefault.swift */,
 			);
 			path = Dr.Booking;
@@ -202,6 +204,7 @@
 		3B24D160237BFCC5008D3605 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3B24D167237C0119008D3605 /* Failure.swift */,
 				3B24D161237BFCED008D3605 /* FavoriteCars.swift */,
 				81B61518237D6A8500C2E6B3 /* Cars.swift */,
 				81BFDAB923815C5900025ACF /* CarInfo.swift */,
@@ -540,6 +543,7 @@
 				3B046B99237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift in Sources */,
 				3B24D16F237C37DF008D3605 /* UserDefault.swift in Sources */,
 				81970DEE23795AA5001CD992 /* ProfileVC.swift in Sources */,
+				8150344523C35C9300C40552 /* Extentions.swift in Sources */,
 				816E23AD2381A20F002ADB7C /* Upload.swift in Sources */,
 				3B046B9D237D6C170032C7D1 /* ProductDetailsTableViewCell.swift in Sources */,
 				81DEBC6B237AC4D80096CF47 /* SearchVC.swift in Sources */,

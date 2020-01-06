@@ -12,9 +12,9 @@ class EditProfileVC: UIViewController ,NVActivityIndicatorViewable {
     
     //MARK: - IBOutlet
     
-    @IBOutlet weak var name: DesignableUITextField!
-    @IBOutlet weak var phone: DesignableUITextField!
-    @IBOutlet weak var email: DesignableUITextField!
+    @IBOutlet weak var name: DesignableUITextField!{didSet{ name.delegate = self }}
+    @IBOutlet weak var phone: DesignableUITextField!{didSet{ phone.delegate = self }}
+    @IBOutlet weak var email: DesignableUITextField!{didSet{ email.delegate = self }}
     @IBOutlet weak var profileImage: UIImageView!{
         didSet{
             Rounded.roundedImage(imageView: self.profileImage)

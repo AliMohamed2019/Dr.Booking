@@ -36,7 +36,7 @@ class FirebaseUploader
             if let image = info[.originalImage] as? UIImage{
                 
                 var imageData = Data()
-                imageData = image.jpegData(compressionQuality: 0.5)!
+                imageData = image.jpegData(compressionQuality: 0.3)!
                 
                 
                 let storeRef = Storage.storage().reference().child("images/" + randomString(length: 20))

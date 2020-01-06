@@ -11,7 +11,7 @@ import NVActivityIndicatorView
 class ForgotPasswordVC: UIViewController , NVActivityIndicatorViewable{
     //MARK: - IBOutlet
     
-    @IBOutlet weak var email: DesignableUITextField!
+    @IBOutlet weak var email: DesignableUITextField!{didSet{ email.delegate = self }}
     @IBOutlet weak var submitBtn: UIButton!
     
     var forgetpass:ForgetPass?

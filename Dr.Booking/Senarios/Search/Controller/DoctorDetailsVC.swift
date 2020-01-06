@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import Alamofire
 class DoctorDetailsVC: UIViewController {
     
     @IBOutlet weak var addName: UILabel!
@@ -82,7 +83,6 @@ class DoctorDetailsVC: UIViewController {
                             if self?.reservationCollectionView.numberOfItems(inSection: 0) != 0 {
                                 self?.hieghtConstraint.constant = 174
                             }
-                            
                         }
                     case.failure(let error):
                         print("failed")
@@ -94,6 +94,7 @@ class DoctorDetailsVC: UIViewController {
         }
     }
     
+    //MARK:- Like Button Pressed
     @IBAction func likeButtonPressed(_ sender: UIButton) {
         if likeBtn.currentBackgroundImage == UIImage(named: "heart") {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)
@@ -135,8 +136,9 @@ class DoctorDetailsVC: UIViewController {
     
 }
 
-//MARK:- TableView set up
-extension DoctorDetailsVC: UICollectionViewDelegate , UICollectionViewDataSource {
+//MARK:- CollectionView SetUp
+extension DoctorDetailsVC: UICollectionViewDelegate , UICollectionViewDataSource , DidReserve {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return reservDates?.count ?? 0
     }
@@ -148,8 +150,19 @@ extension DoctorDetailsVC: UICollectionViewDelegate , UICollectionViewDataSource
             cell.startHour.text = date.fromTime
             cell.endHour.text = date.toTime
             cell.date = date
+            cell.delegate = self
         }
         return cell
+    }
+    
+    //MARK:- DidReserve Methodes
+    
+    func reservedSuccessfully() {
+        Alert.show("تم", massege: "تم الحجز بنجاح", context: self)
+    }
+    
+    func failedToReserve(error: AFError) {
+        Alert.show("فشل", massege: error.localizedDescription , context: self)
     }
     
     

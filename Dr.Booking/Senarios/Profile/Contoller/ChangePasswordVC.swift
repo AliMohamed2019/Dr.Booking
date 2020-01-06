@@ -10,18 +10,28 @@ import UIKit
 import NVActivityIndicatorView
 
 class ChangePasswordVC: UIViewController  , NVActivityIndicatorViewable{
-    var updatePassword:UpdatePassword?
     
-    @IBOutlet weak var currentPassword: DesignableUITextField!
-    @IBOutlet weak var newPassword: DesignableUITextField!
-    @IBOutlet weak var comfirmPassword: DesignableUITextField!
+    @IBOutlet weak var currentPassword: DesignableUITextField!{
+        didSet{
+            currentPassword.delegate = self
+        }
+    }
+    @IBOutlet weak var newPassword: DesignableUITextField!{
+        didSet{
+            newPassword.delegate = self
+        }
+    }
+    @IBOutlet weak var comfirmPassword: DesignableUITextField!{
+        didSet{
+            comfirmPassword.delegate = self
+        }
+    }
     @IBOutlet weak var changBtn: UIButton!
     
+    var updatePassword:UpdatePassword?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("dcfvgbnm,l.")
-        
-        
     }
     
     @IBAction func changePasswordPressed(_ sender: UIButton) {

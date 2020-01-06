@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SearchVC: UIViewController , UITextFieldDelegate{
+class SearchVC: UIViewController {
     
     @IBOutlet weak var searchBtn: UIButton!
-    @IBOutlet weak var searchTv: UITextField!
+    @IBOutlet weak var searchTv: UITextField!{didSet{ searchTv.delegate = self }}
     
     var sortBy: String?
     override func viewDidLoad() {

@@ -26,7 +26,7 @@
                                             <constraint firstAttribute="height" constant="36" id="0Ce-gl-Z4c"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
                                                 <color key="value" red="0.6159052652" green="0.6159052652" blue="0.6159052652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,7 +41,7 @@
                                         <rect key="frame" x="0.0" y="48" width="354" height="36"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="lock.fill" catalog="system"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
@@ -817,7 +817,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="booking" translatesAutoresizingMaskIntoConstraints="NO" id="SIm-iJ-4E9">
-                                <rect key="frame" x="20" y="272" width="374" height="49.5"/>
+                                <rect key="frame" x="20" y="222.5" width="374" height="99"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1173300669" green="0.15818777680000001" blue="0.33180719609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1452,7 +1452,7 @@
             </objects>
             <point key="canvasLocation" x="-3210.144927536232" y="2293.5267857142858"/>
         </scene>
-        <!--جميع الاطباء-->
+        <!--جميع الاعلانات-->
         <scene sceneID="pA1-6Q-pNu">
             <objects>
                 <viewController id="j6o-a0-UxD" customClass="SearchResultVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
@@ -1651,7 +1651,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x6L-2m-y8e"/>
                     </view>
-                    <navigationItem key="navigationItem" title="جميع الاطباء" id="g5Z-Ze-jlK"/>
+                    <navigationItem key="navigationItem" title="جميع الاعلانات" id="g5Z-Ze-jlK"/>
                     <connections>
                         <outlet property="TableView" destination="B2F-mj-A3V" id="aob-gh-Izs"/>
                         <segue destination="cW4-2L-9ZH" kind="show" identifier="GoToSearchDetails" id="EO3-pg-ZLj"/>
