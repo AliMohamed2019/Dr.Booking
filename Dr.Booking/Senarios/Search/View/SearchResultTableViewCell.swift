@@ -31,9 +31,7 @@ class SearchResultTableViewCell: UITableViewCell {
         }
     }
     var delegate: DectorDetailsDelegate?
-    
     var doctor: Doctor?
-    
     @IBAction func addToFavoriets(_ sender: UIButton) {
         if likeBtn.currentBackgroundImage == UIImage(named: "heart") {
             likeBtn.setBackgroundImage(UIImage(named: "like"), for: .normal)

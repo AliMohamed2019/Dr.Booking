@@ -11,8 +11,18 @@ import NVActivityIndicatorView
 class LogInViewController: UIViewController , NVActivityIndicatorViewable{
     
     //MARK: - IBOutlet
-    @IBOutlet weak var email: DesignableUITextField!
-    @IBOutlet weak var password: DesignableUITextField!
+    @IBOutlet weak var email: DesignableUITextField!{
+        didSet{
+            email.delegate = self
+        }
+        
+    }
+    @IBOutlet weak var password: DesignableUITextField!{
+        didSet{
+            password.delegate = self
+        }
+        
+    }
     @IBOutlet weak var logInBtn: UIButton!
     
     var login:Login?
@@ -94,3 +104,9 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
     }
 }
 
+extension UIViewController: UITextFieldDelegate{
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          textField.resignFirstResponder()
+          return true
+      }
+}

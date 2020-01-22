@@ -14,7 +14,7 @@
 		<key>BEMCheckBox.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>29</integer>
+			<integer>28</integer>
 		</dict>
 		<key>BoringSSL-GRPC.xcscheme</key>
 		<dict>
@@ -155,6 +155,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>26</integer>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>29</integer>
 		</dict>
 		<key>SVProgressHUD.xcscheme_^#shared#^_</key>
 		<dict>

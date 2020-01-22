@@ -8,15 +8,14 @@
 
 import UIKit
 
-class SearchVC: UIViewController , UITextFieldDelegate{
+class SearchVC: UIViewController {
     
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var searchTv: UITextField!
     
-    var sortBy: String?
+      var sortBy: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         Rounded.roundedButton1(button: searchBtn)
         searchBtn.isEnabled = false
         searchTv.delegate = self
@@ -24,7 +23,7 @@ class SearchVC: UIViewController , UITextFieldDelegate{
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        sortBy = "rate"
+        sortBy = "all"
         performSegue(withIdentifier: "GoToSearch", sender: self)
     }
     
