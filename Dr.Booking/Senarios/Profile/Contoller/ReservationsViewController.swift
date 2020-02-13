@@ -104,7 +104,7 @@ extension ReservationsViewController: UITableViewDelegate , UITableViewDataSourc
         dID = userReservationsArray?[indexPath.row].doctorID
         if let doc = dID {
             print(doc)
-            let vc = storyboard?.instantiateViewController(identifier: "DectorDataViewController") as! DectorDataViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "DectorDataViewController") as! DectorDataViewController
             vc.doctorID = doc
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -115,7 +115,7 @@ extension ReservationsViewController: UITableViewDelegate , UITableViewDataSourc
 
 extension ReservationsViewController: DectorsDetailsProtcolDelegate {
     func details(id: String) {
-        let vc = storyboard?.instantiateViewController(identifier: "DectorDataViewController") as! DectorDataViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DectorDataViewController") as! DectorDataViewController
         vc.doctorID = id
         navigationController?.pushViewController(vc, animated: true)
         

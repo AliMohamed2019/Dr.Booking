@@ -18,10 +18,31 @@ class RegesterVC: UIViewController  , NVActivityIndicatorViewable{
     
     //MARK: - IBOutlet
     
-    @IBOutlet weak var name: DesignableUITextField!
-    @IBOutlet weak var passwrod: DesignableUITextField!
-    @IBOutlet weak var phone: DesignableUITextField!
-    @IBOutlet weak var email: DesignableUITextField!
+    @IBOutlet weak var StackCenterYConstat: NSLayoutConstraint!
+    @IBOutlet weak var name: DesignableUITextField!{
+        didSet{
+            name.delegate = self
+        }
+        
+    }
+    @IBOutlet weak var passwrod: DesignableUITextField!{
+        didSet{
+            passwrod.delegate = self
+        }
+        
+    }
+    @IBOutlet weak var phone: DesignableUITextField!{
+        didSet{
+            phone.delegate = self
+        }
+        
+    }
+    @IBOutlet weak var email: DesignableUITextField!{
+        didSet{
+            email.delegate = self
+        }
+        
+    }
     @IBOutlet weak var regesterBtn: UIButton!
     
     
@@ -51,10 +72,14 @@ class RegesterVC: UIViewController  , NVActivityIndicatorViewable{
                     case .success(let response):
                         DispatchQueue.main.async {
                             self.stopAnimating()
+                            self.clearText()
                             print("aaaaaaaa")
                             print(response)
                             self.register = response
-                            Alert.show("Error", massege: self.register!.message, context: self)
+                            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as? TabBar {
+                                vc.modalPresentationStyle = .fullScreen
+                                self.present(vc, animated: true, completion: nil)
+                            }
                         }
                     case .failure(let error):
                         DispatchQueue.main.async {
@@ -83,18 +108,47 @@ class RegesterVC: UIViewController  , NVActivityIndicatorViewable{
                     }
                 }
             }else {
-                Alert.show("Error", massege: "الاسم يجب ان يكون اربع حروف علي الاقل", context: self)
+                self.stopAnimating()
+                Alert.show("خطا", massege: "الاسم يجب ان يكون اربع حروف علي الاقل", context: self)
             }
             
             
         }
     }
     
+    func clearText()  {
+        name.text = ""
+        passwrod.text = ""
+        email.text = ""
+        phone.text = ""
+    }
     
     
     
     
     
+    //TODO: Declare textFieldDidBeginEditing here:
+      
+      func textFieldDidBeginEditing(_ textField: UITextField) {
+          
+        UIView.animate(withDuration: 0.5) {
+            self.StackCenterYConstat.constant = -80
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+      
+      
+      //TODO: Declare textFieldDidEndEditing here:
+      
+      func textFieldDidEndEditing(_ textField: UITextField) {
+          
+          UIView.animate(withDuration: 0.5) {
+              self.StackCenterYConstat.constant = 0
+              self.view.layoutIfNeeded()
+          }
+          
+      }
     
     
 }

@@ -73,7 +73,7 @@ extension ProductVC : UITableViewDelegate , UITableViewDataSource {
         
         //TODO: Declare didSelectRowAt here:
         
-        let vc = storyboard?.instantiateViewController(identifier: "ProductDetails") as! ProductDetailsVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ProductDetails") as! ProductDetailsVC
         vc.productID = productsArray?[indexPath.row].id ?? ""
         navigationController?.pushViewController(vc, animated: true)
     }

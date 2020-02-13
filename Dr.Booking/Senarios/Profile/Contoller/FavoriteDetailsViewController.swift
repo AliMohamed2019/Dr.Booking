@@ -100,14 +100,14 @@ extension FavoriteDetailsViewController: UITableViewDelegate , UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorDetails") as! DoctorDetailsVC
         vc.doctor = alFavoriteDoctorArray?[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 extension FavoriteDetailsViewController: DectorDetailsDelegate {
     func details(id: String, doctor: Doctor) {
-        let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorDetails") as! DoctorDetailsVC
         vc.doctor = doctor
         vc.doctorID = id
         navigationController?.pushViewController(vc, animated: true)

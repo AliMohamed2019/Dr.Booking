@@ -10,18 +10,19 @@ import UIKit
 import NVActivityIndicatorView
 class LogInViewController: UIViewController , NVActivityIndicatorViewable{
     
+    @IBOutlet weak var stackCenterYConstat: NSLayoutConstraint!
     //MARK: - IBOutlet
     @IBOutlet weak var email: DesignableUITextField!{
         didSet{
             email.delegate = self
+            
         }
-        
     }
     @IBOutlet weak var password: DesignableUITextField!{
         didSet{
             password.delegate = self
+            
         }
-        
     }
     @IBOutlet weak var logInBtn: UIButton!
     
@@ -49,7 +50,11 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
                         self.login = response
                         self.setData()
                         self.clearText()
-                        self.performSegue(withIdentifier: "GoToTapBar", sender: self)
+                        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as? TabBar {
+                            vc.modalPresentationStyle = .fullScreen
+                            self.present(vc, animated: true, completion: nil)
+                        }
+                        
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
@@ -77,12 +82,7 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GoToTapBar" {
-            let vc = segue.destination as! TabBar
-            vc.modalPresentationStyle = .fullScreen
-        }
-    }
+    
     //MARK: - Func To Save Date in UserDefault
     func setData() {
         UserDefault.setId((self.login?.userData.id)!)
@@ -96,17 +96,47 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
         email.text = ""
         password.text = ""
     }
+    //TODO: Declare textFieldDidBeginEditing here:
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        UIView.animate(withDuration: 0.5) {
+            self.stackCenterYConstat.constant = -80
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
+    
+    //TODO: Declare textFieldDidEndEditing here:
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        UIView.animate(withDuration: 0.5) {
+            self.stackCenterYConstat.constant = 0
+            self.view.layoutIfNeeded()
+        }
+        
+    }
     
     @IBAction func forgotPassword(_ sender: UIButton) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "ForgotPasswordVC") as? ForgotPasswordVC {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func regesterButtonPressed(_ sender: UIButton) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegesterVC") as? RegesterVC {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }
 
 extension UIViewController: UITextFieldDelegate{
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-          textField.resignFirstResponder()
-          return true
-      }
+        textField.resignFirstResponder()
+        return true
+    }
 }

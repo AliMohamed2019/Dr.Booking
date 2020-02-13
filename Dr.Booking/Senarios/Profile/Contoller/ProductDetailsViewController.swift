@@ -82,7 +82,7 @@ extension ProductDetailsViewController: UITableViewDelegate , UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = storyboard?.instantiateViewController(identifier: "ProductDetails") as! ProductDetailsVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ProductDetails") as! ProductDetailsVC
         vc.productID = userProductsArray?[indexPath.row].id ?? ""
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -97,7 +97,7 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorDetails") as! DoctorDetailsVC
         vc.doctor = doctorsArray?[indexPath.row]
         vc.doctorID = doctorsArray?[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
@@ -107,7 +107,7 @@ extension SearchResultVC: UITableViewDelegate , UITableViewDataSource {
 
 extension SearchResultVC: DectorDetailsDelegate {
     func details(id: String, doctor: Doctor) {
-        let vc = storyboard?.instantiateViewController(identifier: "DoctorDetails") as! DoctorDetailsVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorDetails") as! DoctorDetailsVC
         vc.doctor = doctor
         vc.doctorID = id
         navigationController?.pushViewController(vc, animated: true)

@@ -11,7 +11,12 @@ import NVActivityIndicatorView
 class ForgotPasswordVC: UIViewController , NVActivityIndicatorViewable{
     //MARK: - IBOutlet
     
-    @IBOutlet weak var email: DesignableUITextField!
+    @IBOutlet weak var email: DesignableUITextField!{
+        didSet{
+            email.delegate = self
+            
+        }
+    }
     @IBOutlet weak var submitBtn: UIButton!
     
     var forgetpass:ForgetPass?
@@ -38,7 +43,7 @@ class ForgotPasswordVC: UIViewController , NVActivityIndicatorViewable{
                         self.stopAnimating()
                         print(response)
                         self.forgetpass = response
-                        Alert.show("Error", massege: self.forgetpass!.message, context: self)
+                        Alert.show("صحيح", massege: self.forgetpass!.message, context: self)
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
@@ -49,6 +54,12 @@ class ForgotPasswordVC: UIViewController , NVActivityIndicatorViewable{
                 }
             }
         }
+    }
+    
+    
+    @IBAction func backToLoginBtnPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+
     }
     
 }

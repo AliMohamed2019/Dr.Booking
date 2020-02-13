@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -87,7 +88,6 @@
                                 </state>
                                 <connections>
                                     <action selector="forgotPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zk0-pP-NkN"/>
-                                    <segue destination="5g4-NP-ZPl" kind="show" id="nW3-Oc-bCO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1J-Vg-UH9">
@@ -106,7 +106,6 @@
                                 </state>
                                 <connections>
                                     <action selector="regesterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rVL-EE-ejg"/>
-                                    <segue destination="sWd-lj-KO7" kind="show" id="iqF-ny-DmV"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="booking" translatesAutoresizingMaskIntoConstraints="NO" id="Xlg-gz-uj6">
@@ -136,23 +135,23 @@
                         <outlet property="email" destination="cAl-hH-VpF" id="4BX-Ad-rau"/>
                         <outlet property="logInBtn" destination="1y5-6j-Ojc" id="P4j-u1-HXu"/>
                         <outlet property="password" destination="ygD-04-mvR" id="Dwr-JY-YCY"/>
-                        <segue destination="h7b-dH-rG2" kind="show" identifier="GoToTapBar" id="1bT-WS-4Rq"/>
+                        <outlet property="stackCenterYConstat" destination="UnE-Ga-S7p" id="pMa-O5-a9y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1730" y="-796"/>
+            <point key="canvasLocation" x="-1883" y="-796"/>
         </scene>
         <!--المنتجات-->
         <scene sceneID="BMX-hU-hKV">
             <objects>
                 <viewController id="bgh-zL-SXB" customClass="ProductVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iJW-ST-Jay">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wt6-lO-1vg">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="sectionIndexBackgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -262,20 +261,20 @@
             <objects>
                 <viewController id="SGq-bj-wFg" customClass="SearchVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kyh-Vw-g4h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ابحث الان عن الطبيب المناسب " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMJ-hj-iRK">
-                                <rect key="frame" x="91" y="410.5" width="232.5" height="21"/>
+                                <rect key="frame" x="91" y="437.5" width="232.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dl-DL-7S1" userLabel="logo">
-                                <rect key="frame" x="0.0" y="56" width="414" height="354.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="349.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="booking" translatesAutoresizingMaskIntoConstraints="NO" id="1R5-Hm-q16">
-                                        <rect key="frame" x="91.5" y="152.5" width="231.5" height="49.5"/>
+                                        <rect key="frame" x="91.5" y="150" width="231.5" height="49.5"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -285,7 +284,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spT-gU-bdC">
-                                <rect key="frame" x="0.0" y="431.5" width="414" height="410.5"/>
+                                <rect key="frame" x="0.0" y="458.5" width="414" height="437.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يتم الفصل بين الاعراض ب , مثال(بوتكس,جراحة عيون,شفط دهون)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryb-kQ-9Lq">
                                         <rect key="frame" x="20" y="115" width="374" height="36"/>
@@ -392,17 +391,17 @@
             <objects>
                 <viewController id="z6H-Ua-oZg" customClass="ProfileVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3vz-On-2LW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i45-2c-pAn">
-                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAP-6N-tWW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-Iy-FxK">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6w-rD-qEp">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="202"/>
@@ -513,7 +512,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUN-F7-AOP">
-                                                        <rect key="frame" x="0.0" y="420" width="414" height="366"/>
+                                                        <rect key="frame" x="0.0" y="420" width="414" height="388"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4u-af-ih8">
                                                                 <rect key="frame" x="20" y="20" width="374" height="50"/>
@@ -592,11 +591,11 @@
             <objects>
                 <viewController id="2na-Om-r9D" customClass="EditProfileVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="IAy-A8-stb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eTT-1x-sVt">
-                                <rect key="frame" x="30" y="341.5" width="354" height="159"/>
+                                <rect key="frame" x="30" y="368.5" width="354" height="159"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8Z-tq-Evk" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
@@ -649,14 +648,14 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user123" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-pk-XZK">
-                                <rect key="frame" x="152" y="191.5" width="110" height="110"/>
+                                <rect key="frame" x="152" y="218.5" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="NEM-gc-LNQ"/>
                                     <constraint firstAttribute="height" constant="110" id="Z29-Kd-qq5"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RL9-LA-ecy">
-                                <rect key="frame" x="30" y="518.5" width="354" height="50"/>
+                                <rect key="frame" x="30" y="545.5" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.2404647171" green="0.3184609115" blue="0.69135731460000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4MV-ee-PCb"/>
@@ -670,10 +669,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RaV-JP-UoB">
-                                <rect key="frame" x="0.0" y="568.5" width="414" height="273.5"/>
+                                <rect key="frame" x="0.0" y="595.5" width="414" height="300.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yld-7R-tFM">
-                                        <rect key="frame" x="151.5" y="120" width="111" height="34"/>
+                                        <rect key="frame" x="151.5" y="133.5" width="111" height="34"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="تغيير كلمة السر ؟">
@@ -699,7 +698,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKp-93-1OB">
-                                <rect key="frame" x="132" y="176.5" width="150" height="125"/>
+                                <rect key="frame" x="132" y="203.5" width="150" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="42s-yj-ctG"/>
                                     <constraint firstAttribute="width" constant="150" id="ze2-as-Bfm"/>
@@ -746,11 +745,11 @@
             <objects>
                 <viewController id="tQF-Zw-qb0" customClass="ChangePasswordVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n6x-CL-God">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-y0-1gy">
-                                <rect key="frame" x="30" y="361.5" width="354" height="159"/>
+                                <rect key="frame" x="30" y="388.5" width="354" height="159"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة السر الحالية" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IX2-o9-qaV" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
@@ -803,7 +802,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cM2-uG-SpZ">
-                                <rect key="frame" x="30" y="540.5" width="354" height="50"/>
+                                <rect key="frame" x="30" y="567.5" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.52165889740000004" green="0.80826306339999998" blue="0.2478611171" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Rnd-a5-LFS"/>
@@ -817,7 +816,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="booking" translatesAutoresizingMaskIntoConstraints="NO" id="SIm-iJ-4E9">
-                                <rect key="frame" x="20" y="272" width="374" height="49.5"/>
+                                <rect key="frame" x="20" y="299" width="374" height="49.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1173300669" green="0.15818777680000001" blue="0.33180719609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -852,11 +851,11 @@
             <objects>
                 <viewController storyboardIdentifier="DectorDataViewController" id="ZKT-Q8-T99" customClass="DectorDataViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D3a-ix-8iA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVj-j6-lt8">
-                                <rect key="frame" x="0.0" y="56" width="414" height="890"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="912"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgB-ex-XhF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
@@ -1072,11 +1071,11 @@
             <objects>
                 <viewController id="pvg-2S-pYj" customClass="ReservationsViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SzF-zS-Cba">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oe8-Qb-RJf">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1276,11 +1275,11 @@
             <objects>
                 <viewController storyboardIdentifier="ProductDetails" id="xZv-r0-tDc" customClass="ProductDetailsVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="stD-fN-5p3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMR-O5-laH">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Zk-ap-HUI">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
@@ -1409,7 +1408,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="6Ep-ck-Pwt"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBS-az-spi">
-                                <rect key="frame" x="0.0" y="1013" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="1067" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.52165889740000004" green="0.80826306339999998" blue="0.2478611171" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="QbG-PZ-nIT"/>
@@ -1457,11 +1456,11 @@
             <objects>
                 <viewController id="j6o-a0-UxD" customClass="SearchResultVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ao-jL-RJI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B2F-mj-A3V">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1665,14 +1664,14 @@
             <objects>
                 <viewController storyboardIdentifier="DoctorDetails" id="cW4-2L-9ZH" customClass="DoctorDetailsVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Wp-ay-pq0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUH-zw-SJk">
-                                <rect key="frame" x="0.0" y="56" width="414" height="890"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="912"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sd2-z3-fF2">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1229.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZl-Rl-Ym9" customClass="CardView" customModule="Dr_Booking" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="47" width="398" height="470"/>
@@ -2089,11 +2088,11 @@
             <objects>
                 <viewController storyboardIdentifier="FavoriteDetailsViewController" id="U8s-i3-iNo" customClass="FavoriteDetailsViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePf-hF-O9l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="efA-hR-EBm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" red="0.1050147489" green="0.1597248614" blue="0.34349808100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -2297,11 +2296,11 @@
             <objects>
                 <viewController storyboardIdentifier="ProductDetailsViewController" id="Dhr-2l-v14" customClass="ProductDetailsViewController" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ytS-zu-2jp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sj0-84-UWP">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="140" id="q7U-H6-hrB" customClass="ProductDetailsTableViewCell" customModule="Dr_Booking" customModuleProvider="target">
@@ -2393,7 +2392,7 @@
         <!--Tab Bar-->
         <scene sceneID="Exh-yx-uSW">
             <objects>
-                <tabBarController id="h7b-dH-rG2" customClass="TabBar" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" id="h7b-dH-rG2" customClass="TabBar" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Wot-oo-yqc"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P52-H2-Y9q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -2414,13 +2413,13 @@
         <!--Forgot PasswordVC-->
         <scene sceneID="faM-Ln-jMc">
             <objects>
-                <viewController id="5g4-NP-ZPl" customClass="ForgotPasswordVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordVC" id="5g4-NP-ZPl" customClass="ForgotPasswordVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L7u-Wk-Xvk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الالكترونى" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxU-Kx-X8Q" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
-                                <rect key="frame" x="30" y="403" width="354" height="36"/>
+                                <rect key="frame" x="30" y="430" width="354" height="36"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="fQI-cy-iev"/>
@@ -2438,7 +2437,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yL0-74-7Sq">
-                                <rect key="frame" x="30" y="459" width="354" height="45"/>
+                                <rect key="frame" x="30" y="486" width="354" height="45"/>
                                 <color key="backgroundColor" red="0.2404647171" green="0.3184609115" blue="0.69135731460000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="XbF-gl-hPm"/>
@@ -2452,8 +2451,19 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="booking" translatesAutoresizingMaskIntoConstraints="NO" id="zI8-wF-zJj">
-                                <rect key="frame" x="30" y="313.5" width="354" height="49.5"/>
+                                <rect key="frame" x="30" y="340.5" width="354" height="49.5"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhK-TH-fkb">
+                                <rect key="frame" x="30" y="64" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4tE-ic-CuN"/>
+                                    <constraint firstAttribute="width" constant="30" id="9vV-aN-7PH"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backToLoginBtnPressed:" destination="5g4-NP-ZPl" eventType="touchUpInside" id="msg-u6-PbY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1173300669" green="0.15818777680000001" blue="0.33180719609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -2464,8 +2474,10 @@
                             <constraint firstItem="lxU-Kx-X8Q" firstAttribute="centerX" secondItem="L7u-Wk-Xvk" secondAttribute="centerX" id="LXo-ha-jrs"/>
                             <constraint firstItem="yL0-74-7Sq" firstAttribute="leading" secondItem="Ial-CI-Ctr" secondAttribute="leading" constant="30" id="Oja-q8-vWK"/>
                             <constraint firstItem="Ial-CI-Ctr" firstAttribute="trailing" secondItem="zI8-wF-zJj" secondAttribute="trailing" constant="30" id="WOa-qh-tlM"/>
+                            <constraint firstItem="VhK-TH-fkb" firstAttribute="leading" secondItem="Ial-CI-Ctr" secondAttribute="leading" constant="30" id="XbE-kP-hbm"/>
                             <constraint firstItem="Ial-CI-Ctr" firstAttribute="trailing" secondItem="lxU-Kx-X8Q" secondAttribute="trailing" constant="30" id="bMk-fp-rug"/>
                             <constraint firstItem="zI8-wF-zJj" firstAttribute="leading" secondItem="Ial-CI-Ctr" secondAttribute="leading" constant="30" id="nKD-CT-wMS"/>
+                            <constraint firstItem="VhK-TH-fkb" firstAttribute="top" secondItem="Ial-CI-Ctr" secondAttribute="top" constant="20" id="yc0-JV-DiA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ial-CI-Ctr"/>
                     </view>
@@ -2477,18 +2489,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cb9-gs-bMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1194" y="-80"/>
+            <point key="canvasLocation" x="-1206" y="-66"/>
         </scene>
         <!--RegesterVC-->
         <scene sceneID="aKt-qS-PYQ">
             <objects>
-                <viewController id="sWd-lj-KO7" customClass="RegesterVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegesterVC" id="sWd-lj-KO7" customClass="RegesterVC" customModule="Dr_Booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pd7-zc-DOu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="X63-AM-UgK">
-                                <rect key="frame" x="30" y="331" width="354" height="180"/>
+                                <rect key="frame" x="30" y="358" width="354" height="180"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R4E-FE-jVf" customClass="DesignableUITextField" customModule="Dr_Booking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="36"/>
@@ -2556,7 +2568,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMU-mB-6yq">
-                                <rect key="frame" x="30" y="531" width="354" height="45"/>
+                                <rect key="frame" x="30" y="558" width="354" height="45"/>
                                 <color key="backgroundColor" red="0.2404647171497345" green="0.31846091151237488" blue="0.6913573145866394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Wdj-Zi-Tmy"/>
@@ -2570,13 +2582,13 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="booking" translatesAutoresizingMaskIntoConstraints="NO" id="MRl-cB-RhF">
-                                <rect key="frame" x="30" y="241.5" width="354" height="49.5"/>
+                                <rect key="frame" x="30" y="268.5" width="354" height="49.5"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lma-Oe-xgH">
-                                <rect key="frame" x="0.0" y="576" width="414" height="232"/>
+                                <rect key="frame" x="0.0" y="603" width="414" height="259"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Fw-HU-O9k">
-                                        <rect key="frame" x="155.5" y="99" width="103" height="34"/>
+                                        <rect key="frame" x="155.5" y="112.5" width="103" height="34"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="تسجيل الدخول ؟">
@@ -2621,6 +2633,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gUl-iG-9K7"/>
                     <connections>
+                        <outlet property="StackCenterYConstat" destination="F6Z-Uf-bDY" id="oe0-GZ-bz5"/>
                         <outlet property="email" destination="bIn-Un-fkz" id="wW0-yV-KOj"/>
                         <outlet property="name" destination="R4E-FE-jVf" id="da1-ya-pLD"/>
                         <outlet property="passwrod" destination="1fX-f7-6xZ" id="17q-x6-lYg"/>
@@ -2641,7 +2654,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UZO-lJ-K5l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2404647171" green="0.3184609115" blue="0.69135731460000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -2664,7 +2677,7 @@
                     <tabBarItem key="tabBarItem" title="المنتجات" image="barcode.viewfinder" catalog="system" id="1HJ-VK-pLC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="frN-4D-sbz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2404647171" green="0.3184609115" blue="0.69135731460000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -2687,7 +2700,7 @@
                     <tabBarItem key="tabBarItem" title="الصفحة الشخصية" image="person" catalog="system" id="WGe-Sn-2po"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5fQ-h0-pkR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2404647171" green="0.3184609115" blue="0.69135731460000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -2705,6 +2718,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="21" height="21"/>
         <image name="barcode.viewfinder" catalog="system" width="64" height="56"/>
         <image name="booking" width="231.5" height="49.5"/>
         <image name="clock" width="64" height="64"/>
