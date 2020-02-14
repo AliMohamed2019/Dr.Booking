@@ -14,7 +14,8 @@ struct UserDefault {
     static let email = "email"
     static let phone = "phone"
     static let photo = "photo"
-    
+    static var checkLogin = "didSignIn"
+
     
     
     static func setId ( _ id : String){
@@ -49,5 +50,12 @@ struct UserDefault {
     }
     static func getPhoto () ->String{
         return UserDefaults.standard.string(forKey: self.photo) ??  ""
+    }
+    
+    static func setcheckLogin (_ logedIn: Bool){
+        UserDefaults.standard.set(logedIn, forKey: checkLogin)
+    }
+    static func getcheckLogin() ->Bool{
+        return UserDefaults.standard.bool(forKey: checkLogin)
     }
 }

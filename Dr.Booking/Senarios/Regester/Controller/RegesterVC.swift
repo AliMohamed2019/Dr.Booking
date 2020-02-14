@@ -76,10 +76,8 @@ class RegesterVC: UIViewController  , NVActivityIndicatorViewable{
                             print("aaaaaaaa")
                             print(response)
                             self.register = response
-                            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as? TabBar {
-                                vc.modalPresentationStyle = .fullScreen
-                                self.present(vc, animated: true, completion: nil)
-                            }
+                            Alert.show("صحيح", massege: self.register!.message, context: self)
+                            
                         }
                     case .failure(let error):
                         DispatchQueue.main.async {

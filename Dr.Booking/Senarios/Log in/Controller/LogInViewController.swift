@@ -48,6 +48,7 @@ class LogInViewController: UIViewController , NVActivityIndicatorViewable{
                     DispatchQueue.main.async {
                         self.stopAnimating()
                         self.login = response
+                        UserDefault.setcheckLogin(true)
                         self.setData()
                         self.clearText()
                         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as? TabBar {

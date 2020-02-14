@@ -11,8 +11,6 @@
 		3B046B99237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B98237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift */; };
 		3B046B9B237D6BDF0032C7D1 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */; };
 		3B046B9D237D6C170032C7D1 /* ProductDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B046B9C237D6C170032C7D1 /* ProductDetailsTableViewCell.swift */; };
-		3B0BA497239E769C0043D9FE /* DectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BA496239E769C0043D9FE /* DectorView.swift */; };
-		3B0BA499239E8ABA0043D9FE /* DectorDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BA498239E8ABA0043D9FE /* DectorDataViewController.swift */; };
 		3B119CE023782DC700FC4FC2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B119CDF23782DC700FC4FC2 /* LogInViewController.swift */; };
 		3B119CE323782DC700FC4FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B119CE123782DC700FC4FC2 /* Main.storyboard */; };
 		3B119CE523782DC800FC4FC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B119CE423782DC800FC4FC2 /* Assets.xcassets */; };
@@ -32,6 +30,10 @@
 		3B3B326F23815CD700B8D0C1 /* UserReservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B326E23815CD700B8D0C1 /* UserReservation.swift */; };
 		3B3B327123815ED100B8D0C1 /* ReservationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B327023815ED100B8D0C1 /* ReservationsViewController.swift */; };
 		3B3B327323815F2900B8D0C1 /* ReservationDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B327223815F2800B8D0C1 /* ReservationDetailsTableViewCell.swift */; };
+		3B7052FD23F7145D00914AF1 /* FavoriteDoctorForMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7052FC23F7145D00914AF1 /* FavoriteDoctorForMe.swift */; };
+		3B9ECE2B23F57B8400AA89C0 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9ECE2A23F57B8400AA89C0 /* SearchResultModel.swift */; };
+		3B9ECE2D23F5916C00AA89C0 /* AllDectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9ECE2C23F5916C00AA89C0 /* AllDectorModel.swift */; };
+		3B9ECE2F23F5B41D00AA89C0 /* DoctorinformationAndReservationDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9ECE2E23F5B41D00AA89C0 /* DoctorinformationAndReservationDates.swift */; };
 		7D9E1F34C178B97034237E04 /* Pods_Dr_Booking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E65729F7C7618EC01EBDF39 /* Pods_Dr_Booking.framework */; };
 		813FFBE12379A019004897AE /* RegesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FFBE02379A019004897AE /* RegesterVC.swift */; };
 		813FFBE62379A141004897AE /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FFBE52379A141004897AE /* ProductVC.swift */; };
@@ -40,9 +42,7 @@
 		816E23AF23828C23002ADB7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 816E23AE23828C23002ADB7C /* GoogleService-Info.plist */; };
 		818283AC237C4DCF00C10EFD /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818283AB237C4DCF00C10EFD /* ProductDetails.swift */; };
 		81970DEE23795AA5001CD992 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81970DED23795AA5001CD992 /* ProfileVC.swift */; };
-		81B61519237D6A8500C2E6B3 /* Doctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61518237D6A8500C2E6B3 /* Doctors.swift */; };
 		81BFDAB82381442D00025ACF /* ReservationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFDAB72381442D00025ACF /* ReservationCollectionViewCell.swift */; };
-		81BFDABA23815C5900025ACF /* DoctorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFDAB923815C5900025ACF /* DoctorInfo.swift */; };
 		81DEBC5E237AAB1E0096CF47 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBC5D237AAB1E0096CF47 /* ProfileTableViewCell.swift */; };
 		81DEBC60237AABB20096CF47 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBC5F237AABB20096CF47 /* EditProfileVC.swift */; };
 		81DEBC62237AB9A70096CF47 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBC61237AB9A70096CF47 /* ForgotPasswordVC.swift */; };
@@ -66,8 +66,6 @@
 		3B046B98237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		3B046B9C237D6C170032C7D1 /* ProductDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsTableViewCell.swift; sourceTree = "<group>"; };
-		3B0BA496239E769C0043D9FE /* DectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DectorView.swift; sourceTree = "<group>"; };
-		3B0BA498239E8ABA0043D9FE /* DectorDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DectorDataViewController.swift; sourceTree = "<group>"; };
 		3B119CD823782DC700FC4FC2 /* Dr.Booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dr.Booking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B119CDF23782DC700FC4FC2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3B119CE223782DC700FC4FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +87,10 @@
 		3B3B326E23815CD700B8D0C1 /* UserReservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserReservation.swift; path = Dr.Booking/Senarios/Profile/UserReservation.swift; sourceTree = SOURCE_ROOT; };
 		3B3B327023815ED100B8D0C1 /* ReservationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsViewController.swift; sourceTree = "<group>"; };
 		3B3B327223815F2800B8D0C1 /* ReservationDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		3B7052FC23F7145D00914AF1 /* FavoriteDoctorForMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDoctorForMe.swift; sourceTree = "<group>"; };
+		3B9ECE2A23F57B8400AA89C0 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
+		3B9ECE2C23F5916C00AA89C0 /* AllDectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDectorModel.swift; sourceTree = "<group>"; };
+		3B9ECE2E23F5B41D00AA89C0 /* DoctorinformationAndReservationDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorinformationAndReservationDates.swift; sourceTree = "<group>"; };
 		5E65729F7C7618EC01EBDF39 /* Pods_Dr_Booking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dr_Booking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E33EA26FA4806F422DB503 /* Pods-Dr.Booking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dr.Booking.debug.xcconfig"; path = "Target Support Files/Pods-Dr.Booking/Pods-Dr.Booking.debug.xcconfig"; sourceTree = "<group>"; };
 		813FFBE02379A019004897AE /* RegesterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegesterVC.swift; sourceTree = "<group>"; };
@@ -98,9 +100,7 @@
 		816E23AE23828C23002ADB7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		818283AB237C4DCF00C10EFD /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		81970DED23795AA5001CD992 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		81B61518237D6A8500C2E6B3 /* Doctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctors.swift; sourceTree = "<group>"; };
 		81BFDAB72381442D00025ACF /* ReservationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCollectionViewCell.swift; sourceTree = "<group>"; };
-		81BFDAB923815C5900025ACF /* DoctorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInfo.swift; sourceTree = "<group>"; };
 		81DEBC5D237AAB1E0096CF47 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		81DEBC5F237AABB20096CF47 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		81DEBC61237AB9A70096CF47 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
@@ -204,23 +204,85 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		3B24D160237BFCC5008D3605 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */,
-				81B61518237D6A8500C2E6B3 /* Doctors.swift */,
-				81BFDAB923815C5900025ACF /* DoctorInfo.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		3B24D16B237C34B4008D3605 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				3B24D16C237C34C4008D3605 /* UpdatePassword.swift */,
 				3B24D170237C49A1008D3605 /* EditProfile.swift */,
 				3B3B326E23815CD700B8D0C1 /* UserReservation.swift */,
-				3B0BA496239E769C0043D9FE /* DectorView.swift */,
+				3B7052FC23F7145D00914AF1 /* FavoriteDoctorForMe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3BDB491023F6FDD500A14CFE /* ResultOfSearch */ = {
+			isa = PBXGroup;
+			children = (
+				3BDB491123F6FDF500A14CFE /* Model */,
+				3BDB491223F6FDFF00A14CFE /* View */,
+				3BDB491323F6FE0800A14CFE /* Controller */,
+				3BDB491423F6FF0E00A14CFE /* DectorDeatils */,
+			);
+			path = ResultOfSearch;
+			sourceTree = "<group>";
+		};
+		3BDB491123F6FDF500A14CFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B9ECE2A23F57B8400AA89C0 /* SearchResultModel.swift */,
+				3B9ECE2C23F5916C00AA89C0 /* AllDectorModel.swift */,
+				3B24D161237BFCED008D3605 /* FavoriteDoctor.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3BDB491223F6FDFF00A14CFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81DEBC6F237AC5D50096CF47 /* SearchResultTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3BDB491323F6FE0800A14CFE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81DEBC6C237AC55A0096CF47 /* SearchResultVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3BDB491423F6FF0E00A14CFE /* DectorDeatils */ = {
+			isa = PBXGroup;
+			children = (
+				3BDB491723F6FF5B00A14CFE /* Model */,
+				3BDB491623F6FF5300A14CFE /* View */,
+				3BDB491523F6FF4400A14CFE /* Controller */,
+			);
+			path = DectorDeatils;
+			sourceTree = "<group>";
+		};
+		3BDB491523F6FF4400A14CFE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81DEBC71237ADC330096CF47 /* DoctorDetailsVC.swift */,
+				81DEBC75237AEBCF0096CF47 /* Rate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3BDB491623F6FF5300A14CFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81BFDAB72381442D00025ACF /* ReservationCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3BDB491723F6FF5B00A14CFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B9ECE2E23F5B41D00AA89C0 /* DoctorinformationAndReservationDates.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,7 +370,6 @@
 				3B046B96237D67250032C7D1 /* FavoriteDetailsViewController.swift */,
 				3B046B9A237D6BDF0032C7D1 /* ProductDetailsViewController.swift */,
 				3B3B327023815ED100B8D0C1 /* ReservationsViewController.swift */,
-				3B0BA498239E8ABA0043D9FE /* DectorDataViewController.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -345,8 +406,6 @@
 		81DEBC68237AC4AC0096CF47 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				3B24D160237BFCC5008D3605 /* Model */,
-				81DEBC6E237AC5AD0096CF47 /* View */,
 				81DEBC69237AC4C20096CF47 /* Controller */,
 			);
 			path = Search;
@@ -356,20 +415,9 @@
 			isa = PBXGroup;
 			children = (
 				81DEBC6A237AC4D80096CF47 /* SearchVC.swift */,
-				81DEBC6C237AC55A0096CF47 /* SearchResultVC.swift */,
-				81DEBC71237ADC330096CF47 /* DoctorDetailsVC.swift */,
-				81DEBC75237AEBCF0096CF47 /* Rate.swift */,
+				3BDB491023F6FDD500A14CFE /* ResultOfSearch */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		81DEBC6E237AC5AD0096CF47 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				81DEBC6F237AC5D50096CF47 /* SearchResultTableViewCell.swift */,
-				81BFDAB72381442D00025ACF /* ReservationCollectionViewCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		81F2A7F92378488C003DFCD1 /* Utitlites */ = {
@@ -521,11 +569,12 @@
 				81DEBC6D237AC55A0096CF47 /* SearchResultVC.swift in Sources */,
 				3B3B326F23815CD700B8D0C1 /* UserReservation.swift in Sources */,
 				3B24D16A237C2C9C008D3605 /* ForgetPass.swift in Sources */,
-				3B0BA499239E8ABA0043D9FE /* DectorDataViewController.swift in Sources */,
 				3B24D171237C49A1008D3605 /* EditProfile.swift in Sources */,
 				3B119CE023782DC700FC4FC2 /* LogInViewController.swift in Sources */,
 				3B3B327323815F2900B8D0C1 /* ReservationDetailsTableViewCell.swift in Sources */,
 				3B046B9B237D6BDF0032C7D1 /* ProductDetailsViewController.swift in Sources */,
+				3B9ECE2F23F5B41D00AA89C0 /* DoctorinformationAndReservationDates.swift in Sources */,
+				3B9ECE2B23F57B8400AA89C0 /* SearchResultModel.swift in Sources */,
 				81DEBC76237AEBCF0096CF47 /* Rate.swift in Sources */,
 				81BFDAB82381442D00025ACF /* ReservationCollectionViewCell.swift in Sources */,
 				3B24D15E237BFC53008D3605 /* Register.swift in Sources */,
@@ -535,7 +584,6 @@
 				3B24D155237BFAAA008D3605 /* APIClient.swift in Sources */,
 				81DEBC72237ADC330096CF47 /* DoctorDetailsVC.swift in Sources */,
 				813FFBE12379A019004897AE /* RegesterVC.swift in Sources */,
-				81BFDABA23815C5900025ACF /* DoctorInfo.swift in Sources */,
 				3B24D16D237C34C4008D3605 /* UpdatePassword.swift in Sources */,
 				81DEBC5E237AAB1E0096CF47 /* ProfileTableViewCell.swift in Sources */,
 				3B24D168237C0119008D3605 /* Failure.swift in Sources */,
@@ -544,23 +592,23 @@
 				81DEBC70237AC5D50096CF47 /* SearchResultTableViewCell.swift in Sources */,
 				3B046B99237D678E0032C7D1 /* FavoriteDetailsTableViewCell.swift in Sources */,
 				3B24D16F237C37DF008D3605 /* UserDefault.swift in Sources */,
+				3B7052FD23F7145D00914AF1 /* FavoriteDoctorForMe.swift in Sources */,
 				81970DEE23795AA5001CD992 /* ProfileVC.swift in Sources */,
 				816E23AD2381A20F002ADB7C /* Upload.swift in Sources */,
 				3B046B9D237D6C170032C7D1 /* ProductDetailsTableViewCell.swift in Sources */,
 				81DEBC6B237AC4D80096CF47 /* SearchVC.swift in Sources */,
 				816E23AB2381888E002ADB7C /* Maps.swift in Sources */,
 				3B3B327123815ED100B8D0C1 /* ReservationsViewController.swift in Sources */,
-				81B61519237D6A8500C2E6B3 /* Doctors.swift in Sources */,
 				81DEBC78237AEF8D0096CF47 /* ChangePasswordVC.swift in Sources */,
 				81DEBC62237AB9A70096CF47 /* ForgotPasswordVC.swift in Sources */,
 				3B24D163237BFCEE008D3605 /* FavoriteDoctor.swift in Sources */,
 				81DEBC65237ABA4A0096CF47 /* ProductTableViewCell.swift in Sources */,
-				3B0BA497239E769C0043D9FE /* DectorView.swift in Sources */,
 				81F2A7FF2378488C003DFCD1 /* CardView.swift in Sources */,
 				813FFBE62379A141004897AE /* ProductVC.swift in Sources */,
 				81DEBC60237AABB20096CF47 /* EditProfileVC.swift in Sources */,
 				3B24D15A237BFC0F008D3605 /* Login.swift in Sources */,
 				3B046B97237D67250032C7D1 /* FavoriteDetailsViewController.swift in Sources */,
+				3B9ECE2D23F5916C00AA89C0 /* AllDectorModel.swift in Sources */,
 				3B24D156237BFAAA008D3605 /* APIRouter.swift in Sources */,
 				81F678AA237C2A93004CB1AB /* Products.swift in Sources */,
 				81F2A803237853EA003DFCD1 /* TabBar.swift in Sources */,

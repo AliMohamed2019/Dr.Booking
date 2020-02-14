@@ -44,6 +44,8 @@ class EditProfileVC: UIViewController ,NVActivityIndicatorViewable {
     }
     
     @IBAction func changePassword(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(withIdentifier:  "ChangePasswordVC") as! ChangePasswordVC
+              navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: - Func GetData Of User Login

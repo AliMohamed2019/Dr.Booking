@@ -1,19 +1,22 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
 //
-//   let doctorInfo = try? newJSONDecoder().decode(DoctorInfo.self, from: jsonData)
+//  DoctorinformationAndReservationDates.swift
+//  Dr.Booking
+//
+//  Created by Mustafa on 2/13/20.
+//  Copyright © 2020 BeSolutions.Dr.BookingOriginal. All rights reserved.
+//
 
 import Foundation
 
-// MARK: - DoctorInfo
-struct DoctorInfo: Codable {
+// MARK: - DoctorinformationAndReservationDates
+struct DoctorinformationAndReservationDates: Codable {
     let status: Int
-    let dates: [ReserveDate]
-    let doctor: Doctor
+    let dates: [DateElement]?
+    let doctor: Doctorinformation
 }
 
 // MARK: - DateElement
-struct ReserveDate: Codable {
+struct DateElement: Codable {
     let id, idUser, reservationDate, fromTime: String
     let toTime, place, createdBy, created: String
     let lastUpdatedBy, updatedAt, deleted, status: String
@@ -33,7 +36,7 @@ struct ReserveDate: Codable {
 }
 
 // MARK: - Doctor
-struct Doctor: Codable {
+struct Doctorinformation: Codable {
     let favorite: Int
     let id, name, address: String
     let image: String

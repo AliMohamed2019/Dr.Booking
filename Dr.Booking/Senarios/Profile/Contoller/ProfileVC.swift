@@ -26,7 +26,7 @@ class ProfileVC: UIViewController {
     
     let photsArray = ["product","profile","callender","house"]
     let namesArray = ["منتجاتي","تعديل البيانات","حجوزاتي","مفضلتي"]
-    let viewControllerArray = ["GoToProductDetails","GoToProfileDetails" , "GoToReservationDetails" , "GoToFavoriteDetails "]
+    let viewControllerArray = ["ProductDetailsViewController","EditProfileVC" , "ReservationsViewController" , "FavoriteDetailsViewController"]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -36,7 +36,11 @@ class ProfileVC: UIViewController {
     //MARK: - IBAction
     
     @IBAction func signOutPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        UserDefault.setcheckLogin(false)
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController") as? LogInViewController {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     //MARK: - Func GetData Of User Login
@@ -48,6 +52,8 @@ class ProfileVC: UIViewController {
         TableView.reloadData()
         
     }
+    
+   
 }
 
 //MARK: - TableView DataSource Methods
@@ -63,7 +69,7 @@ extension ProfileVC: UITableViewDelegate , UITableViewDataSource {
     //TODO: Declare cellForRowAtIndexPath here:
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+      
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProfileTableViewCell
         cell.iconImage.image = UIImage(named: photsArray[indexPath.row])
         cell.title.text = namesArray[indexPath.row]
@@ -73,7 +79,8 @@ extension ProfileVC: UITableViewDelegate , UITableViewDataSource {
     //TODO: Declare didSelectRowAt here:
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: viewControllerArray[indexPath.row], sender: self)
+        let vc = storyboard?.instantiateViewController(withIdentifier:  viewControllerArray[indexPath.row]) 
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
 }

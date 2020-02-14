@@ -1,19 +1,20 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
 //
-//   let dectorView = try? newJSONDecoder().decode(DectorView.self, from: jsonData)
+//  FavoriteDoctorForMe.swift
+//  Dr.Booking
+//
+//  Created by Mustafa on 2/14/20.
+//  Copyright © 2020 BeSolutions.Dr.BookingOriginal. All rights reserved.
+//
 
 import Foundation
-
-// MARK: - DectorView
-struct DectorView: Codable {
+// MARK: - FavoriteDoctorForMe
+struct FavoriteDoctorForMe: Codable {
     let status: Int
-    let dates: String?
-    let doctor: DoctorV
+    let doctors: [FavoriteDoctorData]
 }
 
 // MARK: - Doctor
-struct DoctorV: Codable {
+struct FavoriteDoctorData: Codable {
     let favorite: Int
     let id, name, address: String
     let image: String

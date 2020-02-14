@@ -13,7 +13,8 @@ class ReservationCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var startHour: UILabel!
     @IBOutlet weak var endHour: UILabel!
     
-    var date: ReserveDate?
+    var date: DateElement?
+
     
     @IBAction func reserveButtonPressed(_ sender: UIButton) {
         if let Date = date {

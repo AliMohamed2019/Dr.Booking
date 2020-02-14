@@ -60,7 +60,7 @@ class APIClient {
     
     
     static func getFavoriteDoctors(user_id : String  , completion:@escaping
-           (Result<Doctors,AFError>)->Void){
+           (Result<FavoriteDoctorForMe,AFError>)->Void){
            performRequest(route: APIRouter.getFavoriteDoctors(user_id: user_id), completion: completion)
 
        }
@@ -108,11 +108,11 @@ class APIClient {
         performRequest(route: APIRouter.editProfile(user_id: user_id, user_name: user_name, user_mail: user_mail, user_phone: user_phone), completion: completion)
     }
     
-    static func getDoctors(user_id : String ,completion:@escaping(Result<Doctors,AFError>)->Void){
+    static func getDoctors(user_id : String ,completion:@escaping(Result<AllDectorModel,AFError>)->Void){
         performRequest(route: APIRouter.getAllDoctors(user_id: user_id) , completion: completion)
     }
     
-    static func getSearchedDoctors(search_words: String, order_by: String,user_id : String ,completion:@escaping(Result<Doctors,AFError>)->Void){
+    static func getSearchedDoctors(search_words: String, order_by: String,user_id : String ,completion:@escaping(Result<SearchResultModel,AFError>)->Void){
         performRequest(route: APIRouter.Search(search_words: search_words, order_by: order_by, user_id: user_id) , completion: completion)
     }
     static func getSearchedDoctorsFailure(search_words: String, order_by: String,user_id : String ,completion:@escaping(Result<Failure,AFError>)->Void){
@@ -132,12 +132,10 @@ class APIClient {
     static func addReservation(user_id : String , doctor_id: String ,docotor_reservation_date_id: String , completion:@escaping(Result<Failure,AFError>)->Void){
         performRequest(route: APIRouter.make_reservation(user_id: user_id, doctor_id: doctor_id, docotor_reservation_date_id: docotor_reservation_date_id), completion: completion)
     }
-    static func getReservation( doctor_id: String , user_id : String  , completion:@escaping(Result<DoctorInfo,AFError>)->Void){
-        performRequest(route: APIRouter.viewDoctor( doctor_id: doctor_id , user_id: user_id), completion: completion)
-    }
-//    static func getReservationString(user_id : String , doctor_id: String , completion:@escaping(Result<String,AFError>)->Void){
-//        performRequestSimple(route: APIRouter.viewDoctor(user_id: user_id, doctor_id: doctor_id), completion: completion)
+//    static func getReservation( doctor_id: String , user_id : String  , completion:@escaping(Result<DoctorInfo,AFError>)->Void){
+//        performRequest(route: APIRouter.viewDoctor( doctor_id: doctor_id , user_id: user_id), completion: completion)
 //    }
+
     
     static func view_reservations (user_id : String , completion:@escaping(Result<UserReservation,AFError>)->Void){
           performRequest(route: APIRouter.view_reservations(user_id: user_id), completion: completion)
@@ -146,9 +144,10 @@ class APIClient {
           performRequest(route: APIRouter.view_reservations(user_id: user_id), completion: completion)
       }
     
-    static func viewDoctor( doctor_id : String,  user_id : String  , completion:@escaping(Result<DectorView,AFError>)->Void){
-             performRequest(route: APIRouter.viewDoctor( doctor_id: doctor_id , user_id: user_id), completion: completion)
-         }
+    
+    static func getDoctorinformationAndReservationDates( doctor_id: String , user_id : String  , completion:@escaping(Result<DoctorinformationAndReservationDates,AFError>)->Void){
+           performRequest(route: APIRouter.viewDoctor( doctor_id: doctor_id , user_id: user_id), completion: completion)
+       }
 
 
 }

@@ -7,13 +7,12 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class SearchVC: UIViewController {
-    
+class SearchVC: UIViewController, NVActivityIndicatorViewable {
+   
     @IBOutlet weak var searchBtn: UIButton!
-    @IBOutlet weak var searchTv: UITextField!
-    
-      var sortBy: String?
+    @IBOutlet weak var searchTv: UITextField!    
     override func viewDidLoad() {
         super.viewDidLoad()
         Rounded.roundedButton1(button: searchBtn)
@@ -22,15 +21,28 @@ class SearchVC: UIViewController {
         
     }
     
+    
+    
+    
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        sortBy = "all"
-        performSegue(withIdentifier: "GoToSearch", sender: self)
+        if let searchText = searchTv.text  {
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultVC") as? SearchResultVC {
+                vc.modalPresentationStyle = .fullScreen
+                vc.chkSearch = 2
+                vc.srachText = searchText
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        
     }
     
     
     @IBAction func skipButtonPressed(_ sender: UIButton) {
-        sortBy = "all"
-        performSegue(withIdentifier: "GoToSearch", sender: self)
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultVC") as? SearchResultVC {
+            vc.modalPresentationStyle = .fullScreen
+            vc.chkSearch = 1
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func searchTextfieldIsEditing(_ sender: UITextField) {
@@ -43,11 +55,5 @@ class SearchVC: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GoToSearch" {
-            let vc = segue.destination as! SearchResultVC
-            vc.modalPresentationStyle = .fullScreen
-            vc.searchDoctors(SortBy: sortBy ?? "all", keyWord: searchTv.text ?? "", userId: UserDefault.getId())
-        }
-    }
+    
 }

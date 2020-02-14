@@ -14,22 +14,23 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater  , NVA
     
     @IBOutlet weak var doctorFavoriteTableView: UITableView!
     
-    var alFavoriteDoctorArray:[Doctor]?
+    var favoriteDoctorForMe:FavoriteDoctorForMe?
     var failure:Failure?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getFavoriteDoctors()
+        
         doctorFavoriteTableView.estimatedRowHeight = 300
         doctorFavoriteTableView.rowHeight = UITableView.automaticDimension
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        getFavoriteDoctors()
+    }
     
     func getFavoriteDoctors() {
         self.startAnimating()
-        
-        self.alFavoriteDoctorArray?.removeAll()
-        
         APIClient.getFavoriteDoctors(user_id: UserDefault.getId()){(Result) in
             switch Result {
             case.success(let response):
@@ -37,7 +38,7 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater  , NVA
                     self.stopAnimating()
                     print("aaaaaaaa")
                     print(response)
-                    self.alFavoriteDoctorArray = response.doctors
+                    self.favoriteDoctorForMe = response
                     self.doctorFavoriteTableView.reloadData()
                 }
             case.failure(let error):
@@ -55,7 +56,6 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater  , NVA
                                 self.failure = response
                                 self.doctorFavoriteTableView.reloadData()
                                 Rounded.emptyData(TabelView: self.doctorFavoriteTableView, View: self.view, MessageText: self.failure!.message)
-                                //  Alert.show("Error", massege: self.failure!.message, context: self)
                                 
                             }
                         case.failure(let error):
@@ -78,38 +78,38 @@ class FavoriteDetailsViewController: UIViewController , CustomCellUpdater  , NVA
 
 extension FavoriteDetailsViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alFavoriteDoctorArray?.count ?? 0
+        return favoriteDoctorForMe?.doctors.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FavoriteDetailsTableViewCell
-        if let doctor = alFavoriteDoctorArray?[indexPath.row] {
-            cell.doctorImage.sd_setImage(with: URL(string: alFavoriteDoctorArray?[indexPath.row].image ?? ""),
+        if let doctor = favoriteDoctorForMe?.doctors[indexPath.row] {
+            cell.doctorImage.sd_setImage(with: URL(string: favoriteDoctorForMe?.doctors[indexPath.row].image ?? ""),
                                          placeholderImage: UIImage(named: "user"))
             cell.doctorName.text = doctor.name
             cell.DoctorTitle.text = doctor.jobTitle
             cell.doctorFees.text = doctor.price
             cell.doctorAddress.text = doctor.address
             cell.rateOfDoctor.rating = doctor.rating
-            
+            cell.lat = doctor.latitude
+            cell.long = doctor.longitude
+            cell.doctorId = doctor.id
             cell.delegate = self
             cell.delegateDetails = self
-            cell.doctor = doctor
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorDetails") as! DoctorDetailsVC
-        vc.doctor = alFavoriteDoctorArray?[indexPath.row]
+        vc.doctorId =  favoriteDoctorForMe?.doctors[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 extension FavoriteDetailsViewController: DectorDetailsDelegate {
-    func details(id: String, doctor: Doctor) {
+    func details(id: String) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DoctorDetails") as! DoctorDetailsVC
-        vc.doctor = doctor
-        vc.doctorID = id
+        vc.doctorId = id
         navigationController?.pushViewController(vc, animated: true)
         
     }
