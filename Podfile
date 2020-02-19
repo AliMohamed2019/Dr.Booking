@@ -15,5 +15,6 @@ target 'Dr.Booking' do
     pod 'NVActivityIndicatorView'
     pod 'SwiftyJSON'
     pod 'Cosmos'
+    pod 'lottie-ios'
     pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 end

@@ -15,6 +15,10 @@
 		3B119CE323782DC700FC4FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B119CE123782DC700FC4FC2 /* Main.storyboard */; };
 		3B119CE523782DC800FC4FC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B119CE423782DC800FC4FC2 /* Assets.xcassets */; };
 		3B119CE823782DC800FC4FC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B119CE623782DC800FC4FC2 /* LaunchScreen.storyboard */; };
+		3B17D8E223FD3EB8004D8DFE /* CompleteReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D8E123FD3EB8004D8DFE /* CompleteReservationViewController.swift */; };
+		3B17D8E523FD4639004D8DFE /* reservation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D8E423FD4639004D8DFE /* reservation.json */; };
+		3B17D8E723FD4677004D8DFE /* StartAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B17D8E623FD4677004D8DFE /* StartAnimationView.swift */; };
+		3B17D8E923FD504F004D8DFE /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B17D8E823FD504F004D8DFE /* success.json */; };
 		3B21C7E723F447850026C25D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B21C7E623F447850026C25D /* AppDelegate.swift */; };
 		3B24D155237BFAAA008D3605 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D152237BFAAA008D3605 /* APIClient.swift */; };
 		3B24D156237BFAAA008D3605 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24D153237BFAAA008D3605 /* APIRouter.swift */; };
@@ -72,6 +76,10 @@
 		3B119CE423782DC800FC4FC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B119CE723782DC800FC4FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B119CE923782DC800FC4FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B17D8E123FD3EB8004D8DFE /* CompleteReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteReservationViewController.swift; sourceTree = "<group>"; };
+		3B17D8E423FD4639004D8DFE /* reservation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reservation.json; sourceTree = "<group>"; };
+		3B17D8E623FD4677004D8DFE /* StartAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartAnimationView.swift; sourceTree = "<group>"; };
+		3B17D8E823FD504F004D8DFE /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		3B21C7E623F447850026C25D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B24D152237BFAAA008D3605 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3B24D153237BFAAA008D3605 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -153,6 +161,7 @@
 		3B119CDA23782DC700FC4FC2 /* Dr.Booking */ = {
 			isa = PBXGroup;
 			children = (
+				3B17D8E323FD4617004D8DFE /* Animation */,
 				3B21C7E523F447600026C25D /* Core */,
 				3B24D151237BFAAA008D3605 /* Networking */,
 				81F2A7F92378488C003DFCD1 /* Utitlites */,
@@ -167,6 +176,15 @@
 				3B24D16E237C37DF008D3605 /* UserDefault.swift */,
 			);
 			path = Dr.Booking;
+			sourceTree = "<group>";
+		};
+		3B17D8E323FD4617004D8DFE /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				3B17D8E823FD504F004D8DFE /* success.json */,
+				3B17D8E423FD4639004D8DFE /* reservation.json */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		3B21C7E523F447600026C25D /* Core */ = {
@@ -267,6 +285,7 @@
 			children = (
 				81DEBC71237ADC330096CF47 /* DoctorDetailsVC.swift */,
 				81DEBC75237AEBCF0096CF47 /* Rate.swift */,
+				3B17D8E123FD3EB8004D8DFE /* CompleteReservationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -424,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				81F2A7FA2378488C003DFCD1 /* Alert.swift */,
+				3B17D8E623FD4677004D8DFE /* StartAnimationView.swift */,
 				81F2A7FB2378488C003DFCD1 /* CardView.swift */,
 				81F2A7FC2378488C003DFCD1 /* DesignableUITextField.swift */,
 				816E23AC2381A20F002ADB7C /* Upload.swift */,
@@ -511,9 +531,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B119CE823782DC800FC4FC2 /* LaunchScreen.storyboard in Resources */,
+				3B17D8E523FD4639004D8DFE /* reservation.json in Resources */,
 				816E23AF23828C23002ADB7C /* GoogleService-Info.plist in Resources */,
 				3B119CE523782DC800FC4FC2 /* Assets.xcassets in Resources */,
 				3B119CE323782DC700FC4FC2 /* Main.storyboard in Resources */,
+				3B17D8E923FD504F004D8DFE /* success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +600,8 @@
 				81DEBC76237AEBCF0096CF47 /* Rate.swift in Sources */,
 				81BFDAB82381442D00025ACF /* ReservationCollectionViewCell.swift in Sources */,
 				3B24D15E237BFC53008D3605 /* Register.swift in Sources */,
+				3B17D8E723FD4677004D8DFE /* StartAnimationView.swift in Sources */,
+				3B17D8E223FD3EB8004D8DFE /* CompleteReservationViewController.swift in Sources */,
 				81DEBC67237ABC0A0096CF47 /* ProductDetailsVC.swift in Sources */,
 				3B21C7E723F447850026C25D /* AppDelegate.swift in Sources */,
 				818283AC237C4DCF00C10EFD /* ProductDetails.swift in Sources */,

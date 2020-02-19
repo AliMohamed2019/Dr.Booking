@@ -150,8 +150,21 @@ extension DoctorDetailsVC: UICollectionViewDelegate , UICollectionViewDataSource
             cell.startHour.text = date.fromTime
             cell.endHour.text = date.toTime
             cell.date = date
+            cell.delegteTransfe = self
         }
         return cell
+    }
+    
+    
+}
+
+extension DoctorDetailsVC: transferToPopup {
+    func transfe(text: String) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "CompleteReservationViewController") as! CompleteReservationViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.msgText = text
+        self.present(vc, animated: true, completion: nil)
+        
     }
     
     
